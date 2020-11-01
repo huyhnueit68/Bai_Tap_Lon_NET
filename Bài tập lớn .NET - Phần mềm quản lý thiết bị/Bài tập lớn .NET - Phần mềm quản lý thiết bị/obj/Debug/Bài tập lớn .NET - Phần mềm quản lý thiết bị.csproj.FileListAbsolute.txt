@@ -1,0 +1,4 @@
+C:\Document Study\LEARN\HK5\.NET\Bài Tập Lớn\Bai_Tap_Lon_NET\Bài tập lớn .NET - Phần mềm quản lý thiết bị\Bài tập lớn .NET - Phần mềm quản lý thiết bị\obj\Debug\Bài tập lớn .NET - Phần mềm quản lý thiết bị.csprojAssemblyReference.cache
+C:\Document Study\LEARN\HK5\.NET\Bài Tập Lớn\Bai_Tap_Lon_NET\Bài tập lớn .NET - Phần mềm quản lý thiết bị\Bài tập lớn .NET - Phần mềm quản lý thiết bị\obj\Debug\Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Properties.Resources.resources
+C:\Document Study\LEARN\HK5\.NET\Bài Tập Lớn\Bai_Tap_Lon_NET\Bài tập lớn .NET - Phần mềm quản lý thiết bị\Bài tập lớn .NET - Phần mềm quản lý thiết bị\obj\Debug\Bài tập lớn .NET - Phần mềm quản lý thiết bị.csproj.GenerateResource.cache
+C:\Document Study\LEARN\HK5\.NET\Bài Tập Lớn\Bai_Tap_Lon_NET\Bài tập lớn .NET - Phần mềm quản lý thiết bị\Bài tập lớn .NET - Phần mềm quản lý thiết bị\obj\Debug\Bài tập lớn .NET - Phần mềm quản lý thiết bị.csproj.CoreCompileInputs.cache
