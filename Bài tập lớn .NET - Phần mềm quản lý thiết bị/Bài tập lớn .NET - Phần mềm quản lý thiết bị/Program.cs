@@ -16,7 +16,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Login());
         }
     }
 }
