@@ -123,12 +123,12 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             }
             if (txtUsername.Text.Trim() == "")
             {
-                errId_Customer.SetError(txtUsername, "Nhập vào mật khẩu khách hàng");
+                errUser_Name.SetError(txtUsername, "Nhập vào mật khẩu khách hàng");
                 return false;
             }
             if (txtMaTK.Text.Trim() == "")
             {
-                errId_Customer.SetError(txtMaTK, "Nhập vào mật khẩu khách hàng");
+                errPass_Word.SetError(txtMaTK, "Nhập vào mật khẩu khách hàng");
                 return false;
             }
             else

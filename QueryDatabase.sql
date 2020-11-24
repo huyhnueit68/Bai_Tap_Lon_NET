@@ -67,3 +67,11 @@ SELECT * FROM Customer_Detail WHERE Id_Customer = 11
 INSERT INTO Account
 VALUES
 (5, N'admin', 'admin')
+
+/*
+	Query for customer_detail
+*/
+
+SELECT * FROM Customer_Detail WHERE Id_Customer  = 1
+
+DELETE FROM Customer_Detail WHERE Id_Customer = 2

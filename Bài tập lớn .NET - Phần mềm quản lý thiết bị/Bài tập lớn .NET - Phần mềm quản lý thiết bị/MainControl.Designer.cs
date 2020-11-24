@@ -317,6 +317,7 @@
             this.btnQLNguoiDung.Text = "Quản Lý Người Dùng";
             this.btnQLNguoiDung.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQLNguoiDung.UseVisualStyleBackColor = true;
+            this.btnQLNguoiDung.Click += new System.EventHandler(this.btnQLNguoiDung_Click);
             // 
             // btnQLMuonTra
             // 

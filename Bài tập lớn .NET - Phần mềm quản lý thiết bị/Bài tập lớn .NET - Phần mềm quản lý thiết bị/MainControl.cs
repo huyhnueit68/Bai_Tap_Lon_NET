@@ -133,32 +133,35 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
         {
             if (Application.OpenForms["QuanLyTaiKhoan"] == null)
                 btnQLTaiKhoan.BackColor = Color.FromArgb(4, 41, 68);
-            if (Application.OpenForms["QuanLyTaiKhoan"] == null)
-                btnQLTaiKhoan.BackColor = Color.FromArgb(4, 41, 68);
-
             if (Application.OpenForms["QuanLyNguoiDung"] == null)
                 btnQLNguoiDung.BackColor = Color.FromArgb(4, 41, 68);
             if (Application.OpenForms["QuanLyNhomNguoiDung"] == null)
                 btnQLNhomNguoiDung.BackColor = Color.FromArgb(4, 41, 68);
-
-            /*if (Application.OpenForms["frmQLCauHinh"] == null)
-                btnQLCauHinh.BackColor = Color.FromArgb(4, 41, 68);
-            if (Application.OpenForms["frmQLPhongMay"] == null)
-                btnQLPhongMay.BackColor = Color.FromArgb(4, 41, 68);
-            if (Application.OpenForms["frmQLNhapMay"] == null)
-                btnQLNhapMay.BackColor = Color.FromArgb(4, 41, 68);
-            if (Application.OpenForms["frmLichSuCapNhat"] == null)
-                btnLichSuCapNhat.BackColor = Color.FromArgb(4, 41, 68);*/
+            if (Application.OpenForms["QuanLyThietBi"] == null)
+                btnQLThanhLy.BackColor = Color.FromArgb(4, 41, 68);
+            if (Application.OpenForms["QuanLyMuonTra"] == null)
+                btnQLMuonTra.BackColor = Color.FromArgb(4, 41, 68);
+            if (Application.OpenForms["QuanLyThanhLy"] == null)
+                btnQLThanhLy.BackColor = Color.FromArgb(4, 41, 68);
+            if (Application.OpenForms["QuanLyThongKe"] == null)
+                btnThongKe.BackColor = Color.FromArgb(4, 41, 68);
         }
 
         //reset color for button
         private void resetColorForButton()
         {
             btnQLTaiKhoan.BackColor = Color.FromArgb(4, 41, 68);
+            btnQLNguoiDung.BackColor = Color.FromArgb(4, 41, 68);
+            btnQLNhomNguoiDung.BackColor = Color.FromArgb(4, 41, 68);
+            btnQLThietBi.BackColor = Color.FromArgb(4, 41, 68);
+            btnQLMuonTra.BackColor = Color.FromArgb(4, 41, 68);
+            btnQLThanhLy.BackColor = Color.FromArgb(4, 41, 68);
+            btnThongKe.BackColor = Color.FromArgb(4, 41, 68);
         }
 
         private void btnQLTaiKhoan_Click(object sender, EventArgs e)
         {
+            //form quan ly tai khoan
             resetColorForButton();
             AbrirFormulario<QuanLyTaiKhoan>();
             btnQLTaiKhoan.BackColor = Color.FromArgb(0, 154, 205);
@@ -203,5 +206,12 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
             }
         }
 
+        private void btnQLNguoiDung_Click(object sender, EventArgs e)
+        {
+            //form quan ly nguoi dung
+            resetColorForButton();
+            AbrirFormulario<QuanLyNguoiDung>();
+            btnQLNguoiDung.BackColor = Color.FromArgb(0, 154, 205);
+        }
     }
 }

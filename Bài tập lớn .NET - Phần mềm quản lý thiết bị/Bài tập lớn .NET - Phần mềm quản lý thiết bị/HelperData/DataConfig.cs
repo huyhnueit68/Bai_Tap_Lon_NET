@@ -35,10 +35,18 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.HelperData
 
         public int CapNhatDL(SqlCommand sqlcmd)
         {
-            SqlCommand cmd = sqlcmd;
-            cmd.Connection = conn;
-            int kq = cmd.ExecuteNonQuery();
-            return kq;
+            try
+            {
+                SqlCommand cmd = sqlcmd;
+                cmd.Connection = conn;
+                int kq = cmd.ExecuteNonQuery();
+                return kq;
+            }
+            catch(Exception ce)
+            {
+                return -9999;
+            }
+            
         }
 
         public bool CheckStatusLogin()

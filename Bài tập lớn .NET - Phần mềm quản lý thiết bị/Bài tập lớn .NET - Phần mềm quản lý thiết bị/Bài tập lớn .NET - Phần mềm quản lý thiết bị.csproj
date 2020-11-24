@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AccountCtrl.cs" />
+    <Compile Include="Controller\CustomerDetailCtrl.cs" />
     <Compile Include="HelperData\DataConfig.cs" />
     <Compile Include="Model\AccountManage.cs" />
     <Compile Include="Model\ConnectData\ConnectDatabase.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="MainControl.Designer.cs">
       <DependentUpon>MainControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\CustomerManage.cs" />
     <Compile Include="ObjAccount.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +81,12 @@
     </Compile>
     <Compile Include="View\Default.Designer.cs">
       <DependentUpon>Default.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuanLyNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QuanLyNguoiDung.Designer.cs">
+      <DependentUpon>QuanLyNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="View\QuanLyTaiKhoan.cs">
       <SubType>Form</SubType>
@@ -107,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Default.resx">
       <DependentUpon>Default.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QuanLyNguoiDung.resx">
+      <DependentUpon>QuanLyNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\QuanLyTaiKhoan.resx">
       <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
