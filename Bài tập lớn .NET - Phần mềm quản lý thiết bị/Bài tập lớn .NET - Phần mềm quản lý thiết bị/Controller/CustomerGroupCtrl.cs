@@ -9,42 +9,40 @@ using System.Windows.Forms;
 
 namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Controller
 {
-    class CustomerDetailCtrl
+    class CustomerGroupCtrl
     {
-        Model.CustomerManage customerDetailMng = new Model.CustomerManage();
+        Model.CustomerGroupManage customerGroupMng = new Model.CustomerGroupManage();
         HelperData.DataConfig helperData = new HelperData.DataConfig();
 
         public int Xoa(string id)
         {
-            return customerDetailMng.Xoa(id);
+            return customerGroupMng.Xoa(id);
         }
 
-        public void HienThi(DataGridView dgv, string id_customer)
+        public void HienThi(DataGridView dgv, string id_group)
         {
-            dgv.DataSource = customerDetailMng.GetDataCustomer(id_customer).Tables[0];
+            dgv.DataSource = customerGroupMng.GetDataCustomer(id_group).Tables[0];
         }
 
-        public int Update(Object.ObjCustomerDetail customerDetail)
+        public int Update(Object.ObjCustomerGroup customerGroup)
         {
-            return customerDetailMng.Update(customerDetail);
+            return customerGroupMng.Update(customerGroup);
         }
 
-        public int Them(Object.ObjCustomerDetail customerDetail)
+        public int Them(Object.ObjCustomerGroup customerGroup)
         {
-            if (!KTMaNguoiDung(Convert.ToInt32(customerDetail.Id_Customer)))
-                return 0;
-            if (!KTMaNhom(Convert.ToInt32(customerDetail.Id_Group)))
+            if (!KTTenNhom(customerGroup.Name_Group))
                 return 2;
-            return customerDetailMng.Save(customerDetail);
+            return customerGroupMng.Save(customerGroup);
         }
 
-        public bool KTMaNguoiDung(int id)
+        public bool KTTenNhom(string name)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "SELECT * FROM Customer_Detail WHERE Id_Customer = @id";
-                cmd.Parameters.Add("id", SqlDbType.Int).Value = id;
+                cmd.CommandText = "SELECT * FROM Customer_Group WHERE Name_Group = @name";
+                cmd.Parameters.Add("name", SqlDbType.NVarChar).Value = name;
                 if (helperData.LayDuLieu(cmd).Tables[0].Rows.Count > 0)
                     return false;
                 else
@@ -52,7 +50,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Controller
             }
             catch (Exception e)
             {
-                MessageBox.Show("Mã tài khoản: " + e.Message);
+                MessageBox.Show("Tên Nhóm: " + e.Message);
                 return false;
             }
 
@@ -65,7 +63,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Controller
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = "SELECT * FROM Customer_Group WHERE Id_Group = @id";
                 cmd.Parameters.Add("id", SqlDbType.Int).Value = id;
-                if (helperData.LayDuLieu(cmd).Tables[0].Rows.Count <= 0)
+                if (helperData.LayDuLieu(cmd).Tables[0].Rows.Count > 0)
                     return false;
                 else
                     return true;
@@ -78,9 +76,9 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Controller
 
         }
 
-        public void HienThiNguoiDung(DataGridView dgv, string tukhoa, string tieuchi)
+        public void HienThiNhomNguoiDung(DataGridView dgv, string tukhoa, string tieuchi)
         {
-            dgv.DataSource = customerDetailMng.getListCustomerDetail(tukhoa, tieuchi).Tables[0];
+            dgv.DataSource = customerGroupMng.getListCustomerGroup(tukhoa, tieuchi).Tables[0];
         }
     }
 }

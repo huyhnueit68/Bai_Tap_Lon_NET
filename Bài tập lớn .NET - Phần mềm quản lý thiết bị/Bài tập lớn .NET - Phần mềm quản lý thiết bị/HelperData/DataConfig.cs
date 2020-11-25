@@ -44,6 +44,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.HelperData
             }
             catch(Exception ce)
             {
+                Console.Write(ce.Message);
                 return -9999;
             }
             

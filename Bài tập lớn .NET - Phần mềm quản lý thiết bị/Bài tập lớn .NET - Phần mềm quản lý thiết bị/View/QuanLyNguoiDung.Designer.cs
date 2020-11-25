@@ -36,7 +36,7 @@
             this.lbl_QLTaiKhoan = new System.Windows.Forms.Label();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.rdbId_Customer = new System.Windows.Forms.RadioButton();
-            this.rdbUserName = new System.Windows.Forms.RadioButton();
+            this.rdbName_Customer = new System.Windows.Forms.RadioButton();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -47,9 +47,17 @@
             this.lblMaTK = new System.Windows.Forms.Label();
             this.txtName_Customer = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.dgvDSTaiKhoan = new System.Windows.Forms.DataGridView();
+            this.dgvDSChiTietNguoiDung = new System.Windows.Forms.DataGridView();
+            this.Id_Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name_Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address_Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Grender_Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Birthday_Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Identity_Card = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_Group = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThemTK = new System.Windows.Forms.Button();
             this.grpThongTinTaiKhoan = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtId_Group = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtIdentity_Customer = new System.Windows.Forms.TextBox();
@@ -62,20 +70,12 @@
             this.errorBirthday_Customer = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorIdentity_Card = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorId_Group = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Id_Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name_Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address_Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Grender_Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Birthday_Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Identity_Card = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id_Group = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
             this.mntNgaySinh = new System.Windows.Forms.MonthCalendar();
             ((System.ComponentModel.ISupportInitialize)(this.errAddress_Customer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errId_Customer)).BeginInit();
             this.grp_TimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDSTaiKhoan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSChiTietNguoiDung)).BeginInit();
             this.grpThongTinTaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorGrender)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorBirthday_Customer)).BeginInit();
@@ -134,6 +134,7 @@
             this.btnTimKiem.TabIndex = 3;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // rdbId_Customer
             // 
@@ -147,17 +148,17 @@
             this.rdbId_Customer.Text = "Mã Người Dùng";
             this.rdbId_Customer.UseVisualStyleBackColor = true;
             // 
-            // rdbUserName
+            // rdbName_Customer
             // 
-            this.rdbUserName.AutoSize = true;
-            this.rdbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbUserName.Location = new System.Drawing.Point(358, 29);
-            this.rdbUserName.Name = "rdbUserName";
-            this.rdbUserName.Size = new System.Drawing.Size(112, 19);
-            this.rdbUserName.TabIndex = 1;
-            this.rdbUserName.TabStop = true;
-            this.rdbUserName.Text = "Tên Đăng Nhập";
-            this.rdbUserName.UseVisualStyleBackColor = true;
+            this.rdbName_Customer.AutoSize = true;
+            this.rdbName_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbName_Customer.Location = new System.Drawing.Point(358, 29);
+            this.rdbName_Customer.Name = "rdbName_Customer";
+            this.rdbName_Customer.Size = new System.Drawing.Size(115, 19);
+            this.rdbName_Customer.TabIndex = 1;
+            this.rdbName_Customer.TabStop = true;
+            this.rdbName_Customer.Text = "Tên Người Dùng";
+            this.rdbName_Customer.UseVisualStyleBackColor = true;
             // 
             // txtTimKiem
             // 
@@ -196,7 +197,7 @@
             // 
             this.grp_TimKiem.Controls.Add(this.btnTimKiem);
             this.grp_TimKiem.Controls.Add(this.rdbId_Customer);
-            this.grp_TimKiem.Controls.Add(this.rdbUserName);
+            this.grp_TimKiem.Controls.Add(this.rdbName_Customer);
             this.grp_TimKiem.Controls.Add(this.txtTimKiem);
             this.grp_TimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grp_TimKiem.ForeColor = System.Drawing.Color.Black;
@@ -263,11 +264,11 @@
             this.lblUsername.TabIndex = 14;
             this.lblUsername.Text = "Tên Người Dùng";
             // 
-            // dgvDSTaiKhoan
+            // dgvDSChiTietNguoiDung
             // 
-            this.dgvDSTaiKhoan.BackgroundColor = System.Drawing.Color.LightBlue;
-            this.dgvDSTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSTaiKhoan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDSChiTietNguoiDung.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.dgvDSChiTietNguoiDung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSChiTietNguoiDung.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_Customer,
             this.Name_Customer,
             this.Address_Customer,
@@ -275,12 +276,70 @@
             this.Birthday_Customer,
             this.Identity_Card,
             this.Id_Group});
-            this.dgvDSTaiKhoan.Location = new System.Drawing.Point(27, 281);
-            this.dgvDSTaiKhoan.Name = "dgvDSTaiKhoan";
-            this.dgvDSTaiKhoan.RowHeadersWidth = 51;
-            this.dgvDSTaiKhoan.Size = new System.Drawing.Size(854, 183);
-            this.dgvDSTaiKhoan.TabIndex = 21;
-            this.dgvDSTaiKhoan.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvDSTaiKhoan_MouseClick);
+            this.dgvDSChiTietNguoiDung.Location = new System.Drawing.Point(27, 281);
+            this.dgvDSChiTietNguoiDung.Name = "dgvDSChiTietNguoiDung";
+            this.dgvDSChiTietNguoiDung.RowHeadersWidth = 51;
+            this.dgvDSChiTietNguoiDung.Size = new System.Drawing.Size(854, 183);
+            this.dgvDSChiTietNguoiDung.TabIndex = 21;
+            this.dgvDSChiTietNguoiDung.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvDSTaiKhoan_MouseClick);
+            // 
+            // Id_Customer
+            // 
+            this.Id_Customer.DataPropertyName = "Id_Customer";
+            this.Id_Customer.HeaderText = "Mã Người Dùng";
+            this.Id_Customer.MinimumWidth = 6;
+            this.Id_Customer.Name = "Id_Customer";
+            this.Id_Customer.Width = 110;
+            // 
+            // Name_Customer
+            // 
+            this.Name_Customer.DataPropertyName = "Name_Customer";
+            this.Name_Customer.HeaderText = "Tên Người Dùng";
+            this.Name_Customer.MinimumWidth = 6;
+            this.Name_Customer.Name = "Name_Customer";
+            this.Name_Customer.ReadOnly = true;
+            this.Name_Customer.Width = 140;
+            // 
+            // Address_Customer
+            // 
+            this.Address_Customer.DataPropertyName = "Address_Customer";
+            this.Address_Customer.HeaderText = "Địa Chỉ";
+            this.Address_Customer.MinimumWidth = 6;
+            this.Address_Customer.Name = "Address_Customer";
+            this.Address_Customer.ReadOnly = true;
+            this.Address_Customer.Width = 130;
+            // 
+            // Grender_Customer
+            // 
+            this.Grender_Customer.DataPropertyName = "Grender_Customer";
+            this.Grender_Customer.HeaderText = "Giới Tính";
+            this.Grender_Customer.MinimumWidth = 6;
+            this.Grender_Customer.Name = "Grender_Customer";
+            this.Grender_Customer.Width = 80;
+            // 
+            // Birthday_Customer
+            // 
+            this.Birthday_Customer.DataPropertyName = "Birthday_Customer";
+            this.Birthday_Customer.HeaderText = "Ngày Sinh";
+            this.Birthday_Customer.MinimumWidth = 6;
+            this.Birthday_Customer.Name = "Birthday_Customer";
+            this.Birthday_Customer.Width = 150;
+            // 
+            // Identity_Card
+            // 
+            this.Identity_Card.DataPropertyName = "Identity_Card";
+            this.Identity_Card.HeaderText = "CMND";
+            this.Identity_Card.MinimumWidth = 6;
+            this.Identity_Card.Name = "Identity_Card";
+            this.Identity_Card.Width = 125;
+            // 
+            // Id_Group
+            // 
+            this.Id_Group.DataPropertyName = "Id_Group";
+            this.Id_Group.HeaderText = "Mã Nhóm";
+            this.Id_Group.MinimumWidth = 6;
+            this.Id_Group.Name = "Id_Group";
+            this.Id_Group.Width = 125;
             // 
             // btnThemTK
             // 
@@ -293,6 +352,7 @@
             this.btnThemTK.TabIndex = 19;
             this.btnThemTK.Text = "Thêm Tài Khoản";
             this.btnThemTK.UseVisualStyleBackColor = false;
+            this.btnThemTK.Click += new System.EventHandler(this.btnThemTK_Click);
             // 
             // grpThongTinTaiKhoan
             // 
@@ -330,6 +390,16 @@
             this.grpThongTinTaiKhoan.TabIndex = 20;
             this.grpThongTinTaiKhoan.TabStop = false;
             this.grpThongTinTaiKhoan.Text = "Thông Tin";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(497, 42);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 22);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtId_Group
             // 
@@ -425,72 +495,6 @@
             // 
             this.errorId_Group.ContainerControl = this;
             // 
-            // Id_Customer
-            // 
-            this.Id_Customer.DataPropertyName = "Id_Customer";
-            this.Id_Customer.HeaderText = "Mã Người Dùng";
-            this.Id_Customer.MinimumWidth = 6;
-            this.Id_Customer.Name = "Id_Customer";
-            this.Id_Customer.Width = 110;
-            // 
-            // Name_Customer
-            // 
-            this.Name_Customer.DataPropertyName = "Name_Customer";
-            this.Name_Customer.HeaderText = "Tên Người Dùng";
-            this.Name_Customer.MinimumWidth = 6;
-            this.Name_Customer.Name = "Name_Customer";
-            this.Name_Customer.ReadOnly = true;
-            this.Name_Customer.Width = 140;
-            // 
-            // Address_Customer
-            // 
-            this.Address_Customer.DataPropertyName = "Address_Customer";
-            this.Address_Customer.HeaderText = "Địa Chỉ";
-            this.Address_Customer.MinimumWidth = 6;
-            this.Address_Customer.Name = "Address_Customer";
-            this.Address_Customer.ReadOnly = true;
-            this.Address_Customer.Width = 130;
-            // 
-            // Grender_Customer
-            // 
-            this.Grender_Customer.DataPropertyName = "Grender_Customer";
-            this.Grender_Customer.HeaderText = "Giới Tính";
-            this.Grender_Customer.MinimumWidth = 6;
-            this.Grender_Customer.Name = "Grender_Customer";
-            this.Grender_Customer.Width = 80;
-            // 
-            // Birthday_Customer
-            // 
-            this.Birthday_Customer.DataPropertyName = "Birthday_Customer";
-            this.Birthday_Customer.HeaderText = "Ngày Sinh";
-            this.Birthday_Customer.MinimumWidth = 6;
-            this.Birthday_Customer.Name = "Birthday_Customer";
-            this.Birthday_Customer.Width = 150;
-            // 
-            // Identity_Card
-            // 
-            this.Identity_Card.DataPropertyName = "Identity_Card";
-            this.Identity_Card.HeaderText = "CMND";
-            this.Identity_Card.MinimumWidth = 6;
-            this.Identity_Card.Name = "Identity_Card";
-            // 
-            // Id_Group
-            // 
-            this.Id_Group.DataPropertyName = "Id_Group";
-            this.Id_Group.HeaderText = "Mã Nhóm";
-            this.Id_Group.MinimumWidth = 6;
-            this.Id_Group.Name = "Id_Group";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(497, 42);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 22);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // mntNgaySinh
             // 
             this.mntNgaySinh.Location = new System.Drawing.Point(299, 12);
@@ -508,7 +512,7 @@
             this.ClientSize = new System.Drawing.Size(945, 551);
             this.Controls.Add(this.lbl_QLTaiKhoan);
             this.Controls.Add(this.grp_TimKiem);
-            this.Controls.Add(this.dgvDSTaiKhoan);
+            this.Controls.Add(this.dgvDSChiTietNguoiDung);
             this.Controls.Add(this.grpThongTinTaiKhoan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -520,7 +524,7 @@
             this.grp_TimKiem.ResumeLayout(false);
             this.grp_TimKiem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDSTaiKhoan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSChiTietNguoiDung)).EndInit();
             this.grpThongTinTaiKhoan.ResumeLayout(false);
             this.grpThongTinTaiKhoan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorGrender)).EndInit();
@@ -539,9 +543,9 @@
         private System.Windows.Forms.GroupBox grp_TimKiem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.RadioButton rdbId_Customer;
-        private System.Windows.Forms.RadioButton rdbUserName;
+        private System.Windows.Forms.RadioButton rdbName_Customer;
         private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.DataGridView dgvDSTaiKhoan;
+        private System.Windows.Forms.DataGridView dgvDSChiTietNguoiDung;
         private System.Windows.Forms.GroupBox grpThongTinTaiKhoan;
         private System.Windows.Forms.TextBox txtId_Customer;
         private System.Windows.Forms.Label label1;

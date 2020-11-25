@@ -329,7 +329,7 @@
             this.Controls.Add(this.grp_TimKiem);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "QuanLyTaiKhoan";
             this.Text = "QuanLyTaiKhoan";
             this.Load += new System.EventHandler(this.QuanLyTaiKhoan_Load);

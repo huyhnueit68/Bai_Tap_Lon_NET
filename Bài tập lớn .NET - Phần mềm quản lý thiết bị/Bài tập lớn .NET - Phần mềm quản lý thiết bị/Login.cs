@@ -61,9 +61,18 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
             user = txtUserName.Text.Trim();
             pass = txtPassWord.Text.Trim();
             //action get database
-            SqlDataAdapter sqldata = new SqlDataAdapter(query, connect);
             DataTable result = new DataTable();
-            sqldata.Fill(result);
+            try
+            {
+                SqlDataAdapter sqldata = new SqlDataAdapter(query, connect);
+                result = new DataTable();
+                sqldata.Fill(result);
+            }
+            catch(Exception ce)
+            {
+                MessageBox.Show(ce.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
             // check database
             if (rdbAdmin.Checked)
             {

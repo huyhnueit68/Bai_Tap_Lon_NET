@@ -213,5 +213,21 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
             AbrirFormulario<QuanLyNguoiDung>();
             btnQLNguoiDung.BackColor = Color.FromArgb(0, 154, 205);
         }
+
+        private void btnQLNhomNguoiDung_Click(object sender, EventArgs e)
+        {
+            //form quan ly nhom nguoi dung
+            resetColorForButton();
+            AbrirFormulario<QLNhomNguoiDungcs>();
+            btnQLNhomNguoiDung.BackColor = Color.FromArgb(0, 154, 205);
+        }
+
+        private void btnQLThietBi_Click(object sender, EventArgs e)
+        {
+            //form quan ly nhom nguoi dung
+            resetColorForButton();
+            AbrirFormulario<QuanLyThietBi>();
+            btnQLThietBi.BackColor = Color.FromArgb(0, 154, 205);
+        }
     }
 }

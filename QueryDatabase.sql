@@ -1,4 +1,4 @@
-
+﻿
 
 /*
 	Delete database
@@ -75,3 +75,35 @@ VALUES
 SELECT * FROM Customer_Detail WHERE Id_Customer  = 1
 
 DELETE FROM Customer_Detail WHERE Id_Customer = 2
+
+/*
+	update
+*/
+
+UPDATE Customer_Detail 
+SET Name_Customer = N'Pham Quang Minh', 
+Address_Customer = N'199 Tran Quoc Hoan, Xuan Thuy, Cau Giay',
+Grender_Customer = N'Nam',
+Birthday_Customer = '2000/12/14 12:00:00 AM',
+Identity_Card = '4654316874',
+Id_Group = 2
+WHERE Id_Customer = 2; 
+
+/*
+	insert cusotomer detail
+*/
+
+SELECT * FROM Customer_Group WHERE Id_Group  = 1
+
+INSERT INTO Customer_Detail(Name_Customer, Address_Customer, Grender_Customer, Birthday_Customer, Identity_Card, Id_Group)
+VALUES
+(N'Administration', N'136 Xuân Thủy, Cầu Giấy, Hà Nội', N'Nam', '2000-12-14', N'123456789', 1)
+
+
+/*
+	query for customer group
+*/
+
+INSERT INTO Customer_Group (Name_Group)
+VALUES
+(N'Quản Trị Viên')

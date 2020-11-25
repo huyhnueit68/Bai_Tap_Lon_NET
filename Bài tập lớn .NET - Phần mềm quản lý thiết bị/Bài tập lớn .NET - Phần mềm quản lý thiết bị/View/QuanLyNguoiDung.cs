@@ -12,9 +12,9 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
 {
     public partial class QuanLyNguoiDung : Form
     {
+        public static string text = "";
         Model.CustomerManage CustomerManage = new Model.CustomerManage();
         Controller.CustomerDetailCtrl cutomerDetailCtrl = new Controller.CustomerDetailCtrl();
-        private object accCtrl;
 
         public QuanLyNguoiDung()
         {
@@ -54,7 +54,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                 btnThemTK.Enabled = false;
                 btnTimKiem.Enabled = false;
             }
-            CustomerManage.HienThi(dgvDSTaiKhoan);
+            CustomerManage.HienThi(dgvDSChiTietNguoiDung);
             HienThiThongTin();
             txtId_Customer.Enabled = false;
             txtBirthday_Customer.Enabled = false;
@@ -63,15 +63,15 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
         //Hàm xử lý load dữ liệu từ dgv lên các text.
         private void HienThiThongTin()
         {
-            if (dgvDSTaiKhoan.CurrentRow != null)
+            if (dgvDSChiTietNguoiDung.CurrentRow != null)
             {
-                txtId_Customer.Text = dgvDSTaiKhoan.CurrentRow.Cells["Id_Customer"].Value.ToString();
-                txtName_Customer.Text = dgvDSTaiKhoan.CurrentRow.Cells["Name_Customer"].Value.ToString();
-                txtAddress_Customer.Text = dgvDSTaiKhoan.CurrentRow.Cells["Address_Customer"].Value.ToString();
-                txtGender_Customer.Text = dgvDSTaiKhoan.CurrentRow.Cells["Grender_Customer"].Value.ToString();
-                txtBirthday_Customer.Text = dgvDSTaiKhoan.CurrentRow.Cells["Birthday_Customer"].Value.ToString();
-                txtIdentity_Customer.Text = dgvDSTaiKhoan.CurrentRow.Cells["Identity_Card"].Value.ToString();
-                txtId_Group.Text = dgvDSTaiKhoan.CurrentRow.Cells["Id_Group"].Value.ToString();
+                txtId_Customer.Text = dgvDSChiTietNguoiDung.CurrentRow.Cells["Id_Customer"].Value.ToString();
+                txtName_Customer.Text = dgvDSChiTietNguoiDung.CurrentRow.Cells["Name_Customer"].Value.ToString();
+                txtAddress_Customer.Text = dgvDSChiTietNguoiDung.CurrentRow.Cells["Address_Customer"].Value.ToString();
+                txtGender_Customer.Text = dgvDSChiTietNguoiDung.CurrentRow.Cells["Grender_Customer"].Value.ToString();
+                txtBirthday_Customer.Text = dgvDSChiTietNguoiDung.CurrentRow.Cells["Birthday_Customer"].Value.ToString();
+                txtIdentity_Customer.Text = dgvDSChiTietNguoiDung.CurrentRow.Cells["Identity_Card"].Value.ToString();
+                txtId_Group.Text = dgvDSChiTietNguoiDung.CurrentRow.Cells["Id_Group"].Value.ToString();
             }
         }
 
@@ -82,6 +82,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
+            CustomerManage.HienThi(dgvDSChiTietNguoiDung);
             txtId_Customer.Clear();
             txtName_Customer.Clear();
             txtAddress_Customer.Clear();
@@ -109,7 +110,31 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
+            if (checkNullTextBox() == false)
+            {
+                MessageBox.Show("Xin mời nhập đầy đủ thông tin!", "Cảnh báo");
+            }
+            else
+            {
+                Object.ObjCustomerDetail objCustoDetail = new Object.ObjCustomerDetail();
+                SetDataCustomerDetail(objCustoDetail);
 
+                string Id_Customer = dgvDSChiTietNguoiDung.CurrentRow.Cells[0].Value.ToString();
+                DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dlg == DialogResult.Yes)
+                {
+                    if (cutomerDetailCtrl.Update(objCustoDetail) > 0)
+                    {
+                        MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CustomerManage.HienThi(dgvDSChiTietNguoiDung);
+                        HienThiThongTin();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Id Customer hoặc Id Group không tồn tại, vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -120,7 +145,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             }
             else
             {
-                string id_customer = dgvDSTaiKhoan.CurrentRow.Cells[0].Value.ToString();
+                string id_customer = dgvDSChiTietNguoiDung.CurrentRow.Cells[0].Value.ToString();
 
                 DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -130,7 +155,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                     if (cutomerDetailCtrl.Xoa(id_customer) != -9999)
                     {
                         MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        cutomerDetailCtrl.HienThi(dgvDSTaiKhoan, id_customer);
+                        cutomerDetailCtrl.HienThi(dgvDSChiTietNguoiDung, id_customer);
                         HienThiThongTin();
                         if (!MainControl.onLoadCheckAccLogin())
                         {
@@ -197,5 +222,61 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
 
         }
 
+        private void SetDataCustomerDetail(Object.ObjCustomerDetail customerDetail)
+        {
+            customerDetail.Id_Customer = txtId_Customer.Text;
+            customerDetail.Name_Customer = txtName_Customer.Text;
+            customerDetail.Address_Customer = txtAddress_Customer.Text;
+            customerDetail.Grender_Customer = txtGender_Customer.Text;
+            customerDetail.Birthday_Customer = txtBirthday_Customer.Text;
+            customerDetail.Identity_Card = txtIdentity_Customer.Text;
+            customerDetail.Id_Group = txtId_Group.Text;
+        }
+
+        private void btnThemTK_Click(object sender, EventArgs e)
+        {
+            View.AddNewCustomerDetail addNewCustomerDetail = new AddNewCustomerDetail();
+            addNewCustomerDetail.Show();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string tieuchi = "";
+            if (rdbName_Customer.Checked)
+            {
+                tieuchi = "Name_Customer";
+                if (txtTimKiem.Text.Length != 0 && tieuchi != "")
+                {
+                    cutomerDetailCtrl.HienThiNguoiDung(dgvDSChiTietNguoiDung, txtTimKiem.Text, tieuchi);
+                }
+            }
+            else if (rdbId_Customer.Checked)
+            {
+                tieuchi = "Id_Customer";
+                int value;
+                if (int.TryParse(txtTimKiem.Text.Trim(), out value))
+                {
+                    if (txtTimKiem.Text.Length != 0 && tieuchi != "")
+                    {
+                        cutomerDetailCtrl.HienThiNguoiDung(dgvDSChiTietNguoiDung, txtTimKiem.Text, tieuchi);
+                    }
+                }
+                else
+                {
+                    text = "Vui lòng nhập vào một số nếu tìm kiếm theo id!";
+                    ThongBao(text);
+                }
+            }
+            else
+            {
+                text = "Vui lòng chọn loại tìm kiếm!";
+                ThongBao(text);
+            }
+        }
+        //Hàm hiển thị thông báo lỗi.
+        private void ThongBao(string text)
+        {
+            MessageBox.Show(text, "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

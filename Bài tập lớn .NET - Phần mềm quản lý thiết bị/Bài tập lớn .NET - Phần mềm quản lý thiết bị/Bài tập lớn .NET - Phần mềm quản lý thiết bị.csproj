@@ -51,6 +51,8 @@
   <ItemGroup>
     <Compile Include="Controller\AccountCtrl.cs" />
     <Compile Include="Controller\CustomerDetailCtrl.cs" />
+    <Compile Include="Controller\CustomerGroupCtrl.cs" />
+    <Compile Include="Controller\DeviceCtrl.cs" />
     <Compile Include="HelperData\DataConfig.cs" />
     <Compile Include="Model\AccountManage.cs" />
     <Compile Include="Model\ConnectData\ConnectDatabase.cs" />
@@ -66,8 +68,13 @@
     <Compile Include="MainControl.Designer.cs">
       <DependentUpon>MainControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\CustomerGroupManage.cs" />
     <Compile Include="Model\CustomerManage.cs" />
-    <Compile Include="ObjAccount.cs" />
+    <Compile Include="Model\DeviceManage.cs" />
+    <Compile Include="Object\ObjAccount.cs" />
+    <Compile Include="Object\ObjCustomerDetail.cs" />
+    <Compile Include="Object\ObjCustomerGroup.cs" />
+    <Compile Include="Object\ObjDevice.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\AddNewAcc.cs">
@@ -76,11 +83,29 @@
     <Compile Include="View\AddNewAcc.Designer.cs">
       <DependentUpon>AddNewAcc.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\AddNewCustomerDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddNewCustomerDetail.Designer.cs">
+      <DependentUpon>AddNewCustomerDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddNewCustomerGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddNewCustomerGroup.Designer.cs">
+      <DependentUpon>AddNewCustomerGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Default.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Default.Designer.cs">
       <DependentUpon>Default.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLNhomNguoiDungcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLNhomNguoiDungcs.Designer.cs">
+      <DependentUpon>QLNhomNguoiDungcs.cs</DependentUpon>
     </Compile>
     <Compile Include="View\QuanLyNguoiDung.cs">
       <SubType>Form</SubType>
@@ -93,6 +118,12 @@
     </Compile>
     <Compile Include="View\QuanLyTaiKhoan.Designer.cs">
       <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuanLyThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QuanLyThietBi.Designer.cs">
+      <DependentUpon>QuanLyThietBi.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -113,14 +144,26 @@
     <EmbeddedResource Include="View\AddNewAcc.resx">
       <DependentUpon>AddNewAcc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\AddNewCustomerDetail.resx">
+      <DependentUpon>AddNewCustomerDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddNewCustomerGroup.resx">
+      <DependentUpon>AddNewCustomerGroup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Default.resx">
       <DependentUpon>Default.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLNhomNguoiDungcs.resx">
+      <DependentUpon>QLNhomNguoiDungcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\QuanLyNguoiDung.resx">
       <DependentUpon>QuanLyNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\QuanLyTaiKhoan.resx">
       <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QuanLyThietBi.resx">
+      <DependentUpon>QuanLyThietBi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
