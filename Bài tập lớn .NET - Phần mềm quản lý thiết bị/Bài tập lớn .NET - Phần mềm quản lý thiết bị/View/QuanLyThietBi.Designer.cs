@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpThongTinTaiKhoan = new System.Windows.Forms.GroupBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtId_Type = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtRoom = new System.Windows.Forms.TextBox();
@@ -57,11 +59,10 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.grp_TimKiem = new System.Windows.Forms.GroupBox();
+            this.cbbLoaiTimKiem = new System.Windows.Forms.ComboBox();
             this.errPrice = new System.Windows.Forms.ErrorProvider(this.components);
             this.errFunction_Group = new System.Windows.Forms.ErrorProvider(this.components);
             this.dgvDSThietBi = new System.Windows.Forms.DataGridView();
-            this.txtStatus = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.Id_Device = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name_Device = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Qty_Device = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,7 +71,6 @@
             this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status_Device = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbbLoaiTimKiem = new System.Windows.Forms.ComboBox();
             this.errStatus_Device = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpThongTinTaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errRoom)).BeginInit();
@@ -122,6 +122,25 @@
             this.grpThongTinTaiKhoan.TabStop = false;
             this.grpThongTinTaiKhoan.Text = "Thông Tin";
             // 
+            // txtStatus
+            // 
+            this.txtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStatus.Location = new System.Drawing.Point(384, 154);
+            this.txtStatus.MaxLength = 20;
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(139, 20);
+            this.txtStatus.TabIndex = 37;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(282, 160);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 15);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "Trạng Thái";
+            // 
             // txtId_Type
             // 
             this.txtId_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -169,8 +188,9 @@
             this.btnThemTK.Name = "btnThemTK";
             this.btnThemTK.Size = new System.Drawing.Size(127, 37);
             this.btnThemTK.TabIndex = 19;
-            this.btnThemTK.Text = "Thêm Tài Khoản";
+            this.btnThemTK.Text = "Thêm Thiết Bị";
             this.btnThemTK.UseVisualStyleBackColor = false;
+            this.btnThemTK.Click += new System.EventHandler(this.btnThemTK_Click);
             // 
             // txtFunction_Device
             // 
@@ -211,6 +231,7 @@
             this.btnXoa.TabIndex = 21;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // label2
             // 
@@ -252,6 +273,7 @@
             this.btnLamMoi.TabIndex = 25;
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnCapNhat
             // 
@@ -264,6 +286,7 @@
             this.btnCapNhat.TabIndex = 20;
             this.btnCapNhat.Text = "Cập Nhật";
             this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // txtQty_Device
             // 
@@ -345,6 +368,7 @@
             this.btnTimKiem.TabIndex = 3;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtTimKiem
             // 
@@ -366,6 +390,18 @@
             this.grp_TimKiem.TabIndex = 26;
             this.grp_TimKiem.TabStop = false;
             this.grp_TimKiem.Text = "Tìm Kiếm";
+            // 
+            // cbbLoaiTimKiem
+            // 
+            this.cbbLoaiTimKiem.FormattingEnabled = true;
+            this.cbbLoaiTimKiem.Items.AddRange(new object[] {
+            "Mã Thiết Bị",
+            "Tên Thiết Bị",
+            "Mã Loại Thiết Bị"});
+            this.cbbLoaiTimKiem.Location = new System.Drawing.Point(384, 28);
+            this.cbbLoaiTimKiem.Name = "cbbLoaiTimKiem";
+            this.cbbLoaiTimKiem.Size = new System.Drawing.Size(192, 24);
+            this.cbbLoaiTimKiem.TabIndex = 4;
             // 
             // errPrice
             // 
@@ -393,25 +429,7 @@
             this.dgvDSThietBi.RowHeadersWidth = 51;
             this.dgvDSThietBi.Size = new System.Drawing.Size(854, 183);
             this.dgvDSThietBi.TabIndex = 27;
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStatus.Location = new System.Drawing.Point(384, 154);
-            this.txtStatus.MaxLength = 20;
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(139, 20);
-            this.txtStatus.TabIndex = 37;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(282, 160);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 15);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Trạng Thái";
+            this.dgvDSThietBi.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvDSThietBi_MouseClick);
             // 
             // Id_Device
             // 
@@ -469,25 +487,15 @@
             this.Id_Type.HeaderText = "Mã Loại TB";
             this.Id_Type.MinimumWidth = 6;
             this.Id_Type.Name = "Id_Type";
+            this.Id_Type.Width = 125;
             // 
             // Status_Device
             // 
             this.Status_Device.DataPropertyName = "Status_Device";
             this.Status_Device.HeaderText = "Trạng Thái";
+            this.Status_Device.MinimumWidth = 6;
             this.Status_Device.Name = "Status_Device";
             this.Status_Device.Width = 120;
-            // 
-            // cbbLoaiTimKiem
-            // 
-            this.cbbLoaiTimKiem.FormattingEnabled = true;
-            this.cbbLoaiTimKiem.Items.AddRange(new object[] {
-            "Mã Thiết Bị",
-            "Tên Thiết Bị",
-            "Loại Thiết Bị"});
-            this.cbbLoaiTimKiem.Location = new System.Drawing.Point(384, 28);
-            this.cbbLoaiTimKiem.Name = "cbbLoaiTimKiem";
-            this.cbbLoaiTimKiem.Size = new System.Drawing.Size(192, 24);
-            this.cbbLoaiTimKiem.TabIndex = 4;
             // 
             // errStatus_Device
             // 

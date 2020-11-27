@@ -103,7 +103,7 @@
             // 
             this.lbThu.AutoSize = true;
             this.lbThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbThu.Location = new System.Drawing.Point(571, 472);
+            this.lbThu.Location = new System.Drawing.Point(514, 472);
             this.lbThu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbThu.Name = "lbThu";
             this.lbThu.Size = new System.Drawing.Size(267, 73);
@@ -125,7 +125,7 @@
             // 
             this.lbtGio.AutoSize = true;
             this.lbtGio.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtGio.Location = new System.Drawing.Point(308, 299);
+            this.lbtGio.Location = new System.Drawing.Point(232, 256);
             this.lbtGio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbtGio.Name = "lbtGio";
             this.lbtGio.Size = new System.Drawing.Size(425, 108);
@@ -151,7 +151,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(865, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(864, 2);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 26);
@@ -189,7 +189,7 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(889, 2);
+            this.btnClose.Location = new System.Drawing.Point(888, 2);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(22, 26);
@@ -339,6 +339,7 @@
             this.btnQLMuonTra.Text = " Mượn/Trả Thiết Bị";
             this.btnQLMuonTra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQLMuonTra.UseVisualStyleBackColor = true;
+            this.btnQLMuonTra.Click += new System.EventHandler(this.btnQLMuonTra_Click);
             // 
             // btnQLThietBi
             // 

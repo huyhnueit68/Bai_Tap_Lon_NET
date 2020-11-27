@@ -24,7 +24,6 @@ SELECT * FROM Customer_Group;
 SELECT * FROM Device;
 SELECT * FROM Liquidate;
 SELECT * FROM Liquidate_Detail;
-SELECT * FROM Rent_Detail;
 SELECT * FROM Rent_Device;
 SELECT * FROM Type_Device;
 
@@ -107,3 +106,35 @@ VALUES
 INSERT INTO Customer_Group (Name_Group)
 VALUES
 (N'Quản Trị Viên')
+
+/*
+	query for device
+*/
+
+
+UPDATE Device
+SET Name_Device = N'HP P17A 17.0Inch LED',
+Qty_Device= 5,
+Price = 2550000,
+Function_Device = N'Hiển thị hình ảnh',
+Room = 'K506',
+Id_Type = 2,
+Status_Device = N'Chưa sử dụng'
+WHERE Id_Device = 1;
+
+/*
+	 query for rent device
+*/
+
+UPDATE Rent_Device
+SET Date_Rent = '2019-11-11',
+Date_Pay= '2020-11-11',
+Id_Device = 1,
+Qty_Device = 2,
+Id_Customer = 1,
+Status_Rent = N'Không sử dụng'
+WHERE Id_Rent = 5;
+
+UPDATE Rent_Device
+SET Status_Rent = N'Không sử dụng'
+WHERE Id_Rent = 5;

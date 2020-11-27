@@ -41,7 +41,7 @@
             // 
             this.lbThu.AutoSize = true;
             this.lbThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbThu.Location = new System.Drawing.Point(844, 539);
+            this.lbThu.Location = new System.Drawing.Point(824, 501);
             this.lbThu.Name = "lbThu";
             this.lbThu.Size = new System.Drawing.Size(328, 91);
             this.lbThu.TabIndex = 22;
@@ -51,7 +51,7 @@
             // 
             this.lbNgayThang.AutoSize = true;
             this.lbNgayThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNgayThang.Location = new System.Drawing.Point(46, 539);
+            this.lbNgayThang.Location = new System.Drawing.Point(65, 501);
             this.lbNgayThang.Name = "lbNgayThang";
             this.lbNgayThang.Size = new System.Drawing.Size(445, 91);
             this.lbNgayThang.TabIndex = 21;
@@ -61,7 +61,7 @@
             // 
             this.lbtGio.AutoSize = true;
             this.lbtGio.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtGio.Location = new System.Drawing.Point(404, 326);
+            this.lbtGio.Location = new System.Drawing.Point(373, 270);
             this.lbtGio.Name = "lbtGio";
             this.lbtGio.Size = new System.Drawing.Size(533, 135);
             this.lbtGio.TabIndex = 20;

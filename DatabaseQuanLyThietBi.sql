@@ -52,14 +52,10 @@ CREATE TABLE Rent_Device (
     Id_Rent int IDENTITY(1,1) PRIMARY KEY,
     Date_Rent date,
     Date_Pay date,
+	Id_Device int FOREIGN KEY REFERENCES Device(Id_Device),
+	Qty_Device int,
     Id_Customer int FOREIGN KEY REFERENCES Customer_Detail(Id_Customer),
-    Status_Device nvarchar(255)
-);
-
-CREATE TABLE Rent_Detail (
-    Id_Rent int FOREIGN KEY REFERENCES Rent_Device(Id_Rent),
-    Id_Device int FOREIGN KEY REFERENCES Device(Id_Device),
-    Qty_Device int
+    Status_Rent nvarchar(255)
 );
 
 /*
@@ -117,13 +113,10 @@ INSERT INTO Device(Name_Device, Qty_Device, Price, Function_Device, Room, Id_Typ
 VALUES
 (N'HP P17A 17.0Inch LED', 5, 2550000, N'Hiển thị hình ảnh', N'K501', 2, N'Chưa sử dụng');
 
-INSERT INTO Rent_Device(Date_Rent, Date_Pay, Id_Customer, Status_Device)
+INSERT INTO Rent_Device(Date_Rent, Date_Pay, Id_Device, Qty_Device, Id_Customer, Status_Rent)
 VALUES
-('2018-11-05', '2018-11-07', 1, N'Đang sử dụng');
-
-INSERT INTO Rent_Detail(Id_Rent, Id_Device, Qty_Device)
-VALUES
-(1, 1, 5);
+('2018-11-05', '2018-11-07',1, 5, 1, N'Đang sử dụng'), 
+('2019-11-05', '2020-11-07',2, 4, 1, N'Không sử dụng');
 
 INSERT INTO Liquidate(Name_Liqui, Date_Liqui)
 VALUES

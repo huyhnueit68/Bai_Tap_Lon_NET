@@ -57,6 +57,7 @@
             this.Id_Group = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThemTK = new System.Windows.Forms.Button();
             this.grpThongTinTaiKhoan = new System.Windows.Forms.GroupBox();
+            this.mntNgaySinh = new System.Windows.Forms.MonthCalendar();
             this.button1 = new System.Windows.Forms.Button();
             this.txtId_Group = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@
             this.errorBirthday_Customer = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorIdentity_Card = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorId_Group = new System.Windows.Forms.ErrorProvider(this.components);
-            this.mntNgaySinh = new System.Windows.Forms.MonthCalendar();
             ((System.ComponentModel.ISupportInitialize)(this.errAddress_Customer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errId_Customer)).BeginInit();
             this.grp_TimKiem.SuspendLayout();
@@ -391,6 +391,16 @@
             this.grpThongTinTaiKhoan.TabStop = false;
             this.grpThongTinTaiKhoan.Text = "Thông Tin";
             // 
+            // mntNgaySinh
+            // 
+            this.mntNgaySinh.Location = new System.Drawing.Point(299, 12);
+            this.mntNgaySinh.MaxSelectionCount = 1;
+            this.mntNgaySinh.Name = "mntNgaySinh";
+            this.mntNgaySinh.TabIndex = 37;
+            this.mntNgaySinh.Visible = false;
+            this.mntNgaySinh.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mntNgaySinh_DateChanged);
+            this.mntNgaySinh.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.mntNgaySinh_DateSelected);
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(497, 42);
@@ -495,16 +505,6 @@
             // 
             this.errorId_Group.ContainerControl = this;
             // 
-            // mntNgaySinh
-            // 
-            this.mntNgaySinh.Location = new System.Drawing.Point(299, 12);
-            this.mntNgaySinh.MaxSelectionCount = 1;
-            this.mntNgaySinh.Name = "mntNgaySinh";
-            this.mntNgaySinh.TabIndex = 37;
-            this.mntNgaySinh.Visible = false;
-            this.mntNgaySinh.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mntNgaySinh_DateChanged);
-            this.mntNgaySinh.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.mntNgaySinh_DateSelected);
-            // 
             // QuanLyNguoiDung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -515,7 +515,7 @@
             this.Controls.Add(this.dgvDSChiTietNguoiDung);
             this.Controls.Add(this.grpThongTinTaiKhoan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "QuanLyNguoiDung";
             this.Text = "QuanLyNguoiDung";
             this.Load += new System.EventHandler(this.QuanLyNguoiDung_Load);
