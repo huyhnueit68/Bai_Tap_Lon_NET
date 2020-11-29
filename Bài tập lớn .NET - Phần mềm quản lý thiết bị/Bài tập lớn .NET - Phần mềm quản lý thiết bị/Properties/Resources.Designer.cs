@@ -93,6 +93,16 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Properties
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fit__1_ {
+            get {
+                object obj = ResourceManager.GetObject("fit (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fit_Pdq_icon {
             get {
                 object obj = ResourceManager.GetObject("fit_Pdq_icon", resourceCulture);
@@ -106,6 +116,16 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Properties
         internal static System.Drawing.Bitmap fit1 {
             get {
                 object obj = ResourceManager.GetObject("fit1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap khohang {
+            get {
+                object obj = ResourceManager.GetObject("khohang", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +156,36 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Properties
         internal static System.Drawing.Bitmap username_1 {
             get {
                 object obj = ResourceManager.GetObject("username-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap warehouse {
+            get {
+                object obj = ResourceManager.GetObject("warehouse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap warehouse1 {
+            get {
+                object obj = ResourceManager.GetObject("warehouse1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap warehouse3 {
+            get {
+                object obj = ResourceManager.GetObject("warehouse3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

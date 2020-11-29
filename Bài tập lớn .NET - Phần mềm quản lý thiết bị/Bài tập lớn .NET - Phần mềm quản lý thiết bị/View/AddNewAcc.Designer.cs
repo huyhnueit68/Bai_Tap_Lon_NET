@@ -35,9 +35,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtPassWord = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,8 +48,8 @@
             this.btnThemTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemTaiKhoan.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemTaiKhoan.ForeColor = System.Drawing.Color.White;
-            this.btnThemTaiKhoan.Location = new System.Drawing.Point(138, 407);
-            this.btnThemTaiKhoan.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThemTaiKhoan.Location = new System.Drawing.Point(139, 407);
+            this.btnThemTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThemTaiKhoan.Name = "btnThemTaiKhoan";
             this.btnThemTaiKhoan.Size = new System.Drawing.Size(155, 43);
             this.btnThemTaiKhoan.TabIndex = 9;
@@ -60,7 +60,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(182, 51);
+            this.label3.Location = new System.Drawing.Point(181, 50);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 23);
@@ -85,8 +85,8 @@
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(702, 407);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThoat.Location = new System.Drawing.Point(701, 407);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(155, 43);
             this.btnThoat.TabIndex = 11;
@@ -97,7 +97,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(197, 142);
+            this.label15.Location = new System.Drawing.Point(197, 137);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(114, 23);
@@ -112,7 +112,7 @@
             this.btnLamMoi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
             this.btnLamMoi.Location = new System.Drawing.Point(421, 407);
-            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(155, 43);
             this.btnLamMoi.TabIndex = 10;
@@ -132,38 +132,41 @@
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox2.Location = new System.Drawing.Point(50, 80);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(51, 80);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Size = new System.Drawing.Size(859, 289);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(359, 51);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4);
-            this.txtId.MaxLength = 50;
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(266, 30);
-            this.txtId.TabIndex = 30;
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.Location = new System.Drawing.Point(359, 142);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(266, 30);
-            this.txtUserName.TabIndex = 31;
-            // 
             // txtPassWord
             // 
             this.txtPassWord.Location = new System.Drawing.Point(359, 215);
+            this.txtPassWord.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassWord.Name = "txtPassWord";
-            this.txtPassWord.Size = new System.Drawing.Size(266, 30);
+            this.txtPassWord.Size = new System.Drawing.Size(265, 30);
             this.txtPassWord.TabIndex = 32;
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(359, 137);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(265, 30);
+            this.txtUserName.TabIndex = 31;
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(359, 50);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtId.MaxLength = 50;
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(265, 30);
+            this.txtId.TabIndex = 30;
+            this.txtId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtId_KeyPress);
             // 
             // AddNewAcc
             // 
@@ -176,6 +179,7 @@
             this.Controls.Add(this.btnThemTaiKhoan);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddNewAcc";
             this.Text = "AddNewAcc";
             this.Load += new System.EventHandler(this.AddNewAcc_Load);

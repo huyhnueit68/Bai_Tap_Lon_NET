@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpThongTinTaiKhoan = new System.Windows.Forms.GroupBox();
+            this.txtQty_Device = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtId_Type = new System.Windows.Forms.TextBox();
@@ -46,8 +48,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
-            this.txtQty_Device = new System.Windows.Forms.TextBox();
-            this.lblMaTK = new System.Windows.Forms.Label();
             this.txtName_Device = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.errRoom = new System.Windows.Forms.ErrorProvider(this.components);
@@ -63,15 +63,15 @@
             this.errPrice = new System.Windows.Forms.ErrorProvider(this.components);
             this.errFunction_Group = new System.Windows.Forms.ErrorProvider(this.components);
             this.dgvDSThietBi = new System.Windows.Forms.DataGridView();
+            this.errStatus_Device = new System.Windows.Forms.ErrorProvider(this.components);
             this.Id_Device = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name_Device = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty_Device = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty_Device = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Function_Device = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status_Device = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.errStatus_Device = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpThongTinTaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errId_Type)).BeginInit();
@@ -91,6 +91,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpThongTinTaiKhoan.BackColor = System.Drawing.Color.Transparent;
+            this.grpThongTinTaiKhoan.Controls.Add(this.txtQty_Device);
+            this.grpThongTinTaiKhoan.Controls.Add(this.label7);
             this.grpThongTinTaiKhoan.Controls.Add(this.txtStatus);
             this.grpThongTinTaiKhoan.Controls.Add(this.label6);
             this.grpThongTinTaiKhoan.Controls.Add(this.txtId_Type);
@@ -107,8 +109,6 @@
             this.grpThongTinTaiKhoan.Controls.Add(this.label1);
             this.grpThongTinTaiKhoan.Controls.Add(this.btnLamMoi);
             this.grpThongTinTaiKhoan.Controls.Add(this.btnCapNhat);
-            this.grpThongTinTaiKhoan.Controls.Add(this.txtQty_Device);
-            this.grpThongTinTaiKhoan.Controls.Add(this.lblMaTK);
             this.grpThongTinTaiKhoan.Controls.Add(this.txtName_Device);
             this.grpThongTinTaiKhoan.Controls.Add(this.lblUsername);
             this.grpThongTinTaiKhoan.Cursor = System.Windows.Forms.Cursors.Default;
@@ -122,10 +122,29 @@
             this.grpThongTinTaiKhoan.TabStop = false;
             this.grpThongTinTaiKhoan.Text = "Thông Tin";
             // 
+            // txtQty_Device
+            // 
+            this.txtQty_Device.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQty_Device.Location = new System.Drawing.Point(104, 165);
+            this.txtQty_Device.MaxLength = 20;
+            this.txtQty_Device.Name = "txtQty_Device";
+            this.txtQty_Device.Size = new System.Drawing.Size(140, 20);
+            this.txtQty_Device.TabIndex = 39;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 171);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 15);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "Số Lượng";
+            // 
             // txtStatus
             // 
             this.txtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStatus.Location = new System.Drawing.Point(384, 154);
+            this.txtStatus.Location = new System.Drawing.Point(384, 161);
             this.txtStatus.MaxLength = 20;
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(139, 20);
@@ -135,7 +154,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(282, 160);
+            this.label6.Location = new System.Drawing.Point(282, 167);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 15);
             this.label6.TabIndex = 36;
@@ -144,7 +163,7 @@
             // txtId_Type
             // 
             this.txtId_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId_Type.Location = new System.Drawing.Point(384, 117);
+            this.txtId_Type.Location = new System.Drawing.Point(384, 119);
             this.txtId_Type.MaxLength = 20;
             this.txtId_Type.Name = "txtId_Type";
             this.txtId_Type.Size = new System.Drawing.Size(139, 20);
@@ -154,7 +173,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(282, 123);
+            this.label5.Location = new System.Drawing.Point(282, 124);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 15);
             this.label5.TabIndex = 34;
@@ -214,7 +233,7 @@
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(104, 153);
+            this.txtPrice.Location = new System.Drawing.Point(104, 119);
             this.txtPrice.MaxLength = 20;
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(140, 20);
@@ -237,7 +256,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 159);
+            this.label2.Location = new System.Drawing.Point(6, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 28;
@@ -246,7 +265,7 @@
             // txtId_Device
             // 
             this.txtId_Device.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId_Device.Location = new System.Drawing.Point(104, 30);
+            this.txtId_Device.Location = new System.Drawing.Point(104, 35);
             this.txtId_Device.MaxLength = 20;
             this.txtId_Device.Name = "txtId_Device";
             this.txtId_Device.Size = new System.Drawing.Size(140, 20);
@@ -256,7 +275,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 36);
+            this.label1.Location = new System.Drawing.Point(4, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 15);
             this.label1.TabIndex = 26;
@@ -288,29 +307,10 @@
             this.btnCapNhat.UseVisualStyleBackColor = false;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
-            // txtQty_Device
-            // 
-            this.txtQty_Device.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQty_Device.Location = new System.Drawing.Point(104, 113);
-            this.txtQty_Device.MaxLength = 20;
-            this.txtQty_Device.Name = "txtQty_Device";
-            this.txtQty_Device.Size = new System.Drawing.Size(140, 20);
-            this.txtQty_Device.TabIndex = 17;
-            // 
-            // lblMaTK
-            // 
-            this.lblMaTK.AutoSize = true;
-            this.lblMaTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaTK.Location = new System.Drawing.Point(6, 119);
-            this.lblMaTK.Name = "lblMaTK";
-            this.lblMaTK.Size = new System.Drawing.Size(60, 15);
-            this.lblMaTK.TabIndex = 16;
-            this.lblMaTK.Text = "Số Lượng";
-            // 
             // txtName_Device
             // 
             this.txtName_Device.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName_Device.Location = new System.Drawing.Point(104, 74);
+            this.txtName_Device.Location = new System.Drawing.Point(104, 79);
             this.txtName_Device.MaxLength = 20;
             this.txtName_Device.Name = "txtName_Device";
             this.txtName_Device.Size = new System.Drawing.Size(140, 20);
@@ -320,7 +320,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(4, 80);
+            this.lblUsername.Location = new System.Drawing.Point(4, 84);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(72, 15);
             this.lblUsername.TabIndex = 14;
@@ -397,7 +397,8 @@
             this.cbbLoaiTimKiem.Items.AddRange(new object[] {
             "Mã Thiết Bị",
             "Tên Thiết Bị",
-            "Mã Loại Thiết Bị"});
+            "Mã Loại Thiết Bị",
+            "Phòng Học"});
             this.cbbLoaiTimKiem.Location = new System.Drawing.Point(384, 28);
             this.cbbLoaiTimKiem.Name = "cbbLoaiTimKiem";
             this.cbbLoaiTimKiem.Size = new System.Drawing.Size(192, 24);
@@ -418,18 +419,22 @@
             this.dgvDSThietBi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_Device,
             this.Name_Device,
-            this.Qty_Device,
             this.Price,
+            this.Qty_Device,
             this.Function_Device,
             this.Room,
             this.Id_Type,
             this.Status_Device});
-            this.dgvDSThietBi.Location = new System.Drawing.Point(32, 294);
+            this.dgvDSThietBi.Location = new System.Drawing.Point(47, 294);
             this.dgvDSThietBi.Name = "dgvDSThietBi";
             this.dgvDSThietBi.RowHeadersWidth = 51;
-            this.dgvDSThietBi.Size = new System.Drawing.Size(854, 183);
+            this.dgvDSThietBi.Size = new System.Drawing.Size(847, 183);
             this.dgvDSThietBi.TabIndex = 27;
             this.dgvDSThietBi.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvDSThietBi_MouseClick);
+            // 
+            // errStatus_Device
+            // 
+            this.errStatus_Device.ContainerControl = this;
             // 
             // Id_Device
             // 
@@ -448,22 +453,19 @@
             this.Name_Device.ReadOnly = true;
             this.Name_Device.Width = 140;
             // 
-            // Qty_Device
-            // 
-            this.Qty_Device.DataPropertyName = "Qty_Device";
-            this.Qty_Device.HeaderText = "Số Lượng";
-            this.Qty_Device.MinimumWidth = 6;
-            this.Qty_Device.Name = "Qty_Device";
-            this.Qty_Device.ReadOnly = true;
-            this.Qty_Device.Width = 60;
-            // 
             // Price
             // 
             this.Price.DataPropertyName = "Price";
             this.Price.HeaderText = "Đơn Gía";
             this.Price.MinimumWidth = 6;
             this.Price.Name = "Price";
-            this.Price.Width = 90;
+            // 
+            // Qty_Device
+            // 
+            this.Qty_Device.DataPropertyName = "Qty_Device";
+            this.Qty_Device.HeaderText = "Số Lượng";
+            this.Qty_Device.MinimumWidth = 6;
+            this.Qty_Device.Name = "Qty_Device";
             // 
             // Function_Device
             // 
@@ -479,7 +481,6 @@
             this.Room.HeaderText = "Thuộc Phòng";
             this.Room.MinimumWidth = 6;
             this.Room.Name = "Room";
-            this.Room.Width = 80;
             // 
             // Id_Type
             // 
@@ -487,7 +488,6 @@
             this.Id_Type.HeaderText = "Mã Loại TB";
             this.Id_Type.MinimumWidth = 6;
             this.Id_Type.Name = "Id_Type";
-            this.Id_Type.Width = 125;
             // 
             // Status_Device
             // 
@@ -496,10 +496,6 @@
             this.Status_Device.MinimumWidth = 6;
             this.Status_Device.Name = "Status_Device";
             this.Status_Device.Width = 120;
-            // 
-            // errStatus_Device
-            // 
-            this.errStatus_Device.ContainerControl = this;
             // 
             // QuanLyThietBi
             // 
@@ -548,8 +544,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.Button btnCapNhat;
-        private System.Windows.Forms.TextBox txtQty_Device;
-        private System.Windows.Forms.Label lblMaTK;
         private System.Windows.Forms.TextBox txtName_Device;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.ErrorProvider errRoom;
@@ -566,15 +560,17 @@
         private System.Windows.Forms.DataGridView dgvDSThietBi;
         private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbbLoaiTimKiem;
+        private System.Windows.Forms.ErrorProvider errStatus_Device;
+        private System.Windows.Forms.TextBox txtQty_Device;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Device;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name_Device;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Qty_Device;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Qty_Device;
         private System.Windows.Forms.DataGridViewTextBoxColumn Function_Device;
         private System.Windows.Forms.DataGridViewTextBoxColumn Room;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status_Device;
-        private System.Windows.Forms.ComboBox cbbLoaiTimKiem;
-        private System.Windows.Forms.ErrorProvider errStatus_Device;
     }
 }

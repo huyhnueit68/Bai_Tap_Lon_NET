@@ -22,25 +22,41 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
         private void btnThemTaiKhoan_Click(object sender, EventArgs e)
         {
             Object.ObjCustomerDetail customerDetail = new Object.ObjCustomerDetail();
-            GanDuLieu(customerDetail);
+            if (checkNullItem())
             {
-                switch (customerDetailCtrl.Them(customerDetail))
+                GanDuLieu(customerDetail);
                 {
-                    case 0:
-                        text = "Vui lòng chọn mã người dùng khác!";
-                        ThongBao(text);
-                        break;
-                    case 1:
-                        MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LamMoi();
-                        break;
-                    case 2:
-                        text = "Vui lòng chọn mã nhóm khác!";
-                        ThongBao(text);
-                        break;
+                    switch (customerDetailCtrl.Them(customerDetail))
+                    {
+                        case 0:
+                            text = "Vui lòng chọn mã người dùng khác!";
+                            ThongBao(text);
+                            break;
+                        case 1:
+                            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LamMoi();
+                            break;
+                        case 2:
+                            text = "Vui lòng chọn mã nhóm khác!";
+                            ThongBao(text);
+                            break;
 
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool checkNullItem()
+        {
+            if (txtAddress_Customer.Text == "" || txtBirthday_Customer.Text == "" || txtGrender_Customer.Text == "" || txtIdentity_Card.Text == "" || txtId_Customer.Text == "" || txtId_Group.Text == "" || txtName_Customer.Text == "")
+            {
+                return false;
+            }
+            else return true;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -106,6 +122,33 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             txtBirthday_Customer.Clear();
             txtIdentity_Card.Clear();
             txtId_Group.Clear();
+        }
+
+        private void txtId_Customer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtIdentity_Card_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtId_Group_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

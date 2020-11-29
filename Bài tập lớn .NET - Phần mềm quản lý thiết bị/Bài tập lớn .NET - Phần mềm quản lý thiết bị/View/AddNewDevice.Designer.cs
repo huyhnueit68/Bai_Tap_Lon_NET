@@ -43,9 +43,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtName_Device = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.txtStatus_Device = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,6 +104,7 @@
             this.txtId_Type.Name = "txtId_Type";
             this.txtId_Type.Size = new System.Drawing.Size(255, 30);
             this.txtId_Type.TabIndex = 41;
+            this.txtId_Type.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtId_Type_KeyPress);
             // 
             // label6
             // 
@@ -158,6 +159,7 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(265, 30);
             this.txtPrice.TabIndex = 35;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // label2
             // 
@@ -176,6 +178,7 @@
             this.txtQty_Device.Name = "txtQty_Device";
             this.txtQty_Device.Size = new System.Drawing.Size(265, 30);
             this.txtQty_Device.TabIndex = 33;
+            this.txtQty_Device.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQty_Device_KeyPress);
             // 
             // label1
             // 
@@ -227,16 +230,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin";
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(71, 99);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(115, 23);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Tên Thiết Bị";
-            // 
             // txtStatus_Device
             // 
             this.txtStatus_Device.Location = new System.Drawing.Point(758, 296);
@@ -255,6 +248,16 @@
             this.label7.TabIndex = 44;
             this.label7.Text = "Trạng Thái";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(71, 99);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(115, 23);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Tên Thiết Bị";
+            // 
             // AddNewDevice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -265,6 +268,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddNewDevice";
             this.Text = "AddNewDevice";
+            this.Load += new System.EventHandler(this.AddNewDevice_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);

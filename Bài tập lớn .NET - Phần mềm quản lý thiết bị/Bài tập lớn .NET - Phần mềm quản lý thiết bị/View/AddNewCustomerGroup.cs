@@ -64,20 +64,34 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
         private void btnThemTaiKhoan_Click_1(object sender, EventArgs e)
         {
             Object.ObjCustomerGroup ctg = new Object.ObjCustomerGroup();
-            GanDuLieu(ctg);
+            if (checkNullItem())
             {
-                switch (customerGroupCtrl.Them(ctg))
+                GanDuLieu(ctg);
                 {
-                    case 1:
-                        MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LamMoi();
-                        break;
-                    case 2:
-                        text = "Vui lòng chọn tên đăng nhập khác!";
-                        ThongBao(text);
-                        break;
+                    switch (customerGroupCtrl.Them(ctg))
+                    {
+                        case 1:
+                            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LamMoi();
+                            break;
+                        case 2:
+                            text = "Vui lòng chọn tên đăng nhập khác!";
+                            ThongBao(text);
+                            break;
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầu đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private bool checkNullItem()
+        {
+            if (txtName_Group.Text == "")
+                return false;
+            return true;
         }
     }
 }

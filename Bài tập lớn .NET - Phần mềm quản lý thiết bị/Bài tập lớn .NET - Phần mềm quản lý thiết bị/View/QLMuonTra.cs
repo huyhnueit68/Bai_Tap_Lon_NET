@@ -12,6 +12,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
 {
     public partial class QLMuonTra : Form
     {
+        public static string text;
         Model.RentDeviceManage rentDeviceManage = new Model.RentDeviceManage();
         Controller.RentDeviceCtrl rentDeviceCtrl = new Controller.RentDeviceCtrl();
         public QLMuonTra()
@@ -47,6 +48,10 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                 {
                     rdbMuon.Checked = true;
                 }
+                else if(tg == "Không sử dụng")
+                {
+                    rdbTra.Checked = true;
+                }
                 else
                 {
                     rdbTra.Checked = true;
@@ -66,7 +71,8 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
 
         private void btnThemTK_Click(object sender, EventArgs e)
         {
-
+            MuonThietBi muon = new MuonThietBi();
+            muon.Show();
         }
 
         private void btnNgayMuon_Click(object sender, EventArgs e)
@@ -183,11 +189,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                 errId_Device.SetError(txtId_Device, "Nhập vào mã thiết bị");
                 return false;
             }
-            if (txtQty_Device.Text.Trim() == "")
-            {
-                errQty_Device.SetError(txtQty_Device, "Nhập vào số lượng thiết bị");
-                return false;
-            }
             if (txtId_Customer.Text.Trim() == "")
             {
                 errId_Customer.SetError(txtId_Customer, "Nhập vào mã khách hàng");
@@ -204,7 +205,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                 errDay_Rent.SetError(txtDate_Rent, "");
                 errDay_Pay.SetError(txtDate_Pay, "");
                 errId_Device.SetError(txtId_Device, "");
-                errQty_Device.SetError(txtQty_Device, "");
                 errId_Customer.SetError(txtId_Customer, "");
                 errStatus_Rent.SetError(rdbMuon, "");
                 return true;
@@ -213,31 +213,66 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
 
         private void btnTraTB_Click(object sender, EventArgs e)
         {
-            if (checkNullTextBox() == false)
+            View.TraThietBi traThietBi = new TraThietBi();
+            traThietBi.Show();
+        }
+
+        private void txtQty_Device_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                MessageBox.Show("Xin mời nhập đầy đủ thông tin!", "Cảnh báo");
+                e.Handled = true;
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string tieuchi = "";
+            if (rdbId_Rent.Checked)
+            {
+                tieuchi = "Id_Rent";
+                int value;
+                if (int.TryParse(txtTimKiem.Text.Trim(), out value))
+                {
+                    if (txtTimKiem.Text.Length != 0 && tieuchi != "")
+                    {
+                        rentDeviceCtrl.HienThiMuonTra(dgvListRentDevice, txtTimKiem.Text, tieuchi);
+                    }
+                }
+                else
+                {
+                    text = "Vui lòng nhập vào một số nếu tìm kiếm theo id!";
+                    ThongBao(text);
+                }
+            }
+            else if (rdbId_Device.Checked)
+            {
+                tieuchi = "Id_Device";
+                int value;
+                if (int.TryParse(txtTimKiem.Text.Trim(), out value))
+                {
+                    if (txtTimKiem.Text.Length != 0 && tieuchi != "")
+                    {
+                        rentDeviceCtrl.HienThiMuonTra(dgvListRentDevice, txtTimKiem.Text, tieuchi);
+                    }
+                }
+                else
+                {
+                    text = "Vui lòng nhập vào một số nếu tìm kiếm theo id!";
+                    ThongBao(text);
+                }
             }
             else
             {
-                Object.ObjRentDevice objRentDevice = new Object.ObjRentDevice();
-                SetDataRentDetail(objRentDevice);
-
-                string Id_Customer = dgvListRentDevice.CurrentRow.Cells[0].Value.ToString();
-                DialogResult dlg = MessageBox.Show("Bạn có chắc chắn trả thiết bị này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dlg == DialogResult.Yes)
-                {
-                    if (rentDeviceCtrl.PayDevice(objRentDevice) > 0)
-                    {
-                        MessageBox.Show("Trả thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        rentDeviceManage.HienThi(dgvListRentDevice);
-                        HienThiThongTin();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Id Customer hoặc Id Device không tồn tại, vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
+                text = "Vui lòng chọn loại tìm kiếm!";
+                ThongBao(text);
             }
+        }
+        //Hàm hiển thị thông báo lỗi.
+        private void ThongBao(string text)
+        {
+            MessageBox.Show(text, "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

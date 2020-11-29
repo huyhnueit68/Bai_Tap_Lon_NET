@@ -32,6 +32,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             HienThiThongTin();
             txtId_Device.Enabled = false;
             txtId_Type.Enabled = false;
+            txtStatus.Enabled = false;
         }
 
         //Hàm xử lý load dữ liệu từ dgv lên các text.
@@ -41,8 +42,8 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             {
                 txtId_Device.Text = dgvDSThietBi.CurrentRow.Cells["Id_Device"].Value.ToString();
                 txtName_Device.Text = dgvDSThietBi.CurrentRow.Cells["Name_Device"].Value.ToString();
-                txtQty_Device.Text = dgvDSThietBi.CurrentRow.Cells["Qty_Device"].Value.ToString();
                 txtPrice.Text = dgvDSThietBi.CurrentRow.Cells["Price"].Value.ToString();
+                txtQty_Device.Text = dgvDSThietBi.CurrentRow.Cells["Qty_Device"].Value.ToString();
                 txtFunction_Device.Text = dgvDSThietBi.CurrentRow.Cells["Function_Device"].Value.ToString();
                 txtRoom.Text = dgvDSThietBi.CurrentRow.Cells["Room"].Value.ToString();
                 txtId_Type.Text = dgvDSThietBi.CurrentRow.Cells["Id_Type"].Value.ToString();
@@ -55,8 +56,8 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             deviceMng.HienThi(dgvDSThietBi);
             txtId_Device.Clear();
             txtName_Device.Clear();
-            txtQty_Device.Clear();
             txtPrice.Clear();
+            txtQty_Device.Clear();
             txtFunction_Device.Clear();
             txtRoom.Clear();
             txtId_Type.Clear();
@@ -114,11 +115,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                 errName_Device.SetError(txtName_Device, "Nhập vào tên thiết bị");
                 return false;
             }
-            if (txtQty_Device.Text.Trim() == "")
-            {
-                errQty_Device.SetError(txtQty_Device, "Nhập vào số lượng thiết bị");
-                return false;
-            }
             if (txtPrice.Text.Trim() == "")
             {
                 errPrice.SetError(txtPrice, "Nhập vào giá thiết bị");
@@ -148,7 +144,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             {
                 errId_Device.SetError(txtId_Device, "");
                 errName_Device.SetError(txtName_Device, "");
-                errQty_Device.SetError(txtQty_Device, "");
                 errPrice.SetError(txtPrice, "");
                 errFunction_Group.SetError(txtFunction_Device, "");
                 errRoom.SetError(txtRoom, "");
@@ -162,8 +157,8 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
         {
             objDevice.Id_Device = txtId_Device.Text;
             objDevice.Name_Device = txtName_Device.Text;
-            objDevice.Qty_Device = txtQty_Device.Text;
             objDevice.Price = txtPrice.Text;
+            objDevice.Qty_Device = txtQty_Device.Text;
             objDevice.Function_Device = txtFunction_Device.Text;
             objDevice.Room = txtRoom.Text;
             objDevice.Id_Type = txtId_Type.Text;
@@ -248,6 +243,13 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                 {
                     text = "Vui lòng nhập vào một số nếu tìm kiếm theo id!";
                     ThongBao(text);
+                }
+            } else if (cbbLoaiTimKiem.Text.Trim() == "Phòng Học")
+            {
+                tieuchi = "Room";
+                if (txtTimKiem.Text.Length != 0 && tieuchi != "")
+                {
+                    deviceCtrl.HienThiNguoiDung(dgvDSThietBi, txtTimKiem.Text, tieuchi);
                 }
             }
             else

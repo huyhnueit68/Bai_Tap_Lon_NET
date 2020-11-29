@@ -38,15 +38,16 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Model
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "UPDATE Device " +
-                "SET Name_Device = @nameDevice, Qty_Device = @qty, " +
+                "SET Name_Device = @nameDevice, " +
                 "Price = @price, Function_Device = @function, " +
+                "Qty_Device = @qtyDevice, " +
                 "Room = @room, Id_Type = @idType, " +
                 "Status_Device = @status " +
                 "WHERE Id_Device = @idDevice; ";
 
             cmd.Parameters.Add("nameDevice", SqlDbType.NVarChar).Value = objDevice.Name_Device;
-            cmd.Parameters.Add("qty", SqlDbType.Int).Value = objDevice.Qty_Device;
             cmd.Parameters.Add("price", SqlDbType.Float).Value = objDevice.Price;
+            cmd.Parameters.Add("qtyDevice", SqlDbType.Int).Value = objDevice.Qty_Device;
             cmd.Parameters.Add("function", SqlDbType.NVarChar).Value = objDevice.Function_Device;
             cmd.Parameters.Add("room", SqlDbType.VarChar).Value = objDevice.Room;
             cmd.Parameters.Add("idType", SqlDbType.Int).Value = objDevice.Id_Type;
@@ -59,12 +60,12 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Model
         public int Save(Object.ObjDevice objDevice)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO Device(Name_Device, Qty_Device, Price, Function_Device, Room, Id_Type, Status_Device) " +
-                "VALUES (@nameDevice, @qty, @price, @function, @room, @idType, @status);";
+            cmd.CommandText = "INSERT INTO Device(Name_Device, Price, ,Qty_Device, Function_Device, Room, Id_Type, Status_Device) " +
+                "VALUES (@nameDevice, @price, @qtyDevice,@function, @room, @idType, @status);";
 
             cmd.Parameters.Add("nameDevice", SqlDbType.NVarChar).Value = objDevice.Name_Device;
-            cmd.Parameters.Add("qty", SqlDbType.NVarChar).Value = objDevice.Qty_Device;
             cmd.Parameters.Add("price", SqlDbType.NVarChar).Value = objDevice.Price;
+            cmd.Parameters.Add("qtyDevice", SqlDbType.Int).Value = objDevice.Qty_Device;
             cmd.Parameters.Add("function", SqlDbType.NVarChar).Value = objDevice.Function_Device;
             cmd.Parameters.Add("room", SqlDbType.NVarChar).Value = objDevice.Room;
             cmd.Parameters.Add("idType", SqlDbType.NVarChar).Value = objDevice.Id_Type;
@@ -84,6 +85,9 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Model
                     break;
                 case "Name_Device":
                     sql += "Name_Device like '%" + key + "%'";
+                    break;
+                case "Room":
+                    sql += "Room like '%" + key + "%'";
                     break;
                 default:
                     sql += "Id_Type = " + key + "";

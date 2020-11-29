@@ -57,25 +57,41 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
         private void btnThemTaiKhoan_Click(object sender, EventArgs e)
         {
             ObjAccount ac = new ObjAccount();
-            GanDuLieu(ac);
+            if (checkNullItem())
             {
-                switch (AccCtrl.Them(ac))
+                GanDuLieu(ac);
                 {
-                    case 0:
-                        text = "Không tồn tại mã tài khoản!";
-                        ThongBao(text);
-                        break;
-                    case 1:
-                        MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LamMoi();
-                        break;
-                    case 2:
-                        text = "Vui lòng chọn tên đăng nhập khác!";
-                        ThongBao(text);
-                        break;
-                    
+                    switch (AccCtrl.Them(ac))
+                    {
+                        case 0:
+                            text = "Không tồn tại mã tài khoản!";
+                            ThongBao(text);
+                            break;
+                        case 1:
+                            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LamMoi();
+                            break;
+                        case 2:
+                            text = "Vui lòng chọn tên đăng nhập khác!";
+                            ThongBao(text);
+                            break;
+
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool checkNullItem()
+        {
+            if (txtId.Text == "" || txtPassWord.Text == "" || txtUserName.Text == "")
+            {
+                return false;
+            }
+            else return true;
         }
 
         //Hàm làm mới các text.
@@ -97,6 +113,15 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
         private void AddNewAcc_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Xác thực rằng phím vừa nhấn không phải CTRL hoặc không phải dạng số.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

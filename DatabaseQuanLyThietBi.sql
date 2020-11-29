@@ -37,8 +37,8 @@ CREATE TABLE Type_Device (
 CREATE TABLE Device (
     Id_Device int IDENTITY(1,1) PRIMARY KEY,
     Name_Device nvarchar(255),
-    Qty_Device int,
     Price float,
+	Qty_Device int,
     Function_Device nvarchar(255),
     Room nvarchar(255),
     Id_Type int FOREIGN KEY REFERENCES Type_Device(Id_Type),
@@ -65,13 +65,9 @@ CREATE TABLE Rent_Device (
 CREATE TABLE Liquidate (
     Id_Liqui int IDENTITY(1,1) PRIMARY KEY,
     Name_Liqui nvarchar(255),
+	Id_Device int FOREIGN KEY REFERENCES Device(Id_Device),
+	Qty_Device int,
     Date_Liqui date    
-);
-
-CREATE TABLE Liquidate_Detail(
-    Id_Liqui int FOREIGN KEY REFERENCES Liquidate(Id_Liqui),
-    Id_Device int FOREIGN KEY REFERENCES Device(Id_Device),
-    Qty_Device int
 );
 
 GO
@@ -109,19 +105,17 @@ VALUES
 (N'Màn Chiếu'),
 (N'Máy Chiếu');
 
-INSERT INTO Device(Name_Device, Qty_Device, Price, Function_Device, Room, Id_Type, Status_Device)
+INSERT INTO Device(Name_Device, Price, Qty_Device, Function_Device, Room, Id_Type, Status_Device)
 VALUES
-(N'HP P17A 17.0Inch LED', 5, 2550000, N'Hiển thị hình ảnh', N'K501', 2, N'Chưa sử dụng');
+(N'HP P17A 17.0Inch LED', 2550000, 5, N'Hiển thị hình ảnh', N'K501', 2, N'Đang sử dụng'),
+(N'DEL XPS 15', 4500000, 9, N'Hiển thị hình ảnh', N'K501', 2, N'Không sử dụng'),
+(N'Acer Nitro 5', 1500000, 10, N'Hiển thị hình ảnh', N'K501', 2, N'Không sử dụng');
 
 INSERT INTO Rent_Device(Date_Rent, Date_Pay, Id_Device, Qty_Device, Id_Customer, Status_Rent)
 VALUES
-('2018-11-05', '2018-11-07',1, 5, 1, N'Đang sử dụng'), 
-('2019-11-05', '2020-11-07',2, 4, 1, N'Không sử dụng');
+('2018-11-05', '2018-11-07', 1, 2, 1, N'Đang sử dụng');
 
-INSERT INTO Liquidate(Name_Liqui, Date_Liqui)
-VALUES
-(N'Thanh lý màn hình hỏng', '2018-12-10');
 
-INSERT INTO Liquidate_Detail(Id_Liqui, Id_Device, Qty_Device)
+INSERT INTO Liquidate(Name_Liqui, Id_Device, Qty_Device, Date_Liqui)
 VALUES
-(1, 1, 9);
+(N'Thanh lý màn hình hỏng', 1, 3, '2018-12-10');

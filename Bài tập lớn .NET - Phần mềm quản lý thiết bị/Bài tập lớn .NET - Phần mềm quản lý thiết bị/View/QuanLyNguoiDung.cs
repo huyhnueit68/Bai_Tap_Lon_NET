@@ -105,7 +105,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
 
         private void mntNgaySinh_DateChanged(object sender, DateRangeEventArgs e)
         {
-           
+            
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)

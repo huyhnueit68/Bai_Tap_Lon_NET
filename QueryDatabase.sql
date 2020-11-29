@@ -23,7 +23,6 @@ SELECT * FROM Customer_Detail;
 SELECT * FROM Customer_Group;
 SELECT * FROM Device;
 SELECT * FROM Liquidate;
-SELECT * FROM Liquidate_Detail;
 SELECT * FROM Rent_Device;
 SELECT * FROM Type_Device;
 
@@ -114,7 +113,6 @@ VALUES
 
 UPDATE Device
 SET Name_Device = N'HP P17A 17.0Inch LED',
-Qty_Device= 5,
 Price = 2550000,
 Function_Device = N'Hiển thị hình ảnh',
 Room = 'K506',
@@ -130,7 +128,6 @@ UPDATE Rent_Device
 SET Date_Rent = '2019-11-11',
 Date_Pay= '2020-11-11',
 Id_Device = 1,
-Qty_Device = 2,
 Id_Customer = 1,
 Status_Rent = N'Không sử dụng'
 WHERE Id_Rent = 5;
@@ -138,3 +135,54 @@ WHERE Id_Rent = 5;
 UPDATE Rent_Device
 SET Status_Rent = N'Không sử dụng'
 WHERE Id_Rent = 5;
+
+
+UPDATE Device
+SET Status_Device = N'Đang sử dụng'
+WHERE Id_Device = 1;
+
+/*
+	query liqui
+*/
+
+UPDATE Liquidate
+SET Name_Liqui  = N'Thanh lý màn hình hỏng',
+Id_Device = 1,
+Qty_Device = 3,
+Date_Liqui = '2020-12-14'
+WHERE Id_Liqui = 1
+
+/*
+	Query for thanh ly
+*/
+
+/* Tinh Tong so thiet bi dang su dung */
+SELECT COUNT(*) AS Total_Device
+
+FROM Device
+WHERE Status_Device = N'Đang sử dụng'
+
+
+/* Tinh Tong so thiet bi thanh ly */
+SELECT COUNT(*) AS Total_Liqui
+FROM Liquidate
+
+/* thong ke thiet bi theo ngay thue gom (Id_Device, Name_Device, Qty_Device, Id_Rent, Date_Liqui, Name_Customer)*/
+
+SELECT D.Id_Device as 'MÃ THIẾT BỊ', D.Name_Device as 'TÊN THIẾT BỊ', RD.Qty_Device as 'SỐ LƯỢNG MƯỢN', RD.Id_Rent as 'MÃ MƯỢN', RD.Date_Rent as 'NGÀY MƯỢN', CD.Name_Customer as 'TÊN NGƯỜI MƯỢN'
+FROM Rent_Device as RD, Device as D, Customer_Detail as CD
+WHERE Date_Rent >= '1999-12-12' AND Date_Rent <= '2020-12-12'
+AND RD.Id_Device = D.Id_Device
+AND RD.Id_Customer = CD.Id_Customer
+
+/* thong ke thiet bi theo ten (Id_Device, Name_Device, Qty_Device, Date_Liqui, Name_Customer)*/
+SELECT D.Id_Device as 'MÃ THIẾT BỊ', D.Name_Device as 'TÊN THIẾT BỊ', RD.Qty_Device as 'SỐ LƯỢNG MƯỢN', RD.Date_Rent as 'NGÀY MƯỢN', CD.Name_Customer AS 'TÊN NGƯỜI DÙNG'
+FROM Rent_Device as RD, Device as D, Customer_Detail as CD
+WHERE CD.Name_Customer LIKE '%a%'
+AND RD.Id_Device = D.Id_Device
+AND RD.Id_Customer = CD.Id_Customer
+
+/* thong ke thiet bi hang nam (Year, Qty_Device)*/
+SELECT DATEPART(yyyy, Date_Liqui) AS 'Year', SUM(Qty_Device) AS 'Total'
+FROM Liquidate
+GROUP BY DATEPART(yyyy, Date_Liqui)

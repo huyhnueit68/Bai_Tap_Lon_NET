@@ -28,7 +28,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
                 btnQLThietBi.Visible = true;
                 btnQLMuonTra.Visible = true;
                 btnQLThanhLy.Visible = true;
-                btnThongKe.Visible = true;
+                btnThongKeTB.Visible = true;
             }
             else
             {
@@ -38,7 +38,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
                 btnQLThietBi.Visible = true;
                 btnQLMuonTra.Visible = true;
                 btnQLThanhLy.Enabled = false;
-                btnThongKe.Enabled = false;
+                btnThongKeTB.Enabled = false;
             }
         }
 
@@ -144,7 +144,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
             if (Application.OpenForms["QuanLyThanhLy"] == null)
                 btnQLThanhLy.BackColor = Color.FromArgb(4, 41, 68);
             if (Application.OpenForms["QuanLyThongKe"] == null)
-                btnThongKe.BackColor = Color.FromArgb(4, 41, 68);
+                btnThongKeTB.BackColor = Color.FromArgb(4, 41, 68);
         }
 
         //reset color for button
@@ -156,7 +156,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
             btnQLThietBi.BackColor = Color.FromArgb(4, 41, 68);
             btnQLMuonTra.BackColor = Color.FromArgb(4, 41, 68);
             btnQLThanhLy.BackColor = Color.FromArgb(4, 41, 68);
-            btnThongKe.BackColor = Color.FromArgb(4, 41, 68);
+            btnThongKeTB.BackColor = Color.FromArgb(4, 41, 68);
         }
 
         private void btnQLTaiKhoan_Click(object sender, EventArgs e)
@@ -224,7 +224,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
 
         private void btnQLThietBi_Click(object sender, EventArgs e)
         {
-            //form quan ly nhom nguoi dung
+            //form quan ly thiet bi
             resetColorForButton();
             AbrirFormulario<QuanLyThietBi>();
             btnQLThietBi.BackColor = Color.FromArgb(0, 154, 205);
@@ -232,10 +232,27 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
 
         private void btnQLMuonTra_Click(object sender, EventArgs e)
         {
-            //form quan ly nhom nguoi dung
+            //form quan ly muon tra
             resetColorForButton();
             AbrirFormulario<QLMuonTra>();
             btnQLMuonTra.BackColor = Color.FromArgb(0, 154, 205);
+        }
+
+        private void btnQLThanhLy_Click(object sender, EventArgs e)
+        {
+            //form quan ly thanh ly
+            resetColorForButton();
+            AbrirFormulario<QLThanhLyTB>();
+            btnQLThanhLy.BackColor = Color.FromArgb(0, 154, 205);
+        }
+
+
+        private void btnThongKeTB_Click(object sender, EventArgs e)
+        {
+            //form thong ke
+            resetColorForButton();
+            AbrirFormulario<QLThongKe>();
+            btnThongKeTB.BackColor = Color.FromArgb(0, 154, 205);
         }
     }
 }

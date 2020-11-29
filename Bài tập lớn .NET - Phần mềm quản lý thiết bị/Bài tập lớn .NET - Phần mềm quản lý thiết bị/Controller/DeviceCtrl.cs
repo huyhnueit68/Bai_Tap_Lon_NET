@@ -18,6 +18,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Controller
         {
             return deviceMng.Xoa(id);
         }
+
         public int Update(Object.ObjDevice objDevice)
         {
             return deviceMng.Update(objDevice);
