@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)http://127.0.0.1:5500/Ph%E1%BB%A7%20%E1%BA%A3nh%201/PhamQuangHuy.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Pham Quang Huy</title>
+    <script src="./Pham Quang Huy_files/demo-core.js.download"></script>
+    <script src="./Pham Quang Huy_files/glsim.js.download"></script>
+    <script src="./Pham Quang Huy_files/teapot-model-IFS.js.download"></script>
+    <script src="./Pham Quang Huy_files/basic-object-models-IFS.js.download"></script>
+    <script src="./Pham Quang Huy_files/slider-canvas.js.download"></script>
+    <script>
+        var graphics;
+        var sphere;
+        var textureImages;
+
+        
+        function Cricle() {
+            glEnableClientState(GL_VERTEX_ARRAY);
+            glVertexPointer(3, GL_FLOAT, 0, sphere.vertexPositions);
+            glEnableClientState(GL_NORMAL_ARRAY);
+            glNormalPointer(GL_FLOAT, 0, sphere.vertexNormals);
+            glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+            glTexCoordPointer(2, GL_FLOAT, 0, sphere.vertexTextureCoords);
+            glDrawElements(GL_TRIANGLES, sphere.indices.length, GL_UNSIGNED_BYTE, sphere.indices);
+        }
+        function draw() {
+            glPushMatrix();
+            var image = textureImages;
+            glEnable(GL_TEXTURE_2D);
+            glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA,image.width,image.height,0,GL_RGBA,GL_UNSIGNED_BYTE,image);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR); 
+            camera.apply();
+            Cricle();
+            glPopMatrix();  
+        }
+
+        function loadImages() {
+            textureImages = new Image();
+            textureImages.src = "./NightEarth-512x256.jpg";
+            draw();
+        }
+
+        function init() {
+            glsimUse("canvas");
+            graphics = canvas.getContext('2d');
+            initGL();
+            camera = new Camera();
+            camera.setScale(1);
+            camera.installTrackball(draw);
+            sphere = uvSphere();
+            loadImages();
+        } 
+
+        function initGL() {
+            glEnable(GL_LIGHTING);
+            glEnable(GL_LIGHT0);
+            glEnable(GL_NORMALIZE);
+            glEnable(GL_DEPTH_TEST);
+            glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE, [1, 1, 1, 1]);
+        }
+    </script>
+</head>
+<body onload="init()" data-new-gr-c-s-check-loaded="14.984.0" data-gr-ext-installed="">
+    <canvas id="canvas" width="900" height="600"></canvas>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+<iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;" src="./Pham Quang Huy_files/saved_resource.html"></iframe><div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div></body></html>
