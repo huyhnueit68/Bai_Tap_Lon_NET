@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label15 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtName_Liqui = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,7 +37,6 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnNgaySinh = new System.Windows.Forms.Button();
-            this.txtId_Liqui = new System.Windows.Forms.TextBox();
             this.cbbThietBi = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtQty_Device = new System.Windows.Forms.TextBox();
@@ -57,16 +55,6 @@
             this.label15.TabIndex = 1;
             this.label15.Text = "Tên Thanh Lý";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(51, 84);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 23);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Mã Thanh Lý";
-            // 
             // txtName_Liqui
             // 
             this.txtName_Liqui.Location = new System.Drawing.Point(235, 154);
@@ -78,7 +66,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(616, 84);
+            this.label1.Location = new System.Drawing.Point(51, 89);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 23);
@@ -88,7 +76,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(616, 157);
+            this.label4.Location = new System.Drawing.Point(607, 92);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 23);
@@ -97,7 +85,7 @@
             // 
             // txtDate_Liqui
             // 
-            this.txtDate_Liqui.Location = new System.Drawing.Point(800, 154);
+            this.txtDate_Liqui.Location = new System.Drawing.Point(791, 89);
             this.txtDate_Liqui.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDate_Liqui.Name = "txtDate_Liqui";
             this.txtDate_Liqui.Size = new System.Drawing.Size(209, 30);
@@ -154,7 +142,7 @@
             // btnNgaySinh
             // 
             this.btnNgaySinh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNgaySinh.Location = new System.Drawing.Point(1014, 154);
+            this.btnNgaySinh.Location = new System.Drawing.Point(1005, 89);
             this.btnNgaySinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNgaySinh.Name = "btnNgaySinh";
             this.btnNgaySinh.Size = new System.Drawing.Size(51, 31);
@@ -163,19 +151,10 @@
             this.btnNgaySinh.UseVisualStyleBackColor = true;
             this.btnNgaySinh.Click += new System.EventHandler(this.btnNgaySinh_Click);
             // 
-            // txtId_Liqui
-            // 
-            this.txtId_Liqui.Location = new System.Drawing.Point(235, 84);
-            this.txtId_Liqui.Margin = new System.Windows.Forms.Padding(4);
-            this.txtId_Liqui.MaxLength = 50;
-            this.txtId_Liqui.Name = "txtId_Liqui";
-            this.txtId_Liqui.Size = new System.Drawing.Size(265, 30);
-            this.txtId_Liqui.TabIndex = 43;
-            // 
             // cbbThietBi
             // 
             this.cbbThietBi.FormattingEnabled = true;
-            this.cbbThietBi.Location = new System.Drawing.Point(800, 81);
+            this.cbbThietBi.Location = new System.Drawing.Point(235, 86);
             this.cbbThietBi.Name = "cbbThietBi";
             this.cbbThietBi.Size = new System.Drawing.Size(265, 31);
             this.cbbThietBi.TabIndex = 45;
@@ -188,13 +167,11 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.mntNgayThanhLy);
             this.groupBox2.Controls.Add(this.cbbThietBi);
-            this.groupBox2.Controls.Add(this.txtId_Liqui);
             this.groupBox2.Controls.Add(this.btnNgaySinh);
             this.groupBox2.Controls.Add(this.txtDate_Liqui);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtName_Liqui);
-            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -228,7 +205,7 @@
             // 
             // mntNgayThanhLy
             // 
-            this.mntNgayThanhLy.Location = new System.Drawing.Point(803, 70);
+            this.mntNgayThanhLy.Location = new System.Drawing.Point(794, 86);
             this.mntNgayThanhLy.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
             this.mntNgayThanhLy.MaxSelectionCount = 1;
             this.mntNgayThanhLy.Name = "mntNgayThanhLy";
@@ -259,7 +236,6 @@
         #endregion
 
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtName_Liqui;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
@@ -268,7 +244,6 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.Button btnNgaySinh;
-        private System.Windows.Forms.TextBox txtId_Liqui;
         private System.Windows.Forms.ComboBox cbbThietBi;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.MonthCalendar mntNgayThanhLy;

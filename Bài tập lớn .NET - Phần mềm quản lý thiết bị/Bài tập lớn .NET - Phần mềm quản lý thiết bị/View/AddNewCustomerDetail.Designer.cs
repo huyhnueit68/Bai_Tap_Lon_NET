@@ -59,7 +59,7 @@
             this.btnThemTaiKhoan.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemTaiKhoan.ForeColor = System.Drawing.Color.White;
             this.btnThemTaiKhoan.Location = new System.Drawing.Point(111, 433);
-            this.btnThemTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThemTaiKhoan.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemTaiKhoan.Name = "btnThemTaiKhoan";
             this.btnThemTaiKhoan.Size = new System.Drawing.Size(191, 55);
             this.btnThemTaiKhoan.TabIndex = 13;
@@ -85,7 +85,7 @@
             this.btnThoat.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Location = new System.Drawing.Point(799, 433);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(191, 57);
             this.btnThoat.TabIndex = 15;
@@ -111,7 +111,7 @@
             this.btnLamMoi.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
             this.btnLamMoi.Location = new System.Drawing.Point(468, 432);
-            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(203, 57);
             this.btnLamMoi.TabIndex = 14;
@@ -145,9 +145,9 @@
             this.groupBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox2.Location = new System.Drawing.Point(35, 28);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(1068, 564);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
@@ -166,7 +166,7 @@
             // txtId_Customer
             // 
             this.txtId_Customer.Location = new System.Drawing.Point(253, 54);
-            this.txtId_Customer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtId_Customer.Margin = new System.Windows.Forms.Padding(4);
             this.txtId_Customer.MaxLength = 50;
             this.txtId_Customer.Name = "txtId_Customer";
             this.txtId_Customer.Size = new System.Drawing.Size(265, 30);
@@ -296,6 +296,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddNewCustomerDetail";
             this.Text = "Add New Customer Detail";
+            this.Load += new System.EventHandler(this.AddNewCustomerDetail_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);

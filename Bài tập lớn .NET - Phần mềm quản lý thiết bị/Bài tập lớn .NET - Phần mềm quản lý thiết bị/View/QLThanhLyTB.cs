@@ -29,8 +29,11 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                 btnThanhLyTB.Enabled = false;
                 btnTimKiem.Enabled = false;
             }
+            txtDate_Liqui.Enabled = false;
             liquiMng.HienThi(dgvListLiqui);
             HienThiThongTin();
+            txtId_Liqui.Enabled = false;
+            txtId_Device.Enabled = false;
         }
 
         public int Xoa(string id)
@@ -173,8 +176,8 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
         private void SetDataLiqui(Object.ObjLiqui objLiqui)
         {
             objLiqui.Id_Liqui = txtId_Liqui.Text;
-            objLiqui.Name_Liqui = txtId_Liqui.Text;
-            objLiqui.Id_Device = txtId_Liqui.Text;
+            objLiqui.Name_Liqui = txtName_Liqui.Text;
+            objLiqui.Id_Device = txtId_Device.Text;
             objLiqui.Qty_Device = txtQty_Device.Text;
             objLiqui.Date_Liqui = txtDate_Liqui.Text;
             

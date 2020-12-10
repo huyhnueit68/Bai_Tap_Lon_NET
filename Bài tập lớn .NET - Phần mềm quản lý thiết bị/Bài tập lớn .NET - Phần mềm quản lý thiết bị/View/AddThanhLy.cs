@@ -42,7 +42,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             txtDate_Liqui.Clear();
-            txtId_Liqui.Clear();
             txtName_Liqui.Clear();
             txtQty_Device.Clear();
             cbbThietBi.Text = "";
@@ -65,6 +64,10 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                             MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LamMoi();
                             break;
+                        default:
+                            text = "Lưu thất bại, vui lòng thử lại!";
+                            ThongBao(text);
+                            break;
                     }
                 }
             }
@@ -76,8 +79,8 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
 
         private void LamMoi()
         {
+            liquiCtrl.HienThiCbbThietBi(cbbThietBi);
             txtDate_Liqui.Clear();
-            txtId_Liqui.Clear();
             txtName_Liqui.Clear();
             txtQty_Device.Clear();
             cbbThietBi.Text = "";
@@ -92,10 +95,9 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
         //Hàm xử lý lưu dữ liệu.
         private void GanDuLieu(Object.ObjLiqui objLiqui)
         {
-            objLiqui.Id_Liqui = txtId_Liqui.Text.Trim();
             objLiqui.Name_Liqui = txtName_Liqui.Text.Trim();
             objLiqui.Qty_Device = txtQty_Device.Text.Trim();
-            objLiqui.Date_Liqui = txtQty_Device.Text.Trim();
+            objLiqui.Date_Liqui = txtDate_Liqui.Text.Trim();
 
             string value = cbbThietBi.SelectedValue.ToString();
             objLiqui.Id_Device = value;
@@ -104,7 +106,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
 
         private bool checkNullItem()
         {
-            if (txtId_Liqui.Text == "" || txtName_Liqui.Text == "" || txtQty_Device.Text == "" || cbbThietBi.Text == "" || txtDate_Liqui.Text == "")
+            if (txtName_Liqui.Text == "" || txtQty_Device.Text == "" || cbbThietBi.Text == "" || txtDate_Liqui.Text == "")
             {
                 return false;
             }
@@ -115,6 +117,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
         {
             liquiCtrl.HienThiCbbThietBi(cbbThietBi);
             txtDate_Liqui.Enabled = false;
+            this.cbbThietBi.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void mntNgayThanhLy_DateSelected(object sender, DateRangeEventArgs e)

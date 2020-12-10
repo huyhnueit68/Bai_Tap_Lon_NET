@@ -23,7 +23,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.HelperData
                 conn.Open();
         }
 
-
         public DataSet LayDuLieu(SqlCommand sqlcmd)
         {
             DataSet ds = new DataSet();
@@ -39,6 +38,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.HelperData
             cmd.Connection = conn;
             int kq = cmd.ExecuteNonQuery();
             return kq;
+
             /*try
             {
                 SqlCommand cmd = sqlcmd;
@@ -46,7 +46,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.HelperData
                 int kq = cmd.ExecuteNonQuery();
                 return kq;
             }
-            catch(Exception ce)
+            catch (Exception ce)
             {
                 Console.Write(ce.Message);
                 return -9999;

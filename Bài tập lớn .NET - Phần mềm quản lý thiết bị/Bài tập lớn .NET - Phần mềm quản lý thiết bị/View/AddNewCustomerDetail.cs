@@ -150,5 +150,10 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                 e.Handled = true;
             }
         }
+
+        private void AddNewCustomerDetail_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

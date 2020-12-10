@@ -12,6 +12,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Model
 {
     class LiquiManage
     {
+        const int ERRO_LOG = -9999;
         DataConfig cls = new DataConfig();
 
         public void HienThi(DataGridView dgv)
@@ -46,24 +47,33 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Model
 
         public int Save(Object.ObjLiqui cdt)
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO Liquidate(Id_Liqui, Name_Liqui, Id_Device, Qty_Device, Date_Liqui) " +
-                "VALUES (@idLiqui, @nameLiqui, @idDevice, @qtyDevice, @dateLiqui); ";
-
-            cmd.Parameters.Add("idLiqui", SqlDbType.DateTime).Value = cdt.Id_Liqui;
-            cmd.Parameters.Add("nameLiqui", SqlDbType.DateTime).Value = cdt.Name_Liqui;
-            cmd.Parameters.Add("idDevice", SqlDbType.DateTime).Value = cdt.Id_Device;
-            cmd.Parameters.Add("qtyDevice", SqlDbType.Int).Value = cdt.Qty_Device;
-            cmd.Parameters.Add("dateLiqui", SqlDbType.Int).Value = cdt.Date_Liqui;
-
-            UpdateStatusDevice(cdt);
-            return cls.CapNhatDL(cmd);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "INSERT INTO Liquidate(Name_Liqui, Id_Device, Qty_Device, Date_Liqui) " +
+                    "VALUES (@nameLiqui, @idDevice, @qtyDevice, @dateLiqui); ";
+                cmd.Parameters.Add("nameLiqui", SqlDbType.NVarChar).Value = cdt.Name_Liqui;
+                cmd.Parameters.Add("idDevice", SqlDbType.Int).Value = cdt.Id_Device;
+                cmd.Parameters.Add("qtyDevice", SqlDbType.Int).Value = cdt.Qty_Device;
+                cmd.Parameters.Add("dateLiqui", SqlDbType.Date).Value = cdt.Date_Liqui;
+                //update status device after liquidate
+                if (cls.CapNhatDL(cmd) == 1)
+                {
+                    UpdateStatusDevice(cdt);
+                    return 1;
+                }
+                return ERRO_LOG;
+            }
+            catch (Exception e)
+            {
+                return ERRO_LOG;
+            }
         }
 
         public void UpdateStatusDevice(Object.ObjLiqui cdt)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "UPDATE Device SET Status_Device = N'Thanh Lý' WHERE Id_Device = @idDevice; ";
+            cmd.CommandText = "UPDATE Device SET Status_Device = N'Thanh lý' WHERE Id_Device = @idDevice; ";
             cmd.Parameters.Add("idDevice", SqlDbType.Int).Value = cdt.Id_Device;
             cls.CapNhatDL(cmd);
         }

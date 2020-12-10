@@ -117,8 +117,12 @@ Price = 2550000,
 Function_Device = N'Hiển thị hình ảnh',
 Room = 'K506',
 Id_Type = 2,
-Status_Device = N'Chưa sử dụng'
+Status_Device = N'Không sử dụng'
 WHERE Id_Device = 1;
+
+UPDATE Device
+SET Status_Device = N'Không sử dụng'
+WHERE Id_Device = 2;
 
 /*
 	 query for rent device
@@ -152,9 +156,13 @@ Qty_Device = 3,
 Date_Liqui = '2020-12-14'
 WHERE Id_Liqui = 1
 
-/*
-	Query for thanh ly
-*/
+SELECT * FROM Device WHERE Status_Device = N'Không sử dụng'
+
+SELECT * FROM Liquidate WHERE Id_Liqui = 2
+
+INSERT INTO Liquidate(Name_Liqui, Id_Device, Qty_Device, Date_Liqui)
+VALUES
+(N'Thanh lý màn hình hỏng', 2, 3, '2018-12-10')
 
 /* Tinh Tong so thiet bi dang su dung */
 SELECT COUNT(*) AS Total_Device
@@ -181,6 +189,7 @@ FROM Rent_Device as RD, Device as D, Customer_Detail as CD
 WHERE CD.Name_Customer LIKE '%a%'
 AND RD.Id_Device = D.Id_Device
 AND RD.Id_Customer = CD.Id_Customer
+/*update cai nay group by ma khach hang*/
 
 /* thong ke thiet bi hang nam (Year, Qty_Device)*/
 SELECT DATEPART(yyyy, Date_Liqui) AS 'Year', SUM(Qty_Device) AS 'Total'

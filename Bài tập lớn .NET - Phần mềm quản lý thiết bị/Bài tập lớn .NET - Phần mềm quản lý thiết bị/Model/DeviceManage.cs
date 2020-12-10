@@ -29,7 +29,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Model
         public int Xoa(string id)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "DELETE FROM Device WHERE Id_Device = @id";
+            cmd.CommandText = "DELETE FROM Device WHERE Id_Device = @id AND Status_Device = N'Không sử dụng' OR Status_Device = N'Thanh lý'";
             cmd.Parameters.Add("id", SqlDbType.Int).Value = Convert.ToInt32(id);
             return cls.CapNhatDL(cmd);
         }

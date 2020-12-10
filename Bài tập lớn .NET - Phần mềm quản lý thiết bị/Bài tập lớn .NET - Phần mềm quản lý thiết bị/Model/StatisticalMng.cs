@@ -47,7 +47,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Model
             }
             catch (Exception ce)
             {
-
             }
             return result;
         }

@@ -51,7 +51,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Controller
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = "SELECT * FROM Liquidate WHERE Id_Liqui = @id";
                 cmd.Parameters.Add("id", SqlDbType.Int).Value = id;
-                if (helperData.LayDuLieu(cmd).Tables[0].Rows.Count <= 0)
+                if (helperData.LayDuLieu(cmd).Tables[0].Rows.Count > 0)
                     return false;
                 else
                     return true;
