@@ -4,6 +4,7 @@
 
 - Phần mềm cho phép người dùng quản lý tài khoản, thiết bị và , mượn/trả thiết bị
 - Quản trị viên có toàn quyền điều kiển và quản lý tất cả các chức năng: thêm sửa xóa tài khoản, nhóm người dùng, thiết bị, mượn trả và chức năng chỉ admin có là thống kê và tổng hợp dữ liệu
+- 
 
 #### Ưu điểm:
 
@@ -24,10 +25,14 @@
 -
 
 ## Chức Năng Chính Của Phần Mềm
+- Tìm kiếm thiết bị
+- Thống kê số lượng trang thiết bị theo thời gian, theo nhân viên
+- Thông tin sử dụng thiết bị của từng nhân viên 
+- Thống kê danh mục thiết bị thanh lí hàng năm
 
 #### Quản lý tài khoản người dùng
 
--
+- 
 -
 -
 -
