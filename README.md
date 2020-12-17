@@ -19,53 +19,49 @@
 
 ## Cách cài đặt
 
--
--
--
+- Cấp quyền truy cập cao nhất cho tư mục chứa project
+- Import database bằng file .\Bai_Tap_Lon_NET\BackUpDatabase\QuanLyThietBi.bak
+- Dẫn lại đường dẫn tới server trong Model\ConnectDatabase\ConnectDatabase.cs
+- Chạy thư mục Bai_Tap_Lon_NET\Bài tập lớn .NET - Phần mềm quản lý thiết bị \Bài tập lớn .NET - Phần mềm quản lý thiết bị.cs
 
 ## Chức Năng Chính Của Phần Mềm
 
+- Tìm kiếm thiêt bị
+- Thống kê số lượng trang thiết bị theo thời gian, theo nhân viên
+- Thông tin sử dụng thiết bị của từng nhân viên
+- Thống kê danh mục thiết bị thanh lí hàng năm
+
 #### Quản lý tài khoản người dùng
 
--
--
--
--
+- Thống kê các tài khoản người dùng
+- Quản lí quyền truy cập
+- Thêm sửa xóa tìm kiếm đối với admin và sửa đối với customer
 
 #### Quản lý nhóm người dùng
 
--
--
--
--
+- Đưa các người dùng cùng 1 nhóm vào cùng 1 quyền truy cập giúp quản lí quyền truy cập dễ dàng hơn
+- Phân biệt rõ ràng admin, người mượn thiết bị ...
 
 #### Quản lý danh mục thiết bị
 
--
--
--
--
+- Thống kê các thiết bị đang được mượn và trả đối với customer
+- Hiển thị toàn bộ danh sách các thiết bị đang mượn và đã trả đối với admin
 
 #### Quản lý nhóm thiết bị
 
--
--
--
--
+- Đưa ra các nhóm thiêt bị có chung mục đích sử dụng
+- Tình trạng hiện tại của từng thiết bị
 
 #### Quản lý việc sử dụng thiết bị
 
--
--
--
--
+- Thống kê các thiết bị đang được sử dụng
+- Thống kê các thiết bị đang được lưu trữ trong kho
 
 #### Quản lý việc thanh lý thiết bị
 
--
--
--
--
+- Thống kê các thiết bị đã được thanh lí
+- thêm thiết bị thanh lý, thêm sửa xóa thanh lý
+- áp dụng chức năng này cho admin
 
 ## Các thư mục trong project và cấu trúc MVC trong chương trình
 
