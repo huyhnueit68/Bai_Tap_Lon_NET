@@ -33,8 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=5.13.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.13.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,14 +52,159 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Controller\AccountCtrl.cs" />
+    <Compile Include="Controller\CustomerDetailCtrl.cs" />
+    <Compile Include="Controller\CustomerGroupCtrl.cs" />
+    <Compile Include="Controller\DeviceCtrl.cs" />
+    <Compile Include="Controller\LiquiCtrl.cs" />
+    <Compile Include="Controller\RentDeviceCtrl.cs" />
+    <Compile Include="Controller\StaisticalCtr.cs" />
+    <Compile Include="Controller\TypeDeviceCtrl.cs" />
+    <Compile Include="HelperData\DataConfig.cs" />
+    <Compile Include="Model\AccountManage.cs" />
+    <Compile Include="Model\ConnectData\ConnectDatabase.cs" />
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainControl.Designer.cs">
+      <DependentUpon>MainControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CustomerGroupManage.cs" />
+    <Compile Include="Model\CustomerManage.cs" />
+    <Compile Include="Model\DeviceManage.cs" />
+    <Compile Include="Model\LiquiManage.cs" />
+    <Compile Include="Model\RentDeviceManage.cs" />
+    <Compile Include="Model\StatisticalMng.cs" />
+    <Compile Include="Model\TypeDeviceMng.cs" />
+    <Compile Include="Object\ObjAccount.cs" />
+    <Compile Include="Object\ObjCustomerDetail.cs" />
+    <Compile Include="Object\ObjCustomerGroup.cs" />
+    <Compile Include="Object\ObjDevice.cs" />
+    <Compile Include="Object\ObjLiqui.cs" />
+    <Compile Include="Object\ObjRentDevice.cs" />
+    <Compile Include="Object\ObjTypeDevice.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\AddNewAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddNewAcc.Designer.cs">
+      <DependentUpon>AddNewAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddNewCustomerDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddNewCustomerDetail.Designer.cs">
+      <DependentUpon>AddNewCustomerDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddNewCustomerGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddNewCustomerGroup.Designer.cs">
+      <DependentUpon>AddNewCustomerGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddNewDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddNewDevice.Designer.cs">
+      <DependentUpon>AddNewDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddNewTypeDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddNewTypeDevice.Designer.cs">
+      <DependentUpon>AddNewTypeDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddThanhLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddThanhLy.Designer.cs">
+      <DependentUpon>AddThanhLy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BieuDoTBThanhLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BieuDoTBThanhLy.Designer.cs">
+      <DependentUpon>BieuDoTBThanhLy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Default.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Default.Designer.cs">
+      <DependentUpon>Default.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MuonThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MuonThietBi.Designer.cs">
+      <DependentUpon>MuonThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLLoaiTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLLoaiTB.Designer.cs">
+      <DependentUpon>QLLoaiTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLMuonTra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLMuonTra.Designer.cs">
+      <DependentUpon>QLMuonTra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLNhomNguoiDungcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLNhomNguoiDungcs.Designer.cs">
+      <DependentUpon>QLNhomNguoiDungcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLThanhLyTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLThanhLyTB.Designer.cs">
+      <DependentUpon>QLThanhLyTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLThongKe.Designer.cs">
+      <DependentUpon>QLThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuanLyNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QuanLyNguoiDung.Designer.cs">
+      <DependentUpon>QuanLyNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuanLyTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QuanLyTaiKhoan.Designer.cs">
+      <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuanLyThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QuanLyThietBi.Designer.cs">
+      <DependentUpon>QuanLyThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TraThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TraThietBi.Designer.cs">
+      <DependentUpon>TraThietBi.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainControl.resx">
+      <DependentUpon>MainControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +213,66 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\AddNewAcc.resx">
+      <DependentUpon>AddNewAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddNewCustomerDetail.resx">
+      <DependentUpon>AddNewCustomerDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddNewCustomerGroup.resx">
+      <DependentUpon>AddNewCustomerGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddNewDevice.resx">
+      <DependentUpon>AddNewDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddNewTypeDevice.resx">
+      <DependentUpon>AddNewTypeDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddThanhLy.resx">
+      <DependentUpon>AddThanhLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BieuDoTBThanhLy.resx">
+      <DependentUpon>BieuDoTBThanhLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Default.resx">
+      <DependentUpon>Default.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MuonThietBi.resx">
+      <DependentUpon>MuonThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLLoaiTB.resx">
+      <DependentUpon>QLLoaiTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLMuonTra.resx">
+      <DependentUpon>QLMuonTra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLNhomNguoiDungcs.resx">
+      <DependentUpon>QLNhomNguoiDungcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLThanhLyTB.resx">
+      <DependentUpon>QLThanhLyTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLThongKe.resx">
+      <DependentUpon>QLThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QuanLyNguoiDung.resx">
+      <DependentUpon>QuanLyNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QuanLyTaiKhoan.resx">
+      <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QuanLyThietBi.resx">
+      <DependentUpon>QuanLyThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TraThietBi.resx">
+      <DependentUpon>TraThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +285,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\login.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\fit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\username-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\password-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\account .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\fit %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

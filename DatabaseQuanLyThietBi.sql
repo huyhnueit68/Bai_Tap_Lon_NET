@@ -7,23 +7,23 @@ USE QuanLyThietBi;
 */
 CREATE TABLE Customer_Group (
     Id_Group int IDENTITY(1,1) PRIMARY KEY,
-    Name_Group varchar(255)
+    Name_Group nvarchar(255)
 );
 
 CREATE TABLE Customer_Detail(
     Id_Customer int IDENTITY(1,1) PRIMARY KEY,
-    Name_Customer varchar(255),
-    Address_Customer varchar(255),
-    Grender_Customer varchar(255),
+    Name_Customer nvarchar(255),
+    Address_Customer nvarchar(255),
+    Grender_Customer nvarchar(255),
     Birthday_Customer date,
-    Identity_Card varchar(255),
+    Identity_Card nvarchar(255),
     Id_Group int FOREIGN KEY REFERENCES Customer_Group(Id_Group)
 );
 
 CREATE TABLE Account(
     Id_Customer int FOREIGN KEY REFERENCES Customer_Detail(Id_Customer),
-    User_Name_Customer varchar(255),
-    Password_Customer varchar(255)
+    User_Name_Customer nvarchar(255),
+    Password_Customer nvarchar(255)
 );
 
 /*
@@ -31,18 +31,18 @@ CREATE TABLE Account(
 */
 CREATE TABLE Type_Device (
     Id_Type int IDENTITY(1,1) PRIMARY KEY,
-    Name_Device varchar(255)
+    Name_Device nvarchar(255)
 );
 
 CREATE TABLE Device (
     Id_Device int IDENTITY(1,1) PRIMARY KEY,
-    Name_Device varchar(255),
-    Qty_Device int,
+    Name_Device nvarchar(255),
     Price float,
-    Function_Device varchar(255),
-    Room varchar(255),
+	Qty_Device int,
+    Function_Device nvarchar(255),
+    Room nvarchar(255),
     Id_Type int FOREIGN KEY REFERENCES Type_Device(Id_Type),
-    Status_Device varchar(255)
+    Status_Device nvarchar(255)
 );
 
 /*
@@ -52,14 +52,10 @@ CREATE TABLE Rent_Device (
     Id_Rent int IDENTITY(1,1) PRIMARY KEY,
     Date_Rent date,
     Date_Pay date,
+	Id_Device int FOREIGN KEY REFERENCES Device(Id_Device),
+	Qty_Device int,
     Id_Customer int FOREIGN KEY REFERENCES Customer_Detail(Id_Customer),
-    Status_Device varchar(255)
-);
-
-CREATE TABLE Rent_Detail (
-    Id_Rent int FOREIGN KEY REFERENCES Rent_Device(Id_Rent),
-    Id_Device int FOREIGN KEY REFERENCES Device(Id_Device),
-    Qty_Device int
+    Status_Rent nvarchar(255)
 );
 
 /*
@@ -68,14 +64,125 @@ CREATE TABLE Rent_Detail (
 
 CREATE TABLE Liquidate (
     Id_Liqui int IDENTITY(1,1) PRIMARY KEY,
-    Name_Liqui varchar(255),
+    Name_Liqui nvarchar(255),
+	Id_Device int FOREIGN KEY REFERENCES Device(Id_Device),
+	Qty_Device int,
     Date_Liqui date    
 );
 
-CREATE TABLE Liquidate_Detail(
-    Id_Liqui int FOREIGN KEY REFERENCES Liquidate(Id_Liqui),
-    Id_Detail int FOREIGN KEY REFERENCES Device(Id_Device),
-    Qty_Device int
-);
-
 GO
+
+/*
+    INSERT INTO DATABASE FOR TABLE
+*/
+
+INSERT INTO Customer_Group (Name_Group)
+VALUES
+(N'Quản Trị Viên'),
+(N'Giáo Viên'),
+(N'Sinh Viên'),
+(N'Kỹ Thuật Viên'),
+(N'Giáo Viên');
+
+INSERT INTO Customer_Detail(Name_Customer, Address_Customer, Grender_Customer, Birthday_Customer, Identity_Card, Id_Group)
+VALUES
+(N'Administration', N'136 Xuân Thủy, Cầu Giấy, Hà Nội', N'Nam', '2000-12-14', N'123456789', 1),
+(N'Phạm Quang Huy', N'136 Xuân Thủy, Cầu Giấy, Hà Nội', N'Nam', '2000-12-14', N'122364952', 2),
+(N'Vũ Thái Dương', N'136 Xuân Thủy, Cầu Giấy, Hà Nội', N'Nam', '2000-04-16', N'122364961', 2),
+(N'Hoàng Khánh Linh', N'199 Trần Quốc Hoàn, Cầu Giấy, Hà Nội', N'Nữ', '2001-10-20', N'122364962', 3),
+(N'Trần Hoàng Long', N'512 Nguyễn Trãi, Thanh Xuân, Hà Nội', N'Nam', '2000-01-13', N'122364963', 2),
+(N'Nguyễn Minh Nguyệt', N'31 Thượng Đình, Thanh Xuân, Hà Nội', N'Nữ', '1999-02-14', N'122364964', 4),
+(N'Trần Hà Vy', N'56 Nguyễn Lương Bằng, Đống Đa, Hà Nội', N'Nữ', '2002-03-14', N'122364965', 3),
+(N'Trần Nguyễn Mạnh Toàn', N'321 Nguyễn Lương Bằng, Đống Đa, Hà Nội', N'Nam', '2001-04-04', N'122364966', 3),
+(N'Phạm Thanh Thảo', N'98 Hoàng Cầu, Đống Đa, Hà Nội', N'Nữ', '2002-05-22', N'122364967', 3),
+(N'Trịnh Xuân Nam', N'15 Phố Yên Sở, Hoàng Mai, Hà Nội', N'Nam', '1998-12-04', N'122364968', 5),
+(N'Mai Thạch Hiên', N'27 Yên Duyên, Hoàng Mai, Hà Nội', N'Nữ', '2001-11-14', N'122364969', 3),
+(N'Trịnh Xuân Thức', N'42 Nguyễn Trãi, Thanh Xuân, Hà Nội', N'Nữ', '2001-11-24', N'122364970', 3),
+(N'Lưu Ánh Ngọc', N'32 Nguyễn Lương Bằng, Đống Đa, Hà Nội', N'Nữ', '2001-11-14', N'122364971', 3),
+(N'Vũ Linh Ngọc', N'159 Phố Yên Sở, Hoàng Mai, Hà Nội', N'Nữ', '2001-11-14', N'122364972', 3),
+(N'Trần Linh Trang', N'27 Yên Duyên, Hoàng Mai, Hà Nội', N'Nữ', '2001-11-14', N'122364973', 3),
+(N'Ngọc Mai Trang', N'153 Hoàng Cầu, Đống Đa, Hà Nội', N'Nữ', '2001-11-14', N'122364974', 3),
+(N'Võ Huy Hoàng', N'526 Xuân Thủy, Cầu Giấy, Hà Nội', N'Nam', '2002-10-27', N'122364975', 3);
+
+
+INSERT INTO Account(Id_Customer, User_Name_Customer, Password_Customer)
+VALUES
+(1, N'admin', 'admin'),
+(2, N'HuyHnueIT', 'HuyHnueIT'),
+(3, N'VuDuong1604', 'VuDuong1604'),
+(4, N'LinhHoang01', 'LinhHoang01'),
+(5, N'Long1301', 'Long1301'),
+(6, N'MinhNguyetIT', 'MinhNguyetIT'),
+(7, N'VyTran1234', 'VyTran1234'),
+(8, N'ToanProVjp1102', 'ToanProVjp1102'),
+(9, N'CongChuaBongBong', 'CongChuaBongBong'),
+(10, N'NamITPro', 'NamITPro'),
+(11, N'HienXinh', 'HienXinh'),
+(12, N'ThucNo1', 'ThucNo1'),
+(13, N'Ngockana', 'Ngockana'),
+(14, N'Ngocvu', 'Ngocvu'),
+(15, N'Trangkk12', 'Trangkk12'),
+(16, N'TrangCute', 'TrangCute'),
+(17, N'HoangVo2710', 'HoangVo2710');
+
+
+INSERT INTO Type_Device(Name_Device)
+VALUES
+(N'WebCam'),
+(N'Màn Hình'),
+(N'Cây Máy Tính'),
+(N'Bàn Phím'),
+(N'Chuột'),
+(N'Máy In'),
+(N'Màn Chiếu'),
+(N'Máy Chiếu');
+
+INSERT INTO Device(Name_Device, Price, Qty_Device, Function_Device, Room, Id_Type, Status_Device)
+VALUES
+(N'HP P17A 17.0Inch LED', 2550000, 5, N'Hiển thị hình ảnh', N'K501', 2, N'Đang sử dụng'),
+(N'DEL XPS 15', 4500000, 9, N'Hiển thị hình ảnh', N'K501', 2, N'Không sử dụng'),
+(N'Webcam LOGITECH C270 HD', 950000, 3, N'Quay hình ảnh', N'K503', 1, N'Đang sử dụng'),
+(N'Webcam Dahua Z2 HD 720P', 550000, 2, N'Quay hình ảnh', N'K503', 1, N'Đang sử dụng'),
+(N'Webcam Dahua Z2 HD 720P', 550000, 3, N'Quay hình ảnh', N'K503', 1, N'Không sử dụng'),
+(N'Dell Optiplex 3030 core i3 màn 19.5 inch HD', 4480000, 1, N'Cây máy tính', N'K504', 3, N'Đang sử dụng'),
+(N'Dell Optiplex 3030 core i3 màn 19.5 inch HD', 4480000, 1, N'Cây máy tính', N'K504', 3, N'Không sử dụng'),
+(N'Dell Optiplex 3040 SFF intel Pentium G4400', 2900000, 4, N'Cây máy tính', N'K504', 3, N'Không sử dụng'),
+(N'Bàn phím vi tính không dây Rapoo K2600', 349000, 6, N'Bàn phím', N'K502', 4, N'Đang sử dụng'),
+(N'Bàn phím không dây Logitech K400 Plus Đen', 649000, 3, N'Bàn phím', N'K502', 4, N'Không sử dụng'),
+(N'Genius NX 7005 Đen', 200000, 5, N'Chuột không dây', N'K506', 5, N'Không sử dụng'),
+(N'Microsoft Arc', 2450000, 2, N'Chuột không dây', N'K506', 5, N'Không sử dụng'),
+(N'Sony VPL-EX435', 13490000, 3, N'Máy chiếu', N'K504', 7, N'Đang sử dụng'),
+(N'Epson EB-X400', 9980000, 5, N'Máy chiếu', N'K504', 7, N'Không sử dụng'),
+(N'Dalite P70TS 100 Inch', 796000, 5, N'Màn chiếu', N'K503', 7, N'Không sử dụng'),
+(N'Dalite P70WS 100 Inch', 690000, 5, N'Màn chiếu', N'K503', 7, N'Không sử dụng'),
+(N'HP LaserJet Pro M12a', 1790000, 5, N'Màn chiếu', N'K503', 7, N'Không sử dụng'),
+(N'Canon PIXMA G1010', 1990000, 2, N'Màn chiếu', N'K503', 7, N'Không sử dụng'),
+(N'HP Neverstop Laser 1000w', 3190000, 5, N'Màn chiếu', N'K503', 7, N'Không sử dụng'),
+(N'Acer Nitro 5', 1500000, 10, N'Hiển thị hình ảnh', N'K501', 2, N'Không sử dụng');
+
+
+INSERT INTO Rent_Device(Date_Rent, Date_Pay, Id_Device, Qty_Device, Id_Customer, Status_Rent)
+VALUES
+('2018-11-05', '2020-11-07', 2, 3, 3, N'Đang sử dụng'),
+('2018-10-05', '2019-10-05', 1, 2, 5, N'Đang sử dụng'),
+('2017-08-05', '2020-08-07', 3, 1, 3, N'Đang sử dụng'),
+('2018-11-05', '2019-02-12', 2, 1, 7, N'Đang sử dụng'),
+('2018-11-05', '2020-11-07', 4, 2, 10, N'Đang sử dụng'),
+('2018-12-20', '2019-11-07', 1, 1, 4, N'Đang sử dụng'),
+('2018-04-16', '2019-11-07', 4, 4, 8, N'Đang sử dụng'),
+('2018-11-12', '2019-11-07', 7, 3, 5, N'Đang sử dụng'),
+('2018-11-05', '2018-11-07', 2, 2, 6, N'Đang sử dụng'),
+('2018-01-03', '2018-11-07', 2, 6, 11, N'Đang sử dụng'),
+('2018-11-05', '2018-11-07', 1, 2, 2, N'Đang sử dụng');
+
+
+INSERT INTO Liquidate(Name_Liqui, Id_Device, Qty_Device, Date_Liqui)
+VALUES
+(N'Thanh lý màn hình hỏng', 2, 3, '2018-12-10'),
+(N'Thanh lý webcam hỏng', 1, 3, '2018-12-11'),
+(N'Thanh lý chuột hỏng', 5, 7, '2018-12-10'),
+(N'Thanh lý cây cháy', 3, 1, '2018-12-10'),
+(N'Thanh lý bàn phím liệt', 4, 2, '2018-12-10'),
+(N'Thanh lý bàn phím mất nút', 4, 1, '2018-12-10'),
+(N'Thanh lý máy chiếu hỏng đèn', 7, 2, '2018-12-10'),
+(N'Thanh lý màn hình hỏng', 2, 1, '2018-02-10');
