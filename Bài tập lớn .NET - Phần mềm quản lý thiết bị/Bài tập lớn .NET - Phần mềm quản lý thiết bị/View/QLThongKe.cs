@@ -89,5 +89,10 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             BieuDoTBThanhLy bieuDoTBThanhLy = new BieuDoTBThanhLy();
             bieuDoTBThanhLy.Show();
         }
+
+        private void QLThongKe_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

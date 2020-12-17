@@ -38,7 +38,6 @@ CREATE TABLE Device (
     Id_Device int IDENTITY(1,1) PRIMARY KEY,
     Name_Device nvarchar(255),
     Price float,
-	Qty_Device int,
     Function_Device nvarchar(255),
     Room nvarchar(255),
     Id_Type int FOREIGN KEY REFERENCES Type_Device(Id_Type),
@@ -53,7 +52,6 @@ CREATE TABLE Rent_Device (
     Date_Rent date,
     Date_Pay date,
 	Id_Device int FOREIGN KEY REFERENCES Device(Id_Device),
-	Qty_Device int,
     Id_Customer int FOREIGN KEY REFERENCES Customer_Detail(Id_Customer),
     Status_Rent nvarchar(255)
 );
@@ -66,7 +64,6 @@ CREATE TABLE Liquidate (
     Id_Liqui int IDENTITY(1,1) PRIMARY KEY,
     Name_Liqui nvarchar(255),
 	Id_Device int FOREIGN KEY REFERENCES Device(Id_Device),
-	Qty_Device int,
     Date_Liqui date    
 );
 
@@ -137,52 +134,49 @@ VALUES
 (N'Màn Chiếu'),
 (N'Máy Chiếu');
 
-INSERT INTO Device(Name_Device, Price, Qty_Device, Function_Device, Room, Id_Type, Status_Device)
+INSERT INTO Device(Name_Device, Price, Function_Device, Room, Id_Type, Status_Device)
 VALUES
-(N'HP P17A 17.0Inch LED', 2550000, 5, N'Hiển thị hình ảnh', N'K501', 2, N'Đang sử dụng'),
-(N'DEL XPS 15', 4500000, 9, N'Hiển thị hình ảnh', N'K501', 2, N'Không sử dụng'),
-(N'Webcam LOGITECH C270 HD', 950000, 3, N'Quay hình ảnh', N'K503', 1, N'Đang sử dụng'),
-(N'Webcam Dahua Z2 HD 720P', 550000, 2, N'Quay hình ảnh', N'K503', 1, N'Đang sử dụng'),
-(N'Webcam Dahua Z2 HD 720P', 550000, 3, N'Quay hình ảnh', N'K503', 1, N'Không sử dụng'),
-(N'Dell Optiplex 3030 core i3 màn 19.5 inch HD', 4480000, 1, N'Cây máy tính', N'K504', 3, N'Đang sử dụng'),
-(N'Dell Optiplex 3030 core i3 màn 19.5 inch HD', 4480000, 1, N'Cây máy tính', N'K504', 3, N'Không sử dụng'),
-(N'Dell Optiplex 3040 SFF intel Pentium G4400', 2900000, 4, N'Cây máy tính', N'K504', 3, N'Không sử dụng'),
-(N'Bàn phím vi tính không dây Rapoo K2600', 349000, 6, N'Bàn phím', N'K502', 4, N'Đang sử dụng'),
-(N'Bàn phím không dây Logitech K400 Plus Đen', 649000, 3, N'Bàn phím', N'K502', 4, N'Không sử dụng'),
-(N'Genius NX 7005 Đen', 200000, 5, N'Chuột không dây', N'K506', 5, N'Không sử dụng'),
-(N'Microsoft Arc', 2450000, 2, N'Chuột không dây', N'K506', 5, N'Không sử dụng'),
-(N'Sony VPL-EX435', 13490000, 3, N'Máy chiếu', N'K504', 7, N'Đang sử dụng'),
-(N'Epson EB-X400', 9980000, 5, N'Máy chiếu', N'K504', 7, N'Không sử dụng'),
-(N'Dalite P70TS 100 Inch', 796000, 5, N'Màn chiếu', N'K503', 7, N'Không sử dụng'),
-(N'Dalite P70WS 100 Inch', 690000, 5, N'Màn chiếu', N'K503', 7, N'Không sử dụng'),
-(N'HP LaserJet Pro M12a', 1790000, 5, N'Màn chiếu', N'K503', 7, N'Không sử dụng'),
-(N'Canon PIXMA G1010', 1990000, 2, N'Màn chiếu', N'K503', 7, N'Không sử dụng'),
-(N'HP Neverstop Laser 1000w', 3190000, 5, N'Màn chiếu', N'K503', 7, N'Không sử dụng'),
-(N'Acer Nitro 5', 1500000, 10, N'Hiển thị hình ảnh', N'K501', 2, N'Không sử dụng');
+(N'HP P17A 17.0Inch LED', 2550000, N'Hiển thị hình ảnh', N'K501', 2, N'Đang sử dụng'),
+(N'DEL XPS 15', 4500000, N'Hiển thị hình ảnh', N'K501', 2, N'Đang sử dụng'),
+(N'Webcam LOGITECH C270 HD', 950000, N'Quay hình ảnh', N'K503', 1, N'Đang sử dụng'),
+(N'Webcam Dahua Z2 HD 720P', 550000, N'Quay hình ảnh', N'K503', 1, N'Đang sử dụng'),
+(N'Webcam Dahua Z2 HD 720P', 550000, N'Quay hình ảnh', N'K503', 1, N'Đang sử dụng'),
+(N'Dell Optiplex 3030 core i3 màn 19.5 inch HD', 4480000, N'Cây máy tính', N'K504', 3, N'Đang sử dụng'),
+(N'Dell Optiplex 3030 core i3 màn 19.5 inch HD', 4480000, N'Cây máy tính', N'K504', 3, N'Đang sử dụng'),
+(N'Dell Optiplex 3040 SFF intel Pentium G4400', 2900000, N'Cây máy tính', N'K504', 3, N'Đang sử dụng'),
+(N'Bàn phím vi tính không dây Rapoo K2600', 349000, N'Bàn phím', N'K502', 4, N'Đang sử dụng'),
+(N'Bàn phím không dây Logitech K400 Plus Đen', 649000, N'Bàn phím', N'K502', 4, N'Thanh lý'),
+(N'Genius NX 7005 Đen', 200000, N'Chuột không dây', N'K506', 5, N'Thanh lý'),
+(N'Microsoft Arc', 2450000, N'Chuột không dây', N'K506', 5, N'Thanh lý'),
+(N'Sony VPL-EX435', 13490000, N'Máy chiếu', N'K504', 7, N'Thanh lý'),
+(N'Epson EB-X400', 9980000, N'Máy chiếu', N'K504', 7, N'Thanh lý'),
+(N'Dalite P70TS 100 Inch', 796000, N'Màn chiếu', N'K503', 7, N'Thanh lý'),
+(N'Dalite P70WS 100 Inch', 690000, N'Màn chiếu', N'K503', 7, N'Thanh lý'),
+(N'HP LaserJet Pro M12a', 1790000, N'Màn chiếu', N'K503', 7, N'Thanh lý'),
+(N'Canon PIXMA G1010', 1990000, N'Màn chiếu', N'K503', 7, N'Không sử dụng'),
+(N'HP Neverstop Laser 1000w', 3190000, N'Màn chiếu', N'K503', 7, N'Không sử dụng'),
+(N'Acer Nitro 5', 1500000, N'Hiển thị hình ảnh', N'K501', 2, N'Không sử dụng');
 
 
-INSERT INTO Rent_Device(Date_Rent, Date_Pay, Id_Device, Qty_Device, Id_Customer, Status_Rent)
+INSERT INTO Rent_Device(Date_Rent, Date_Pay, Id_Device, Id_Customer, Status_Rent)
 VALUES
-('2018-11-05', '2020-11-07', 2, 3, 3, N'Đang sử dụng'),
-('2018-10-05', '2019-10-05', 1, 2, 5, N'Đang sử dụng'),
-('2017-08-05', '2020-08-07', 3, 1, 3, N'Đang sử dụng'),
-('2018-11-05', '2019-02-12', 2, 1, 7, N'Đang sử dụng'),
-('2018-11-05', '2020-11-07', 4, 2, 10, N'Đang sử dụng'),
-('2018-12-20', '2019-11-07', 1, 1, 4, N'Đang sử dụng'),
-('2018-04-16', '2019-11-07', 4, 4, 8, N'Đang sử dụng'),
-('2018-11-12', '2019-11-07', 7, 3, 5, N'Đang sử dụng'),
-('2018-11-05', '2018-11-07', 2, 2, 6, N'Đang sử dụng'),
-('2018-01-03', '2018-11-07', 2, 6, 11, N'Đang sử dụng'),
-('2018-11-05', '2018-11-07', 1, 2, 2, N'Đang sử dụng');
+('05-11-2018', '07-11-2020', 2, 3, N'Đang sử dụng'),
+('2018-10-05', '2019-10-05', 9, 5, N'Đang sử dụng'),
+('2017-08-05', '2020-08-07', 3, 3, N'Đang sử dụng'),
+('2018-11-05', '2019-02-12', 5, 7, N'Đang sử dụng'),
+('2018-11-05', '2020-11-07', 4, 10, N'Đang sử dụng'),
+('2018-12-20', '2019-11-07', 1, 4, N'Đang sử dụng'),
+('2018-04-16', '2019-11-07', 6, 8, N'Đang sử dụng'),
+('2018-11-12', '2019-11-07', 7, 5, N'Đang sử dụng'),
+('2018-11-05', '2018-11-07', 8, 6, N'Đang sử dụng');
 
-
-INSERT INTO Liquidate(Name_Liqui, Id_Device, Qty_Device, Date_Liqui)
+INSERT INTO Liquidate(Name_Liqui, Id_Device, Date_Liqui)
 VALUES
-(N'Thanh lý màn hình hỏng', 2, 3, '2018-12-10'),
-(N'Thanh lý webcam hỏng', 1, 3, '2018-12-11'),
-(N'Thanh lý chuột hỏng', 5, 7, '2018-12-10'),
-(N'Thanh lý cây cháy', 3, 1, '2018-12-10'),
-(N'Thanh lý bàn phím liệt', 4, 2, '2018-12-10'),
-(N'Thanh lý bàn phím mất nút', 4, 1, '2018-12-10'),
-(N'Thanh lý máy chiếu hỏng đèn', 7, 2, '2018-12-10'),
-(N'Thanh lý màn hình hỏng', 2, 1, '2018-02-10');
+(N'Thanh lý màn hình hỏng', 17, '2018-12-10'),
+(N'Thanh lý webcam hỏng', 10, '2018-12-11'),
+(N'Thanh lý chuột hỏng', 11, '2020-12-10'),
+(N'Thanh lý cây cháy', 12, '2020-12-10'),
+(N'Thanh lý bàn phím liệt', 13, '2018-12-10'),
+(N'Thanh lý bàn phím mất nút',14, '2019-12-10'),
+(N'Thanh lý máy chiếu hỏng đèn', 15, '2019-12-10'),
+(N'Thanh lý màn hình hỏng', 16, '2018-02-10');

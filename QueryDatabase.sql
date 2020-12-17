@@ -9,7 +9,6 @@ DROP TABLE Customer_Detail;
 DROP TABLE Customer_Group;
 DROP TABLE Device;
 DROP TABLE Liquidate;
-DROP TABLE Liquidate_Detail;
 DROP TABLE Rent_Detail;
 DROP TABLE Rent_Device;
 DROP TABLE Type_Device;
@@ -25,6 +24,9 @@ SELECT * FROM Device;
 SELECT * FROM Liquidate;
 SELECT * FROM Rent_Device;
 SELECT * FROM Type_Device;
+DELETE FROM Device WHERE Id_Device = 9 
+AND Status_Device != N'Đang sử dụng' 
+
 
 /*
 	Query login application
@@ -110,6 +112,8 @@ VALUES
 	query for device
 */
 
+DELETE FROM Device WHERE Id_Device = 1 
+AND Status_Device != N'Đang sử dụng' 
 
 UPDATE Device
 SET Name_Device = N'HP P17A 17.0Inch LED',
@@ -184,14 +188,14 @@ FROM Liquidate
 
 /* thong ke thiet bi theo ngay thue gom (Id_Device, Name_Device, Qty_Device, Id_Rent, Date_Liqui, Name_Customer)*/
 
-SELECT D.Id_Device as 'MÃ THIẾT BỊ', D.Name_Device as 'TÊN THIẾT BỊ', RD.Qty_Device as 'SỐ LƯỢNG MƯỢN', RD.Id_Rent as 'MÃ MƯỢN', RD.Date_Rent as 'NGÀY MƯỢN', CD.Name_Customer as 'TÊN NGƯỜI MƯỢN'
+SELECT D.Id_Device as 'MÃ THIẾT BỊ', D.Name_Device as 'TÊN THIẾT BỊ', RD.Id_Rent as 'MÃ MƯỢN', RD.Date_Rent as 'NGÀY MƯỢN', CD.Name_Customer as 'TÊN NGƯỜI MƯỢN'
 FROM Rent_Device as RD, Device as D, Customer_Detail as CD
 WHERE Date_Rent >= '1999-12-12' AND Date_Rent <= '2020-12-12'
 AND RD.Id_Device = D.Id_Device
 AND RD.Id_Customer = CD.Id_Customer
 
 /* thong ke thiet bi theo ten (Id_Device, Name_Device, Qty_Device, Date_Liqui, Name_Customer)*/
-SELECT D.Id_Device as 'MÃ THIẾT BỊ', D.Name_Device as 'TÊN THIẾT BỊ', RD.Qty_Device as 'SỐ LƯỢNG MƯỢN', RD.Date_Rent as 'NGÀY MƯỢN', CD.Name_Customer AS 'TÊN NGƯỜI DÙNG'
+SELECT D.Id_Device as 'MÃ THIẾT BỊ', D.Name_Device as 'TÊN THIẾT BỊ', RD.Date_Rent as 'NGÀY MƯỢN', CD.Name_Customer AS 'TÊN NGƯỜI DÙNG'
 FROM Rent_Device as RD, Device as D, Customer_Detail as CD
 WHERE CD.Name_Customer LIKE '%a%'
 AND RD.Id_Device = D.Id_Device
@@ -199,6 +203,6 @@ AND RD.Id_Customer = CD.Id_Customer
 /*update cai nay group by ma khach hang*/
 
 /* thong ke thiet bi hang nam (Year, Qty_Device)*/
-SELECT DATEPART(yyyy, Date_Liqui) AS 'Year', SUM(Qty_Device) AS 'Total'
+SELECT DATEPART(yyyy, Date_Liqui) AS 'Year', SUM(Id_Liqui) AS 'Total'
 FROM Liquidate
 GROUP BY DATEPART(yyyy, Date_Liqui)

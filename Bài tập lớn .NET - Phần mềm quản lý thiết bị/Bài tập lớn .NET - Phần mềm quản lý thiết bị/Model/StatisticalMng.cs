@@ -55,7 +55,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Model
         {
             SqlCommand sqlcmd = new SqlCommand("SELECT D.Id_Device AS 'MÃ THIẾT BỊ', " +
                 "D.Name_Device AS 'TÊN THIẾT BỊ', " +
-                "RD.Qty_Device AS 'SỐ LƯỢNG MƯỢN', " +
                 "RD.Id_Rent AS 'MÃ MƯỢN', " +
                 "RD.Date_Rent AS 'NGÀY MƯỢN', " +
                 "CD.Name_Customer AS 'TÊN NGƯỜI DÙNG' FROM Rent_Device AS RD, " +
@@ -79,7 +78,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Model
         {
             SqlCommand sqlcmd = new SqlCommand("SELECT D.Id_Device as 'MÃ THIẾT BỊ', " +
                 "D.Name_Device as 'TÊN THIẾT BỊ', " +
-                "RD.Qty_Device as 'SỐ LƯỢNG MƯỢN', " +
                 "RD.Date_Rent as 'NGÀY MƯỢN', " +
                 "CD.Name_Customer AS 'TÊN NGƯỜI DÙNG' " +
                 "FROM Rent_Device as RD, Device as D, Customer_Detail as CD " +
@@ -100,7 +98,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Model
         public DataSet getDeviceToChar()
         {
             SqlConnection connect = ConnectDatabase.connect;
-            string query = "SELECT DATEPART(yyyy, Date_Liqui) AS 'Year', SUM(Qty_Device) AS 'Total' FROM Liquidate GROUP BY DATEPART(yyyy, Date_Liqui)";
+            string query = "SELECT DATEPART(yyyy, Date_Liqui) AS 'Year', SUM(Id_Liqui) AS 'Total' FROM Liquidate GROUP BY DATEPART(yyyy, Date_Liqui)";
 
             //action get database
             DataSet result = new DataSet();

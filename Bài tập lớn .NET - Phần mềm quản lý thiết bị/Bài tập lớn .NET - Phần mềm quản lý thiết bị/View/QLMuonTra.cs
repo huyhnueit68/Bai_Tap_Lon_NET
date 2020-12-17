@@ -26,6 +26,10 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             HienThiThongTin();
             txtDate_Pay.Enabled = false;
             txtDate_Rent.Enabled = false;
+            txtId_Rent.Enabled = false;
+            txtId_Device.Enabled = false;
+            rdbMuon.Enabled = false;
+            rdbTra.Enabled = false;
         }
 
         //Hàm xử lý load dữ liệu từ dgv lên các text.
@@ -37,7 +41,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                 txtDate_Rent.Text = dgvListRentDevice.CurrentRow.Cells["Date_Rent"].Value.ToString();
                 txtDate_Pay.Text = dgvListRentDevice.CurrentRow.Cells["Date_Pay"].Value.ToString();
                 txtId_Device.Text = dgvListRentDevice.CurrentRow.Cells["Id_Device"].Value.ToString();
-                txtQty_Device.Text = dgvListRentDevice.CurrentRow.Cells["Qty_Device"].Value.ToString();
                 txtId_Customer.Text = dgvListRentDevice.CurrentRow.Cells["Id_Customer"].Value.ToString();
                 string tg = dgvListRentDevice.CurrentRow.Cells["Status_Rent"].Value.ToString();
                 if(tg == "Đang sử dụng")
@@ -95,7 +98,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             txtDate_Rent.Clear();
             txtDate_Pay.Clear();
             txtId_Device.Clear();
-            txtQty_Device.Clear();
             txtId_Customer.Clear();
             rdbMuon.Checked = false;
             rdbTra.Checked = false;
@@ -107,7 +109,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             objRentDevice.Day_Rent = txtDate_Rent.Text;
             objRentDevice.Day_Pay = txtDate_Pay.Text;
             objRentDevice.Id_Device = txtId_Device.Text;
-            objRentDevice.Qty_Device = txtQty_Device.Text;
             objRentDevice.Id_Customer = txtId_Customer.Text;
             if(rdbMuon.Checked == true)
             {
@@ -119,6 +120,18 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             }
         }
 
+        private bool CheckDateTimeRent()
+        {
+
+            TimeSpan value = mntNgayTra.SelectionStart.Subtract(mntNgayMuon.SelectionStart);
+
+            if (value.TotalSeconds > 0)
+            {
+                return true;
+            }
+            else return false;
+        }
+
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             if (checkNullTextBox() == false)
@@ -127,23 +140,31 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             }
             else
             {
-                Object.ObjRentDevice objRentDevice = new Object.ObjRentDevice();
-                SetDataRentDetail(objRentDevice);
-
-                string Id_Customer = dgvListRentDevice.CurrentRow.Cells[0].Value.ToString();
-                DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dlg == DialogResult.Yes)
+                if (CheckDateTimeRent())
                 {
-                    if (rentDeviceCtrl.Update(objRentDevice) > 0)
+                    Object.ObjRentDevice objRentDevice = new Object.ObjRentDevice();
+                    SetDataRentDetail(objRentDevice);
+
+                    string Id_Customer = dgvListRentDevice.CurrentRow.Cells[0].Value.ToString();
+                    string Id_Device_Current = txtId_Device.Text;
+                    DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dlg == DialogResult.Yes)
                     {
-                        MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        rentDeviceManage.HienThi(dgvListRentDevice);
-                        HienThiThongTin();
+                        if (rentDeviceCtrl.Update(objRentDevice) > 0)
+                        {
+                            MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            rentDeviceManage.HienThi(dgvListRentDevice);
+                            HienThiThongTin();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Id Customer hoặc Id Device không tồn tại hoặc thiết bị đã có người sử dụng, vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Id Customer hoặc Id Device không tồn tại, vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn ngày trả > ngày mượn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

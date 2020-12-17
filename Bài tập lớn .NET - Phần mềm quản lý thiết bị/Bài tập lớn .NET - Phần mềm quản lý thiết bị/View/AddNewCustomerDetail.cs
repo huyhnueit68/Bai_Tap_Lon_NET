@@ -52,7 +52,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
 
         private bool checkNullItem()
         {
-            if (txtAddress_Customer.Text == "" || txtBirthday_Customer.Text == "" || txtGrender_Customer.Text == "" || txtIdentity_Card.Text == "" || txtId_Customer.Text == "" || txtId_Group.Text == "" || txtName_Customer.Text == "")
+            if (txtAddress_Customer.Text == "" || txtBirthday_Customer.Text == "" || cbbGrender.Text == "" || txtIdentity_Card.Text == "" || txtId_Customer.Text == "" || txtId_Group.Text == "" || txtName_Customer.Text == "")
             {
                 return false;
             }
@@ -73,7 +73,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             txtId_Customer.Clear();
             txtName_Customer.Clear();
             txtAddress_Customer.Clear();
-            txtGrender_Customer.Clear();
+            cbbGrender.Text = "";
             txtBirthday_Customer.Clear();
             txtIdentity_Card.Clear();
             txtId_Group.Clear();
@@ -96,7 +96,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             customerDetail.Id_Customer = txtId_Customer.Text.Trim();
             customerDetail.Name_Customer = txtName_Customer.Text.Trim();
             customerDetail.Address_Customer = txtAddress_Customer.Text.Trim();
-            customerDetail.Grender_Customer = txtGrender_Customer.Text.Trim();
+            customerDetail.Grender_Customer = cbbGrender.Text.Trim();
             customerDetail.Birthday_Customer = txtBirthday_Customer.Text.Trim();
             customerDetail.Identity_Card = txtIdentity_Card.Text.Trim();
             customerDetail.Id_Group = txtId_Group.Text.Trim();
@@ -113,7 +113,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             txtId_Customer.Clear();
             txtName_Customer.Clear();
             txtAddress_Customer.Clear();
-            txtGrender_Customer.Clear();
+            cbbGrender.Text = "";
             txtBirthday_Customer.Clear();
             txtIdentity_Card.Clear();
             txtId_Group.Clear();
@@ -144,6 +144,17 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             {
                 e.Handled = true;
             }
+        }
+
+        private void cbbGrender_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            return;
+        }
+
+        private void AddNewCustomerDetail_Load(object sender, EventArgs e)
+        {
+            txtBirthday_Customer.Enabled = false;
         }
     }
 }

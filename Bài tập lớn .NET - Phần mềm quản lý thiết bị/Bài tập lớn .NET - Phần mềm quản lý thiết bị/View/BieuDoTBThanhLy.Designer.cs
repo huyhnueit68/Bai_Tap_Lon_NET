@@ -41,25 +41,24 @@
             this.chartThanhLy.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartThanhLy.Legends.Add(legend1);
-            this.chartThanhLy.Location = new System.Drawing.Point(16, 15);
-            this.chartThanhLy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chartThanhLy.Location = new System.Drawing.Point(12, 12);
             this.chartThanhLy.Name = "chartThanhLy";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Total";
             this.chartThanhLy.Series.Add(series1);
-            this.chartThanhLy.Size = new System.Drawing.Size(1035, 479);
+            this.chartThanhLy.Size = new System.Drawing.Size(776, 389);
             this.chartThanhLy.TabIndex = 0;
             this.chartThanhLy.Text = "chart1";
+            this.chartThanhLy.Click += new System.EventHandler(this.chartThanhLy_Click);
             // 
             // BieuDoTBThanhLy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 523);
+            this.ClientSize = new System.Drawing.Size(800, 425);
             this.Controls.Add(this.chartThanhLy);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "BieuDoTBThanhLy";
             this.Text = "Biểu Đồ Thống Kê Thiết Bị Thanh Lý Hằng Năm";

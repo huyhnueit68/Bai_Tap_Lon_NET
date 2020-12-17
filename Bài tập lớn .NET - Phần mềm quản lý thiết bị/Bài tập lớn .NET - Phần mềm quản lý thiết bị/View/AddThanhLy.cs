@@ -38,7 +38,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
         {
             txtDate_Liqui.Clear();
             txtName_Liqui.Clear();
-            txtQty_Device.Clear();
             cbbThietBi.Text = "";
         }
 
@@ -77,7 +76,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             liquiCtrl.HienThiCbbThietBi(cbbThietBi);
             txtDate_Liqui.Clear();
             txtName_Liqui.Clear();
-            txtQty_Device.Clear();
             cbbThietBi.Text = "";
         }
 
@@ -91,7 +89,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
         private void GanDuLieu(Object.ObjLiqui objLiqui)
         {
             objLiqui.Name_Liqui = txtName_Liqui.Text.Trim();
-            objLiqui.Qty_Device = txtQty_Device.Text.Trim();
             objLiqui.Date_Liqui = txtDate_Liqui.Text.Trim();
 
             string value = cbbThietBi.SelectedValue.ToString();
@@ -101,7 +98,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
 
         private bool checkNullItem()
         {
-            if (txtName_Liqui.Text == "" || txtQty_Device.Text == "" || cbbThietBi.Text == "" || txtDate_Liqui.Text == "")
+            if (txtName_Liqui.Text == "" || cbbThietBi.Text == "" || txtDate_Liqui.Text == "")
             {
                 return false;
             }

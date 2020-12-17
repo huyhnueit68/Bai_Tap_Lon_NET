@@ -29,7 +29,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             txtId_Device.Enabled = false;
             txtId_Rent.Enabled = false;
             txtId_Customer.Enabled = false;
-            txtQty_Device.Enabled = false;
         }
 
         //Hàm xử lý load dữ liệu từ dgv lên các text.
@@ -41,7 +40,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                 txtDate_Rent.Text = dgvListRentDevice.CurrentRow.Cells["Date_Rent"].Value.ToString();
                 txtDate_Pay.Text = dgvListRentDevice.CurrentRow.Cells["Date_Pay"].Value.ToString();
                 txtId_Device.Text = dgvListRentDevice.CurrentRow.Cells["Id_Device"].Value.ToString();
-                txtQty_Device.Text = dgvListRentDevice.CurrentRow.Cells["Qty_Device"].Value.ToString();
                 txtId_Customer.Text = dgvListRentDevice.CurrentRow.Cells["Id_Customer"].Value.ToString();
                 string tg = dgvListRentDevice.CurrentRow.Cells["Status_Rent"].Value.ToString();
                 if (tg == "Đang sử dụng")
@@ -99,7 +97,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             objRentDevice.Day_Rent = txtDate_Rent.Text;
             objRentDevice.Day_Pay = txtDate_Pay.Text;
             objRentDevice.Id_Device = txtId_Device.Text;
-            objRentDevice.Qty_Device = txtQty_Device.Text;
             objRentDevice.Id_Customer = txtId_Customer.Text;
             if (rdbMuon.Checked == true)
             {
