@@ -22,10 +22,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
 
         private void QLMuonTra_Load(object sender, EventArgs e)
         {
-            if (Login.resultLogin != 1)
-            {
-                
-            }
             rentDeviceManage.HienThi(dgvListRentDevice);
             HienThiThongTin();
             txtDate_Pay.Enabled = false;
@@ -57,16 +53,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                     rdbTra.Checked = true;
                 }
             }
-        }
-
-        private void grp_TimKiem_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grpThongTinTaiKhoan_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void btnThemTK_Click(object sender, EventArgs e)

@@ -10,50 +10,52 @@ using System.Windows.Forms;
 
 namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
 {
-    public partial class QLNhomNguoiDungcs : Form
+    public partial class QLLoaiTB : Form
     {
         public static string text = "";
-        Model.CustomerGroupManage CustomerGroupManage = new Model.CustomerGroupManage();
-        Controller.CustomerGroupCtrl cutomerGroupCtrl = new Controller.CustomerGroupCtrl();
+        Model.TypeDeviceMng typeDeviceMng = new Model.TypeDeviceMng();
+        Controller.TypeDeviceCtrl typeDeviceCtrl = new Controller.TypeDeviceCtrl();
 
-        public QLNhomNguoiDungcs()
+        public QLLoaiTB()
         {
             InitializeComponent();
         }
 
-        private void QLNhomNguoiDungcs_Load(object sender, EventArgs e)
+        private void QLLoaiTB_Load(object sender, EventArgs e)
         {
             if (Login.resultLogin != 1)
             {
                 btnXoa.Enabled = false;
                 btnThemTK.Enabled = false;
-                btnTimKiem.Enabled = false;
             }
-            CustomerGroupManage.HienThi(dgvListCustomerGroup);
+            typeDeviceMng.HienThi(dgvDSLoaiTB);
             HienThiThongTin();
-            txtId_Group.Enabled = false;
+            txtId_Type.Enabled = false;
         }
 
-        //Hàm xử lý load dữ liệu từ dgv lên các text.
         private void HienThiThongTin()
         {
-            if (dgvListCustomerGroup.CurrentRow != null)
+            if (dgvDSLoaiTB.CurrentRow != null)
             {
-                txtId_Group.Text = dgvListCustomerGroup.CurrentRow.Cells["Id_Group"].Value.ToString();
-                txtName_Group.Text = dgvListCustomerGroup.CurrentRow.Cells["Name_Group"].Value.ToString();
+                txtId_Type.Text = dgvDSLoaiTB.CurrentRow.Cells["Id_Type"].Value.ToString();
+                txtName_Type.Text = dgvDSLoaiTB.CurrentRow.Cells["Name_Device"].Value.ToString();
             }
         }
 
-        private void dgvListCustomerGroup_MouseClick(object sender, MouseEventArgs e)
+        private void dgvDSLoaiTB_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvDSLoaiTB_MouseClick(object sender, MouseEventArgs e)
         {
             HienThiThongTin();
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            CustomerGroupManage.HienThi(dgvListCustomerGroup);
-            txtId_Group.Clear();
-            txtName_Group.Clear();
+            typeDeviceMng.HienThi(dgvDSLoaiTB);
+            HienThiThongTin();
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
@@ -64,58 +66,57 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             }
             else
             {
-                Object.ObjCustomerGroup objCustomerGroup = new Object.ObjCustomerGroup();
-                SetDataCustomerGroup(objCustomerGroup);
+                Object.ObjTypeDevice objTypeDevice = new Object.ObjTypeDevice();
+                SetDataTypeDeivce(objTypeDevice);
 
-                string Id_Customer = dgvListCustomerGroup.CurrentRow.Cells[0].Value.ToString();
+                string Id_Customer = dgvDSLoaiTB.CurrentRow.Cells[0].Value.ToString();
                 DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlg == DialogResult.Yes)
                 {
-                    if (cutomerGroupCtrl.Update(objCustomerGroup) > 0)
+                    if (typeDeviceCtrl.Update(objTypeDevice) > 0)
                     {
                         MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        CustomerGroupManage.HienThi(dgvListCustomerGroup);
+                        typeDeviceMng.HienThi(dgvDSLoaiTB);
                         HienThiThongTin();
                     }
                     else
                     {
-                        MessageBox.Show("Id Customer hoặc Id Group không tồn tại, vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Id Type không tồn tại, vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
         }
 
+        private void SetDataTypeDeivce(Object.ObjTypeDevice objTypeDevice)
+        {
+            objTypeDevice.Id_Type = txtId_Type.Text;
+            objTypeDevice.Name_Device = txtName_Type.Text;
+        }
+
         private bool checkNullTextBox()
         {
-            if (txtId_Group.Text.Trim() == "")
+            if (txtId_Type.Text.Trim() == "")
             {
-                errorId_Group.SetError(txtId_Group, "Nhập vào mã nhóm");
+                errIdType.SetError(txtId_Type, "Nhập vào mã loại");
                 return false;
             }
-            if (txtName_Group.Text.Trim() == "")
+            if (txtName_Type.Text.Trim() == "")
             {
-                errorName_Group.SetError(txtName_Group, "Nhập vào tên nhóm");
+                errNameType.SetError(txtName_Type, "Nhập vào tên loại");
                 return false;
             }
             else
             {
-                errorId_Group.SetError(txtId_Group, "");
-                errorName_Group.SetError(txtName_Group, "");
+                errIdType.SetError(txtId_Type, "");
+                errNameType.SetError(txtName_Type, "");
                 return true;
             }
-
-        }
-
-        private void SetDataCustomerGroup(Object.ObjCustomerGroup customerGroup)
-        {
-            customerGroup.Id_Group = txtId_Group.Text;
-            customerGroup.Name_Group = txtName_Group.Text;
         }
 
         private void btnThemTK_Click(object sender, EventArgs e)
         {
-            View.AddNewCustomerGroup customerGroup = new View.AddNewCustomerGroup();
-            customerGroup.Show();
+            AddNewTypeDevice typeDevice = new AddNewTypeDevice();
+            typeDevice.Show();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -126,22 +127,22 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             }
             else
             {
-                string id_customer = dgvListCustomerGroup.CurrentRow.Cells[0].Value.ToString();
+                string id_customer = dgvDSLoaiTB.CurrentRow.Cells[0].Value.ToString();
 
                 DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn xóa dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (dlg == DialogResult.Yes)
                 {
                     //delete in table customer detail
-                    if (cutomerGroupCtrl.Xoa(id_customer) != -9999)
+                    if (typeDeviceCtrl.Xoa(id_customer) != -9999)
                     {
                         MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        cutomerGroupCtrl.HienThi(dgvListCustomerGroup, id_customer);
+                        typeDeviceMng.HienThi(dgvDSLoaiTB);
                         HienThiThongTin();
                     }
                     else
                     {
-                        MessageBox.Show("Không thể xóa thông tin nhóm này khi có người dùng thuộc nhóm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Không thể xóa loại thiết bị này khi đang có thiết bị thuộc loại này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -150,23 +151,23 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string tieuchi = "";
-            if (rdbName_Group.Checked)
+            if (rdbName_Type.Checked)
             {
-                tieuchi = "Name_Group";
+                tieuchi = "Name_Device";
                 if (txtTimKiem.Text.Length != 0 && tieuchi != "")
                 {
-                    cutomerGroupCtrl.HienThiNhomNguoiDung(dgvListCustomerGroup, txtTimKiem.Text, tieuchi);
+                    typeDeviceCtrl.HienThiLoaiTB(dgvDSLoaiTB, txtTimKiem.Text, tieuchi);
                 }
             }
-            else if (rdbId_Group.Checked)
+            else if (rdbId_Type.Checked)
             {
-                tieuchi = "Id_Group";
+                tieuchi = "Id_Type";
                 int value;
                 if (int.TryParse(txtTimKiem.Text.Trim(), out value))
                 {
                     if (txtTimKiem.Text.Length != 0 && tieuchi != "")
                     {
-                        cutomerGroupCtrl.HienThiNhomNguoiDung(dgvListCustomerGroup, txtTimKiem.Text, tieuchi);
+                        typeDeviceCtrl.HienThiLoaiTB(dgvDSLoaiTB, txtTimKiem.Text, tieuchi);
                     }
                 }
                 else
@@ -182,7 +183,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             }
         }
 
-        //Hàm hiển thị thông báo lỗi.
         private void ThongBao(string text)
         {
             MessageBox.Show(text, "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -60,6 +60,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
                 "AND Account.PassWord_Customer = '" + txtPassWord.Text.Trim() + "'; ";
             user = txtUserName.Text.Trim();
             pass = txtPassWord.Text.Trim();
+
             //action get database
             DataTable result = new DataTable();
             try

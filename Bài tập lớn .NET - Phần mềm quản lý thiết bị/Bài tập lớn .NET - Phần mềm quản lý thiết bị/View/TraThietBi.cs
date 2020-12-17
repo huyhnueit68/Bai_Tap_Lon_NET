@@ -22,10 +22,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
 
         private void TraThietBi_Load(object sender, EventArgs e)
         {
-            if (Login.resultLogin != 1)
-            {
-
-            }
             rentDeviceManage.HienThiTra(dgvListRentDevice);
             HienThiThongTin();
             txtDate_Pay.Enabled = false;

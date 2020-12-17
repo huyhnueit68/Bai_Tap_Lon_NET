@@ -76,7 +76,6 @@
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 22;
             this.label2.Text = "Mật Khẩu:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnThoat
             // 
@@ -140,7 +139,6 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // txtPassWord
             // 
@@ -182,7 +180,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddNewAcc";
             this.Text = "AddNewAcc";
-            this.Load += new System.EventHandler(this.AddNewAcc_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);

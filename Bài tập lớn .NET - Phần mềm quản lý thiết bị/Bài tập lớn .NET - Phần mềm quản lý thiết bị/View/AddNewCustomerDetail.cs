@@ -79,11 +79,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             txtId_Group.Clear();
         }
 
-        private void Id_Customer_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void mntNgaySinh_DateSelected(object sender, DateRangeEventArgs e)
         {
             txtBirthday_Customer.Text = mntNgaySinh.SelectionStart.ToShortDateString();
@@ -149,11 +144,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             {
                 e.Handled = true;
             }
-        }
-
-        private void AddNewCustomerDetail_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

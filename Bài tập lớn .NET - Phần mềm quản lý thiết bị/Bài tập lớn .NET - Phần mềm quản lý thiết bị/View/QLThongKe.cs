@@ -23,21 +23,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             loadThongKe.Start();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void loadThongKe_Tick(object sender, EventArgs e)
         {
             //load tong thiet bi dang su dung
@@ -46,11 +31,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             //load tong so thiet bi thanh ly
             DataTable dataTable2 = StatisticalMng.HTTongThanhLy();
             lblTongTBThanhLy.Text = dataTable2.Rows[0]["Total_Liqui"].ToString();
-
-        }
-
-        private void QLThongKe_Load(object sender, EventArgs e)
-        {
 
         }
 

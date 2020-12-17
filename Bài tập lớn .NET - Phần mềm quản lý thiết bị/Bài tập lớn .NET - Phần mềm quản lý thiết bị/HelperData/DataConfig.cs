@@ -23,6 +23,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.HelperData
                 conn.Open();
         }
 
+
         public DataSet LayDuLieu(SqlCommand sqlcmd)
         {
             DataSet ds = new DataSet();
@@ -34,12 +35,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.HelperData
 
         public int CapNhatDL(SqlCommand sqlcmd)
         {
-            SqlCommand cmd = sqlcmd;
-            cmd.Connection = conn;
-            int kq = cmd.ExecuteNonQuery();
-            return kq;
-
-            /*try
+            try
             {
                 SqlCommand cmd = sqlcmd;
                 cmd.Connection = conn;
@@ -50,7 +46,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.HelperData
             {
                 Console.Write(ce.Message);
                 return -9999;
-            }*/
+            }
 
         }
 

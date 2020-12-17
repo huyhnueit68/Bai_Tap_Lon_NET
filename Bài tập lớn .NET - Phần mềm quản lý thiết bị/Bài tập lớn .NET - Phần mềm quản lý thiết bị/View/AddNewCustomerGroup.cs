@@ -24,11 +24,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             txtName_Group.Clear();
         }
 
-        private void btnThemTaiKhoan_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //Hàm xử lý lưu dữ liệu.
         private void GanDuLieu(Object.ObjCustomerGroup customerGroup)
         {
@@ -54,11 +49,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             {
                 this.Close();
             }
-        }
-
-        private void AddNewCustomerGroup_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnThemTaiKhoan_Click_1(object sender, EventArgs e)

@@ -22,16 +22,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             InitializeComponent();
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             txtPassWord.Clear();
@@ -108,11 +98,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             tk.Id_Customer = txtId.Text.Trim();
             tk.UserName_Customer = txtUserName.Text.Trim();
             tk.PassWord_Customer = txtPassWord.Text.Trim();
-        }
-
-        private void AddNewAcc_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void txtId_KeyPress(object sender, KeyPressEventArgs e)

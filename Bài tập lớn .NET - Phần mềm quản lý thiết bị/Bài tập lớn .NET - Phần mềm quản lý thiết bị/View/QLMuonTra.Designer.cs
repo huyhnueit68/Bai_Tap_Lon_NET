@@ -231,7 +231,6 @@
             this.grp_TimKiem.TabIndex = 26;
             this.grp_TimKiem.TabStop = false;
             this.grp_TimKiem.Text = "Tìm Kiếm";
-            this.grp_TimKiem.Enter += new System.EventHandler(this.grp_TimKiem_Enter);
             // 
             // rdbId_Device
             // 
@@ -386,7 +385,6 @@
             this.grpThongTinTaiKhoan.TabIndex = 24;
             this.grpThongTinTaiKhoan.TabStop = false;
             this.grpThongTinTaiKhoan.Text = "Thông Tin";
-            this.grpThongTinTaiKhoan.Enter += new System.EventHandler(this.grpThongTinTaiKhoan_Enter);
             // 
             // txtQty_Device
             // 

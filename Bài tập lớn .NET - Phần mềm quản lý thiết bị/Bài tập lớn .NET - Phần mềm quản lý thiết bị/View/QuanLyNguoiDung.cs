@@ -21,31 +21,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_QLTaiKhoan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtId_Customer_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblMaTK_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void QuanLyNguoiDung_Load(object sender, EventArgs e)
         {
             if(Login.resultLogin != 1)

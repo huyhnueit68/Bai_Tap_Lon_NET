@@ -99,7 +99,6 @@
             this.txtId_Customer.Name = "txtId_Customer";
             this.txtId_Customer.Size = new System.Drawing.Size(140, 20);
             this.txtId_Customer.TabIndex = 27;
-            this.txtId_Customer.TextChanged += new System.EventHandler(this.txtId_Customer_TextChanged);
             // 
             // label1
             // 
@@ -120,7 +119,6 @@
             this.lbl_QLTaiKhoan.Size = new System.Drawing.Size(516, 61);
             this.lbl_QLTaiKhoan.TabIndex = 19;
             this.lbl_QLTaiKhoan.Text = "Quản Lý Người Dùng";
-            this.lbl_QLTaiKhoan.Click += new System.EventHandler(this.lbl_QLTaiKhoan_Click);
             // 
             // btnTimKiem
             // 
@@ -243,7 +241,6 @@
             this.lblMaTK.Size = new System.Drawing.Size(47, 15);
             this.lblMaTK.TabIndex = 16;
             this.lblMaTK.Text = "Địa Chỉ";
-            this.lblMaTK.Click += new System.EventHandler(this.lblMaTK_Click);
             // 
             // txtName_Customer
             // 
@@ -457,7 +454,6 @@
             this.txtBirthday_Customer.Name = "txtBirthday_Customer";
             this.txtBirthday_Customer.Size = new System.Drawing.Size(104, 20);
             this.txtBirthday_Customer.TabIndex = 31;
-            this.txtBirthday_Customer.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
@@ -468,7 +464,6 @@
             this.label3.Size = new System.Drawing.Size(63, 15);
             this.label3.TabIndex = 30;
             this.label3.Text = "Ngày Sinh";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtGender_Customer
             // 

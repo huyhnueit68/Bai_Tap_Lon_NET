@@ -221,7 +221,6 @@
             this.dgvListCustomerGroup.RowHeadersWidth = 51;
             this.dgvListCustomerGroup.Size = new System.Drawing.Size(446, 174);
             this.dgvListCustomerGroup.TabIndex = 21;
-            this.dgvListCustomerGroup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListCustomerGroup_CellContentClick);
             this.dgvListCustomerGroup.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvListCustomerGroup_MouseClick);
             // 
             // Id_Group

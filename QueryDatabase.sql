@@ -123,6 +123,13 @@ WHERE Id_Device = 1;
 UPDATE Device
 SET Status_Device = N'Không sử dụng'
 WHERE Id_Device = 2;
+/*
+	query for Type_Device
+*/
+
+UPDATE Type_Device 
+SET Name_Device = N'HIHIH'
+WHERE Id_Type = 1
 
 /*
 	 query for rent device

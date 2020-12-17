@@ -20,11 +20,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             InitializeComponent();
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnNgaySinh_Click(object sender, EventArgs e)
         {
             mntNgayThanhLy.Visible = true;

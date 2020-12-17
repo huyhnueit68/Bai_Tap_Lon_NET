@@ -145,6 +145,8 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
                 btnQLThanhLy.BackColor = Color.FromArgb(4, 41, 68);
             if (Application.OpenForms["QuanLyThongKe"] == null)
                 btnThongKeTB.BackColor = Color.FromArgb(4, 41, 68);
+            if (Application.OpenForms["QuanLyLoaiThietBi"] == null)
+                btnQLLoaiTB.BackColor = Color.FromArgb(4, 41, 68);
         }
 
         //reset color for button
@@ -157,6 +159,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
             btnQLMuonTra.BackColor = Color.FromArgb(4, 41, 68);
             btnQLThanhLy.BackColor = Color.FromArgb(4, 41, 68);
             btnThongKeTB.BackColor = Color.FromArgb(4, 41, 68);
+            btnQLLoaiTB.BackColor = Color.FromArgb(4, 41, 68);
         }
 
         private void btnQLTaiKhoan_Click(object sender, EventArgs e)
@@ -171,11 +174,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
         {
             resetColorForButton();
             AbrirFormulario<Default>();
-        }
-
-        private void panelformularios_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         public static bool onLoadCheckAccLogin()
@@ -253,6 +251,14 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
             resetColorForButton();
             AbrirFormulario<QLThongKe>();
             btnThongKeTB.BackColor = Color.FromArgb(0, 154, 205);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //form thong ke
+            resetColorForButton();
+            AbrirFormulario<QLLoaiTB>();
+            btnQLLoaiTB.BackColor = Color.FromArgb(0, 154, 205);
         }
     }
 }

@@ -296,7 +296,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddNewCustomerDetail";
             this.Text = "Add New Customer Detail";
-            this.Load += new System.EventHandler(this.AddNewCustomerDetail_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);

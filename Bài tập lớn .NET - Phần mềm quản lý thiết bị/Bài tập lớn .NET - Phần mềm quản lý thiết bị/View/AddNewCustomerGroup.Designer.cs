@@ -127,7 +127,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddNewCustomerGroup";
             this.Text = "Add New Customer Group";
-            this.Load += new System.EventHandler(this.AddNewCustomerGroup_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);

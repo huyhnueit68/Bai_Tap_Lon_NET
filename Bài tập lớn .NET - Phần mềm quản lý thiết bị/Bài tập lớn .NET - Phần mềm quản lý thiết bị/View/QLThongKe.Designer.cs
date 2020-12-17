@@ -110,7 +110,6 @@
             this.dgvThongKe.RowTemplate.Height = 24;
             this.dgvThongKe.Size = new System.Drawing.Size(769, 468);
             this.dgvThongKe.TabIndex = 0;
-            this.dgvThongKe.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgvThongKe.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvThongKe_MouseClick);
             // 
             // panel1
@@ -158,7 +157,6 @@
             this.label1.Size = new System.Drawing.Size(311, 24);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tổng số thiết bị đang được sử dụng";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -351,7 +349,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "QLThongKe";
             this.Text = "QLThongKe";
-            this.Load += new System.EventHandler(this.QLThongKe_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongKe)).EndInit();
             this.panel1.ResumeLayout(false);

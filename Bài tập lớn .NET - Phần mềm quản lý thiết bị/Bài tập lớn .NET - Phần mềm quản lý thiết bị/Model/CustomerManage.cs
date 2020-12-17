@@ -27,6 +27,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Model
             }
             return cls.LayDuLieu(sqlcmd);
         }
+
         public void HienThi(DataGridView dgv)
         {
             dgv.DataSource = GetDataCustomer(Login.getIdCustomerLogin()).Tables[0];
