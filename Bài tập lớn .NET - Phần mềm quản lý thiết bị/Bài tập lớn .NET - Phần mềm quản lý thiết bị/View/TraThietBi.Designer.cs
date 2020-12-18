@@ -57,11 +57,8 @@
             this.Date_Rent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date_Pay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id_Device = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty_Device = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id_Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status_Rent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtQty_Device = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.grpThongTinTaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListRentDevice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errId_Rent)).BeginInit();
@@ -79,8 +76,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpThongTinTaiKhoan.BackColor = System.Drawing.Color.Transparent;
-            this.grpThongTinTaiKhoan.Controls.Add(this.txtQty_Device);
-            this.grpThongTinTaiKhoan.Controls.Add(this.label5);
             this.grpThongTinTaiKhoan.Controls.Add(this.button1);
             this.grpThongTinTaiKhoan.Controls.Add(this.rdbTra);
             this.grpThongTinTaiKhoan.Controls.Add(this.rdbMuon);
@@ -100,11 +95,9 @@
             this.grpThongTinTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grpThongTinTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpThongTinTaiKhoan.ForeColor = System.Drawing.Color.White;
-            this.grpThongTinTaiKhoan.Location = new System.Drawing.Point(45, 15);
-            this.grpThongTinTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpThongTinTaiKhoan.Location = new System.Drawing.Point(34, 12);
             this.grpThongTinTaiKhoan.Name = "grpThongTinTaiKhoan";
-            this.grpThongTinTaiKhoan.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpThongTinTaiKhoan.Size = new System.Drawing.Size(1069, 254);
+            this.grpThongTinTaiKhoan.Size = new System.Drawing.Size(802, 206);
             this.grpThongTinTaiKhoan.TabIndex = 27;
             this.grpThongTinTaiKhoan.TabStop = false;
             this.grpThongTinTaiKhoan.Text = "Thông Tin";
@@ -114,10 +107,9 @@
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(879, 150);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(659, 122);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 46);
+            this.button1.Size = new System.Drawing.Size(127, 37);
             this.button1.TabIndex = 40;
             this.button1.Text = "Thoát";
             this.button1.UseVisualStyleBackColor = false;
@@ -127,10 +119,9 @@
             // 
             this.rdbTra.AutoSize = true;
             this.rdbTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbTra.Location = new System.Drawing.Point(771, 212);
-            this.rdbTra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbTra.Location = new System.Drawing.Point(578, 134);
             this.rdbTra.Name = "rdbTra";
-            this.rdbTra.Size = new System.Drawing.Size(51, 22);
+            this.rdbTra.Size = new System.Drawing.Size(43, 19);
             this.rdbTra.TabIndex = 39;
             this.rdbTra.TabStop = true;
             this.rdbTra.Text = "Trả";
@@ -140,10 +131,9 @@
             // 
             this.rdbMuon.AutoSize = true;
             this.rdbMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbMuon.Location = new System.Drawing.Point(644, 212);
-            this.rdbMuon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbMuon.Location = new System.Drawing.Point(483, 134);
             this.rdbMuon.Name = "rdbMuon";
-            this.rdbMuon.Size = new System.Drawing.Size(67, 22);
+            this.rdbMuon.Size = new System.Drawing.Size(57, 19);
             this.rdbMuon.TabIndex = 38;
             this.rdbMuon.TabStop = true;
             this.rdbMuon.Text = "Mượn";
@@ -151,21 +141,19 @@
             // 
             // txtId_Device
             // 
-            this.txtId_Device.Location = new System.Drawing.Point(644, 53);
-            this.txtId_Device.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtId_Device.Location = new System.Drawing.Point(483, 43);
             this.txtId_Device.MaxLength = 20;
             this.txtId_Device.Name = "txtId_Device";
-            this.txtId_Device.Size = new System.Drawing.Size(183, 24);
+            this.txtId_Device.Size = new System.Drawing.Size(138, 21);
             this.txtId_Device.TabIndex = 37;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(499, 56);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(374, 46);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 18);
+            this.label6.Size = new System.Drawing.Size(69, 15);
             this.label6.TabIndex = 36;
             this.label6.Text = "Mã Thiết Bị";
             // 
@@ -173,70 +161,63 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(499, 212);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(374, 134);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 18);
+            this.label4.Size = new System.Drawing.Size(66, 15);
             this.label4.TabIndex = 32;
             this.label4.Text = "Trạng Thái";
             // 
             // txtId_Customer
             // 
-            this.txtId_Customer.Location = new System.Drawing.Point(644, 150);
-            this.txtId_Customer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtId_Customer.Location = new System.Drawing.Point(483, 84);
             this.txtId_Customer.MaxLength = 20;
             this.txtId_Customer.Name = "txtId_Customer";
-            this.txtId_Customer.Size = new System.Drawing.Size(183, 24);
+            this.txtId_Customer.Size = new System.Drawing.Size(138, 21);
             this.txtId_Customer.TabIndex = 31;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(499, 156);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(374, 89);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 18);
+            this.label3.Size = new System.Drawing.Size(96, 15);
             this.label3.TabIndex = 30;
             this.label3.Text = "Mã Khách Hàng";
             // 
             // txtDate_Pay
             // 
-            this.txtDate_Pay.Location = new System.Drawing.Point(196, 160);
-            this.txtDate_Pay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDate_Pay.Location = new System.Drawing.Point(147, 130);
             this.txtDate_Pay.MaxLength = 20;
             this.txtDate_Pay.Name = "txtDate_Pay";
-            this.txtDate_Pay.Size = new System.Drawing.Size(173, 24);
+            this.txtDate_Pay.Size = new System.Drawing.Size(131, 21);
             this.txtDate_Pay.TabIndex = 29;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(69, 167);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(52, 136);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 18);
+            this.label2.Size = new System.Drawing.Size(56, 15);
             this.label2.TabIndex = 28;
             this.label2.Text = "Ngày Trả";
             // 
             // txtId_Rent
             // 
-            this.txtId_Rent.Location = new System.Drawing.Point(196, 53);
-            this.txtId_Rent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtId_Rent.Location = new System.Drawing.Point(147, 43);
             this.txtId_Rent.MaxLength = 20;
             this.txtId_Rent.Name = "txtId_Rent";
-            this.txtId_Rent.Size = new System.Drawing.Size(173, 24);
+            this.txtId_Rent.Size = new System.Drawing.Size(131, 21);
             this.txtId_Rent.TabIndex = 27;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 59);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(52, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 18);
+            this.label1.Size = new System.Drawing.Size(60, 15);
             this.label1.TabIndex = 26;
             this.label1.Text = "Mã Mượn";
             // 
@@ -245,10 +226,9 @@
             this.btnTraTB.BackColor = System.Drawing.Color.SteelBlue;
             this.btnTraTB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTraTB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTraTB.Location = new System.Drawing.Point(879, 53);
-            this.btnTraTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTraTB.Location = new System.Drawing.Point(659, 43);
             this.btnTraTB.Name = "btnTraTB";
-            this.btnTraTB.Size = new System.Drawing.Size(169, 46);
+            this.btnTraTB.Size = new System.Drawing.Size(127, 37);
             this.btnTraTB.TabIndex = 21;
             this.btnTraTB.Text = "Trả Thiết Bị";
             this.btnTraTB.UseVisualStyleBackColor = false;
@@ -256,21 +236,19 @@
             // 
             // txtDate_Rent
             // 
-            this.txtDate_Rent.Location = new System.Drawing.Point(196, 103);
-            this.txtDate_Rent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDate_Rent.Location = new System.Drawing.Point(147, 84);
             this.txtDate_Rent.MaxLength = 20;
             this.txtDate_Rent.Name = "txtDate_Rent";
-            this.txtDate_Rent.Size = new System.Drawing.Size(173, 24);
+            this.txtDate_Rent.Size = new System.Drawing.Size(131, 21);
             this.txtDate_Rent.TabIndex = 15;
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(69, 111);
-            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsername.Location = new System.Drawing.Point(52, 90);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(84, 18);
+            this.lblUsername.Size = new System.Drawing.Size(70, 15);
             this.lblUsername.TabIndex = 14;
             this.lblUsername.Text = "Ngày Mượn";
             // 
@@ -283,14 +261,12 @@
             this.Date_Rent,
             this.Date_Pay,
             this.Id_Device,
-            this.Qty_Device,
             this.Id_Customer,
             this.Status_Rent});
-            this.dgvListRentDevice.Location = new System.Drawing.Point(45, 289);
-            this.dgvListRentDevice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvListRentDevice.Location = new System.Drawing.Point(34, 235);
             this.dgvListRentDevice.Name = "dgvListRentDevice";
             this.dgvListRentDevice.RowHeadersWidth = 51;
-            this.dgvListRentDevice.Size = new System.Drawing.Size(1069, 234);
+            this.dgvListRentDevice.Size = new System.Drawing.Size(802, 190);
             this.dgvListRentDevice.TabIndex = 28;
             this.dgvListRentDevice.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvListRentDevice_MouseClick);
             // 
@@ -355,14 +331,6 @@
             this.Id_Device.Name = "Id_Device";
             this.Id_Device.Width = 110;
             // 
-            // Qty_Device
-            // 
-            this.Qty_Device.DataPropertyName = "Qty_Device";
-            this.Qty_Device.HeaderText = "Số Lượng";
-            this.Qty_Device.MinimumWidth = 6;
-            this.Qty_Device.Name = "Qty_Device";
-            this.Qty_Device.Width = 125;
-            // 
             // Id_Customer
             // 
             this.Id_Customer.DataPropertyName = "Id_Customer";
@@ -379,36 +347,15 @@
             this.Status_Rent.Name = "Status_Rent";
             this.Status_Rent.Width = 125;
             // 
-            // txtQty_Device
-            // 
-            this.txtQty_Device.Location = new System.Drawing.Point(644, 105);
-            this.txtQty_Device.Margin = new System.Windows.Forms.Padding(4);
-            this.txtQty_Device.MaxLength = 20;
-            this.txtQty_Device.Name = "txtQty_Device";
-            this.txtQty_Device.Size = new System.Drawing.Size(183, 24);
-            this.txtQty_Device.TabIndex = 42;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(499, 108);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 18);
-            this.label5.TabIndex = 41;
-            this.label5.Text = "Số lượng";
-            // 
             // TraThietBi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1187, 554);
+            this.ClientSize = new System.Drawing.Size(890, 450);
             this.Controls.Add(this.dgvListRentDevice);
             this.Controls.Add(this.grpThongTinTaiKhoan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TraThietBi";
             this.Text = "TraThietBi";
             this.Load += new System.EventHandler(this.TraThietBi_Load);
@@ -456,10 +403,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Date_Rent;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date_Pay;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Device;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Qty_Device;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Customer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status_Rent;
-        private System.Windows.Forms.TextBox txtQty_Device;
-        private System.Windows.Forms.Label label5;
     }
 }

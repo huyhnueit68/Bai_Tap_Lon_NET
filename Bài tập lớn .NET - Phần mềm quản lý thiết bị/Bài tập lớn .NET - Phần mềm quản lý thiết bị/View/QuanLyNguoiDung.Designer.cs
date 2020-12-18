@@ -65,12 +65,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtBirthday_Customer = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtGender_Customer = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.errorGrender = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorBirthday_Customer = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorIdentity_Card = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorId_Group = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errAddress_Customer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errId_Customer)).BeginInit();
             this.grp_TimKiem.SuspendLayout();
@@ -347,7 +347,7 @@
             this.btnThemTK.Name = "btnThemTK";
             this.btnThemTK.Size = new System.Drawing.Size(127, 37);
             this.btnThemTK.TabIndex = 19;
-            this.btnThemTK.Text = "Thêm Tài Khoản";
+            this.btnThemTK.Text = "Thêm";
             this.btnThemTK.UseVisualStyleBackColor = false;
             this.btnThemTK.Click += new System.EventHandler(this.btnThemTK_Click);
             // 
@@ -357,6 +357,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpThongTinTaiKhoan.BackColor = System.Drawing.Color.Transparent;
+            this.grpThongTinTaiKhoan.Controls.Add(this.cbbGioiTinh);
             this.grpThongTinTaiKhoan.Controls.Add(this.mntNgaySinh);
             this.grpThongTinTaiKhoan.Controls.Add(this.button1);
             this.grpThongTinTaiKhoan.Controls.Add(this.txtId_Group);
@@ -366,7 +367,6 @@
             this.grpThongTinTaiKhoan.Controls.Add(this.btnThemTK);
             this.grpThongTinTaiKhoan.Controls.Add(this.txtBirthday_Customer);
             this.grpThongTinTaiKhoan.Controls.Add(this.label3);
-            this.grpThongTinTaiKhoan.Controls.Add(this.txtGender_Customer);
             this.grpThongTinTaiKhoan.Controls.Add(this.btnXoa);
             this.grpThongTinTaiKhoan.Controls.Add(this.label2);
             this.grpThongTinTaiKhoan.Controls.Add(this.txtId_Customer);
@@ -465,15 +465,6 @@
             this.label3.TabIndex = 30;
             this.label3.Text = "Ngày Sinh";
             // 
-            // txtGender_Customer
-            // 
-            this.txtGender_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGender_Customer.Location = new System.Drawing.Point(104, 153);
-            this.txtGender_Customer.MaxLength = 20;
-            this.txtGender_Customer.Name = "txtGender_Customer";
-            this.txtGender_Customer.Size = new System.Drawing.Size(140, 20);
-            this.txtGender_Customer.TabIndex = 29;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -499,6 +490,19 @@
             // errorId_Group
             // 
             this.errorId_Group.ContainerControl = this;
+            // 
+            // cbbGioiTinh
+            // 
+            this.cbbGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbGioiTinh.FormattingEnabled = true;
+            this.cbbGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cbbGioiTinh.Location = new System.Drawing.Point(104, 151);
+            this.cbbGioiTinh.Name = "cbbGioiTinh";
+            this.cbbGioiTinh.Size = new System.Drawing.Size(140, 21);
+            this.cbbGioiTinh.TabIndex = 38;
+            this.cbbGioiTinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbbGioiTinh_KeyPress);
             // 
             // QuanLyNguoiDung
             // 
@@ -556,7 +560,6 @@
         private System.Windows.Forms.ErrorProvider errName;
         private System.Windows.Forms.TextBox txtBirthday_Customer;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtGender_Customer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtIdentity_Customer;
         private System.Windows.Forms.Label label4;
@@ -575,5 +578,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Group;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MonthCalendar mntNgaySinh;
+        private System.Windows.Forms.ComboBox cbbGioiTinh;
     }
 }

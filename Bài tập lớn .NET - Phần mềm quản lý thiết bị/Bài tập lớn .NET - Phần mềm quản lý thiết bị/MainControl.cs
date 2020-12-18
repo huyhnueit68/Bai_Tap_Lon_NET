@@ -260,5 +260,10 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
             AbrirFormulario<QLLoaiTB>();
             btnQLLoaiTB.BackColor = Color.FromArgb(0, 154, 205);
         }
+
+        private void panelformularios_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -43,7 +43,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                 txtId_Customer.Text = dgvDSChiTietNguoiDung.CurrentRow.Cells["Id_Customer"].Value.ToString();
                 txtName_Customer.Text = dgvDSChiTietNguoiDung.CurrentRow.Cells["Name_Customer"].Value.ToString();
                 txtAddress_Customer.Text = dgvDSChiTietNguoiDung.CurrentRow.Cells["Address_Customer"].Value.ToString();
-                txtGender_Customer.Text = dgvDSChiTietNguoiDung.CurrentRow.Cells["Grender_Customer"].Value.ToString();
+                cbbGioiTinh.Text = dgvDSChiTietNguoiDung.CurrentRow.Cells["Grender_Customer"].Value.ToString();
                 txtBirthday_Customer.Text = dgvDSChiTietNguoiDung.CurrentRow.Cells["Birthday_Customer"].Value.ToString();
                 txtIdentity_Customer.Text = dgvDSChiTietNguoiDung.CurrentRow.Cells["Identity_Card"].Value.ToString();
                 txtId_Group.Text = dgvDSChiTietNguoiDung.CurrentRow.Cells["Id_Group"].Value.ToString();
@@ -61,7 +61,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             txtId_Customer.Clear();
             txtName_Customer.Clear();
             txtAddress_Customer.Clear();
-            txtGender_Customer.Clear();
+            cbbGioiTinh.Text = "";
             txtBirthday_Customer.Clear();
             txtIdentity_Customer.Clear();
             txtId_Group.Clear();
@@ -163,9 +163,9 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                 errAddress_Customer.SetError(txtAddress_Customer, "Nhập vào địa chỉ người dùng");
                 return false;
             }
-            if (txtGender_Customer.Text.Trim() == "")
+            if (cbbGioiTinh.Text.Trim() == "")
             {
-                errorGrender.SetError(txtGender_Customer, "Nhập vào giới tính người dùng");
+                errorGrender.SetError(cbbGioiTinh, "Nhập vào giới tính người dùng");
                 return false;
             }
             if (txtBirthday_Customer.Text.Trim() == "")
@@ -188,7 +188,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                 errId_Customer.SetError(txtId_Customer, "");
                 errName.SetError(txtName_Customer, "");
                 errAddress_Customer.SetError(txtAddress_Customer, "");
-                errorGrender.SetError(txtGender_Customer, "");
+                errorGrender.SetError(cbbGioiTinh, "");
                 errorBirthday_Customer.SetError(txtBirthday_Customer, "");
                 errorIdentity_Card.SetError(txtIdentity_Customer, "");
                 errorId_Group.SetError(txtId_Group, "");
@@ -201,7 +201,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             customerDetail.Id_Customer = txtId_Customer.Text;
             customerDetail.Name_Customer = txtName_Customer.Text;
             customerDetail.Address_Customer = txtAddress_Customer.Text;
-            customerDetail.Grender_Customer = txtGender_Customer.Text;
+            customerDetail.Grender_Customer = cbbGioiTinh.Text;
             customerDetail.Birthday_Customer = txtBirthday_Customer.Text;
             customerDetail.Identity_Card = txtIdentity_Customer.Text;
             customerDetail.Id_Group = txtId_Group.Text;
@@ -251,6 +251,12 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
         private void ThongBao(string text)
         {
             MessageBox.Show(text, "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void cbbGioiTinh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            return;
         }
     }
 }

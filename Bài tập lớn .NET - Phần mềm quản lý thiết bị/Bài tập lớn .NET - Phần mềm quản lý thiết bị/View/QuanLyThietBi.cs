@@ -43,7 +43,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                 txtId_Device.Text = dgvDSThietBi.CurrentRow.Cells["Id_Device"].Value.ToString();
                 txtName_Device.Text = dgvDSThietBi.CurrentRow.Cells["Name_Device"].Value.ToString();
                 txtPrice.Text = dgvDSThietBi.CurrentRow.Cells["Price"].Value.ToString();
-                txtQty_Device.Text = dgvDSThietBi.CurrentRow.Cells["Qty_Device"].Value.ToString();
                 txtFunction_Device.Text = dgvDSThietBi.CurrentRow.Cells["Function_Device"].Value.ToString();
                 txtRoom.Text = dgvDSThietBi.CurrentRow.Cells["Room"].Value.ToString();
                 txtId_Type.Text = dgvDSThietBi.CurrentRow.Cells["Id_Type"].Value.ToString();
@@ -57,7 +56,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             txtId_Device.Clear();
             txtName_Device.Clear();
             txtPrice.Clear();
-            txtQty_Device.Clear();
             txtFunction_Device.Clear();
             txtRoom.Clear();
             txtId_Type.Clear();
@@ -158,7 +156,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             objDevice.Id_Device = txtId_Device.Text;
             objDevice.Name_Device = txtName_Device.Text;
             objDevice.Price = txtPrice.Text;
-            objDevice.Qty_Device = txtQty_Device.Text;
             objDevice.Function_Device = txtFunction_Device.Text;
             objDevice.Room = txtRoom.Text;
             objDevice.Id_Type = txtId_Type.Text;
@@ -180,11 +177,19 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                 if (dlg == DialogResult.Yes)
                 {
                     //delete in table customer detail
-                    if (deviceCtrl.Xoa(id_customer) != -9999)
+                    int result = deviceCtrl.Xoa(id_customer);
+                    if (result != -9999)
                     {
-                        MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        deviceCtrl.HienThi(dgvDSThietBi, id_customer);
-                        HienThiThongTin();
+                        if(result != 0)
+                        {
+                            MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            deviceCtrl.HienThi(dgvDSThietBi, txtId_Device.Text);
+                            HienThiThongTin();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể xóa thông thiết bị này khi đang có người mượn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {

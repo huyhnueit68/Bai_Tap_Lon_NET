@@ -31,7 +31,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             txtName_Device.Clear();
-            txtQty_Device.Clear();
             txtPrice.Clear();
             txtFunction_Device.Clear();
             txtRoom.Clear();
@@ -72,7 +71,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
 
         private bool checkNullItem()
         {
-            if(txtFunction_Device.Text == "" || txtId_Type.Text == "" || txtName_Device.Text == "" || txtPrice.Text == "" || txtQty_Device.Text == "" || txtRoom.Text == "" || txtStatus_Device.Text == "")
+            if(txtFunction_Device.Text == "" || txtId_Type.Text == "" || txtName_Device.Text == "" || txtPrice.Text == "" || txtRoom.Text == "" || txtStatus_Device.Text == "")
             {
                 return false;
             }
@@ -82,7 +81,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
         private void LamMoi()
         {
             txtName_Device.Clear();
-            txtQty_Device.Clear();
             txtPrice.Clear();
             txtFunction_Device.Clear();
             txtRoom.Clear();
@@ -95,7 +93,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
         {
             objDevice.Name_Device = txtName_Device.Text.Trim();
             objDevice.Price = txtPrice.Text.Trim();
-            objDevice.Qty_Device = txtQty_Device.Text.Trim();
             objDevice.Function_Device = txtFunction_Device.Text.Trim();
             objDevice.Room = txtRoom.Text.Trim();
             objDevice.Id_Type = txtId_Type.Text.Trim();

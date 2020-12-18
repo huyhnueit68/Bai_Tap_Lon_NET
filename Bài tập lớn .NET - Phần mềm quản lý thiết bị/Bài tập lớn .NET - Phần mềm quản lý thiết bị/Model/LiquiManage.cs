@@ -50,11 +50,10 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Model
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "INSERT INTO Liquidate(Name_Liqui, Id_Device, Qty_Device, Date_Liqui) " +
-                    "VALUES (@nameLiqui, @idDevice, @qtyDevice, @dateLiqui); ";
+                cmd.CommandText = "INSERT INTO Liquidate(Name_Liqui, Id_Device, Date_Liqui) " +
+                    "VALUES (@nameLiqui, @idDevice, @dateLiqui); ";
                 cmd.Parameters.Add("nameLiqui", SqlDbType.NVarChar).Value = cdt.Name_Liqui;
                 cmd.Parameters.Add("idDevice", SqlDbType.Int).Value = cdt.Id_Device;
-                cmd.Parameters.Add("qtyDevice", SqlDbType.Int).Value = cdt.Qty_Device;
                 cmd.Parameters.Add("dateLiqui", SqlDbType.Date).Value = cdt.Date_Liqui;
                 //update status device after liquidate
                 if (cls.CapNhatDL(cmd) == 1)
@@ -84,13 +83,11 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Model
             cmd.CommandText = "UPDATE Liquidate " +
                 "SET Name_Liqui = @nameLiqui, " +
                 "Id_Device = @idDevice, " +
-                "Qty_Device = @qty, " +
                 "Date_Liqui = @date " +
                 "WHERE Id_Liqui = @idLiqui";
 
             cmd.Parameters.Add("nameLiqui", SqlDbType.NVarChar).Value = objLiqui.Name_Liqui;
             cmd.Parameters.Add("idDevice", SqlDbType.NVarChar).Value = objLiqui.Id_Device;
-            cmd.Parameters.Add("qty", SqlDbType.NVarChar).Value = objLiqui.Qty_Device;
             cmd.Parameters.Add("date", SqlDbType.DateTime).Value = objLiqui.Date_Liqui;
             cmd.Parameters.Add("idLiqui", SqlDbType.VarChar).Value = objLiqui.Id_Liqui;
             

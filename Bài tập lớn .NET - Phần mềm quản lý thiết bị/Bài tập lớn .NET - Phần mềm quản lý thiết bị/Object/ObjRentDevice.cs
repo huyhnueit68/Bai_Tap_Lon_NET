@@ -40,14 +40,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Object
             set { _idDevice = value; }
         }
 
-        private string _qtyDevice;
-
-        public string Qty_Device
-        {
-            get { return _qtyDevice; }
-            set { _qtyDevice = value; }
-        }
-
         private string _idCustomer;
 
         public string Id_Customer

@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpThongTinTaiKhoan = new System.Windows.Forms.GroupBox();
-            this.txtQty_Device = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtId_Type = new System.Windows.Forms.TextBox();
@@ -67,7 +65,6 @@
             this.Id_Device = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name_Device = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty_Device = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Function_Device = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,8 +88,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpThongTinTaiKhoan.BackColor = System.Drawing.Color.Transparent;
-            this.grpThongTinTaiKhoan.Controls.Add(this.txtQty_Device);
-            this.grpThongTinTaiKhoan.Controls.Add(this.label7);
             this.grpThongTinTaiKhoan.Controls.Add(this.txtStatus);
             this.grpThongTinTaiKhoan.Controls.Add(this.label6);
             this.grpThongTinTaiKhoan.Controls.Add(this.txtId_Type);
@@ -121,25 +116,6 @@
             this.grpThongTinTaiKhoan.TabIndex = 24;
             this.grpThongTinTaiKhoan.TabStop = false;
             this.grpThongTinTaiKhoan.Text = "Thông Tin";
-            // 
-            // txtQty_Device
-            // 
-            this.txtQty_Device.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQty_Device.Location = new System.Drawing.Point(104, 165);
-            this.txtQty_Device.MaxLength = 20;
-            this.txtQty_Device.Name = "txtQty_Device";
-            this.txtQty_Device.Size = new System.Drawing.Size(140, 20);
-            this.txtQty_Device.TabIndex = 39;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 171);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 15);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "Số Lượng";
             // 
             // txtStatus
             // 
@@ -420,7 +396,6 @@
             this.Id_Device,
             this.Name_Device,
             this.Price,
-            this.Qty_Device,
             this.Function_Device,
             this.Room,
             this.Id_Type,
@@ -451,7 +426,7 @@
             this.Name_Device.MinimumWidth = 6;
             this.Name_Device.Name = "Name_Device";
             this.Name_Device.ReadOnly = true;
-            this.Name_Device.Width = 140;
+            this.Name_Device.Width = 150;
             // 
             // Price
             // 
@@ -459,13 +434,6 @@
             this.Price.HeaderText = "Đơn Gía";
             this.Price.MinimumWidth = 6;
             this.Price.Name = "Price";
-            // 
-            // Qty_Device
-            // 
-            this.Qty_Device.DataPropertyName = "Qty_Device";
-            this.Qty_Device.HeaderText = "Số Lượng";
-            this.Qty_Device.MinimumWidth = 6;
-            this.Qty_Device.Name = "Qty_Device";
             // 
             // Function_Device
             // 
@@ -562,12 +530,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbbLoaiTimKiem;
         private System.Windows.Forms.ErrorProvider errStatus_Device;
-        private System.Windows.Forms.TextBox txtQty_Device;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Device;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name_Device;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Qty_Device;
         private System.Windows.Forms.DataGridViewTextBoxColumn Function_Device;
         private System.Windows.Forms.DataGridViewTextBoxColumn Room;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Type;

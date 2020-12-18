@@ -249,7 +249,7 @@
             this.btnThemTK.Name = "btnThemTK";
             this.btnThemTK.Size = new System.Drawing.Size(127, 37);
             this.btnThemTK.TabIndex = 19;
-            this.btnThemTK.Text = "Thêm Tài Khoản";
+            this.btnThemTK.Text = "Thêm Nhóm";
             this.btnThemTK.UseVisualStyleBackColor = false;
             this.btnThemTK.Click += new System.EventHandler(this.btnThemTK_Click);
             // 

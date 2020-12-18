@@ -65,7 +65,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                             LamMoi();
                             break;
                         case 2:
-                            text = "Vui lòng chọn tên đăng nhập khác!";
+                            text = "Vui lòng chọn tên nhóm khác!";
                             ThongBao(text);
                             break;
                     }

@@ -72,6 +72,7 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(123, 420);
@@ -168,7 +169,7 @@
             this.rdbAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbAdmin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rdbAdmin.Location = new System.Drawing.Point(69, 376);
-            this.rdbAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.rdbAdmin.Name = "rdbAdmin";
             this.rdbAdmin.Size = new System.Drawing.Size(107, 21);
             this.rdbAdmin.TabIndex = 20;
@@ -182,7 +183,7 @@
             this.rdbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rdbUser.Location = new System.Drawing.Point(190, 376);
-            this.rdbUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbUser.Margin = new System.Windows.Forms.Padding(2);
             this.rdbUser.Name = "rdbUser";
             this.rdbUser.Size = new System.Drawing.Size(99, 21);
             this.rdbUser.TabIndex = 21;
@@ -208,7 +209,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

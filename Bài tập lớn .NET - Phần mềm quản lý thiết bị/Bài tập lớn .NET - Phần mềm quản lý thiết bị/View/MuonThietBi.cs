@@ -139,15 +139,22 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
         //Hàm xử lý lưu dữ liệu.
         private void GanDuLieu(Object.ObjRentDevice rentDevice)
         {
-            rentDevice.Day_Rent = txtDate_Rent.Text.Trim();
-            rentDevice.Day_Pay = txtDate_Pay.Text.Trim();
+            try
+            {
+                rentDevice.Day_Rent = txtDate_Rent.Text.Trim();
+                rentDevice.Day_Pay = txtDate_Pay.Text.Trim();
 
-            string value = cbbThietBi.SelectedValue.ToString();
-            rentDevice.Id_Device = value;
+                string value = cbbThietBi.SelectedValue.ToString();
+                rentDevice.Id_Device = value;
 
-            rentDevice.Qty_Device = txtQty_Device.Text.Trim();
-            rentDevice.Id_Customer = txtId_Customer.Text.Trim();
-            rentDevice.Status_Device = "Đang sử dụng";
+                rentDevice.Id_Customer = txtId_Customer.Text.Trim();
+                rentDevice.Status_Device = "Đang sử dụng";
+
+            } catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            
         }
 
         private void txtId_Customer_KeyPress(object sender, KeyPressEventArgs e)
@@ -166,6 +173,12 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
             {
                 e.Handled = true;
             }
+        }
+
+        private void cbbThietBi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+            return;
         }
     }
 }

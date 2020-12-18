@@ -29,7 +29,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Model
         public int Xoa(string id)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "DELETE FROM Device WHERE Id_Device = @id AND Status_Device = N'Không sử dụng' OR Status_Device = N'Thanh lý'";
+            cmd.CommandText = "DELETE FROM Device WHERE Id_Device = @id AND Status_Device != N'Đang sử dụng'";
             cmd.Parameters.Add("id", SqlDbType.Int).Value = Convert.ToInt32(id);
             return cls.CapNhatDL(cmd);
         }
@@ -40,14 +40,12 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Model
             cmd.CommandText = "UPDATE Device " +
                 "SET Name_Device = @nameDevice, " +
                 "Price = @price, Function_Device = @function, " +
-                "Qty_Device = @qtyDevice, " +
                 "Room = @room, Id_Type = @idType, " +
                 "Status_Device = @status " +
                 "WHERE Id_Device = @idDevice; ";
 
             cmd.Parameters.Add("nameDevice", SqlDbType.NVarChar).Value = objDevice.Name_Device;
             cmd.Parameters.Add("price", SqlDbType.Float).Value = objDevice.Price;
-            cmd.Parameters.Add("qtyDevice", SqlDbType.Int).Value = objDevice.Qty_Device;
             cmd.Parameters.Add("function", SqlDbType.NVarChar).Value = objDevice.Function_Device;
             cmd.Parameters.Add("room", SqlDbType.VarChar).Value = objDevice.Room;
             cmd.Parameters.Add("idType", SqlDbType.Int).Value = objDevice.Id_Type;
@@ -60,12 +58,11 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Model
         public int Save(Object.ObjDevice objDevice)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO Device(Name_Device, Price, ,Qty_Device, Function_Device, Room, Id_Type, Status_Device) " +
-                "VALUES (@nameDevice, @price, @qtyDevice,@function, @room, @idType, @status);";
+            cmd.CommandText = "INSERT INTO Device(Name_Device, Price, Function_Device, Room, Id_Type, Status_Device) " +
+                "VALUES (@nameDevice, @price,@function, @room, @idType, @status);";
 
             cmd.Parameters.Add("nameDevice", SqlDbType.NVarChar).Value = objDevice.Name_Device;
             cmd.Parameters.Add("price", SqlDbType.NVarChar).Value = objDevice.Price;
-            cmd.Parameters.Add("qtyDevice", SqlDbType.Int).Value = objDevice.Qty_Device;
             cmd.Parameters.Add("function", SqlDbType.NVarChar).Value = objDevice.Function_Device;
             cmd.Parameters.Add("room", SqlDbType.NVarChar).Value = objDevice.Room;
             cmd.Parameters.Add("idType", SqlDbType.NVarChar).Value = objDevice.Id_Type;
