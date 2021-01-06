@@ -197,7 +197,7 @@ AND RD.Id_Customer = CD.Id_Customer
 /* thong ke thiet bi theo ten (Id_Device, Name_Device, Qty_Device, Date_Liqui, Name_Customer)*/
 SELECT D.Id_Device as 'MÃ THIẾT BỊ', D.Name_Device as 'TÊN THIẾT BỊ', RD.Date_Rent as 'NGÀY MƯỢN', CD.Name_Customer AS 'TÊN NGƯỜI DÙNG'
 FROM Rent_Device as RD, Device as D, Customer_Detail as CD
-WHERE CD.Name_Customer LIKE '%a%'
+WHERE CD.Name_Customer Like N'%Dương%'
 AND RD.Id_Device = D.Id_Device
 AND RD.Id_Customer = CD.Id_Customer
 /*update cai nay group by ma khach hang*/

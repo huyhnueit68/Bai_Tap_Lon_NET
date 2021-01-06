@@ -26,7 +26,33 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Controller
 
         public int Update(Object.ObjCustomerGroup customerGroup)
         {
-            return customerGroupMng.Update(customerGroup);
+            if (!checkCustomerGroup(customerGroup.Name_Group))
+            {
+                return -1;
+            }
+            else
+            {
+                return customerGroupMng.Update(customerGroup);
+            }
+        }
+
+        public bool checkCustomerGroup(string nameGroup)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "SELECT * FROM Customer_Group WHERE Name_Group = @name";
+                cmd.Parameters.Add("name", SqlDbType.NVarChar).Value = nameGroup;
+                if (helperData.LayDuLieu(cmd).Tables[0].Rows.Count > 0)
+                    return false;
+                else
+                    return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Mã nhóm: " + e.Message);
+                return false;
+            }
         }
 
         public int Them(Object.ObjCustomerGroup customerGroup)
@@ -73,7 +99,6 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Controller
                 MessageBox.Show("Mã nhóm: " + e.Message);
                 return false;
             }
-
         }
 
         public void HienThiNhomNguoiDung(DataGridView dgv, string tukhoa, string tieuchi)

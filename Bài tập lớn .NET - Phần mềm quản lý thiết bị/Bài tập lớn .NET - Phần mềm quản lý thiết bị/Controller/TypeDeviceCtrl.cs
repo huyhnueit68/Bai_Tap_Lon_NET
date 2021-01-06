@@ -17,6 +17,8 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Controller
 
         public int Update(Object.ObjTypeDevice typeDevice)
         {
+            if (!KiemTraTenLoai(typeDevice.Name_Device))
+                return -1;
             return TypeDeviceMng.Update(typeDevice);
         }
 
@@ -29,17 +31,12 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Controller
 
         public bool KiemTraTenLoai(string name)
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT * FROM Type_Device WHERE Name_Device = @nameDevice";
-            cmd.Parameters.Add("nameDevice", SqlDbType.NVarChar).Value = name;
-
-            if (helperData.LayDuLieu(cmd).Tables[0].Rows.Count > 0)
-                return false;
-            else
-                return true;
-
-            /*try
+            try
             {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "SELECT * FROM Type_Device WHERE Name_Device = @nameDevice";
+                cmd.Parameters.Add("nameDevice", SqlDbType.NVarChar).Value = name;
+
                 if (helperData.LayDuLieu(cmd).Tables[0].Rows.Count > 0)
                     return false;
                 else
@@ -47,9 +44,8 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Controller
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
                 return false;
-            }*/
+            }
         }
 
         public int Xoa(string id)

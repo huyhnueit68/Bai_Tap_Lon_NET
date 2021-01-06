@@ -261,6 +261,11 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
             btnQLLoaiTB.BackColor = Color.FromArgb(0, 154, 205);
         }
 
+        public static string checkInjectionSQL(string value)
+        {
+            return value.Replace("\'", "NULL").Replace("=", "NULL");
+        }
+
         private void panelformularios_Paint(object sender, PaintEventArgs e)
         {
 
