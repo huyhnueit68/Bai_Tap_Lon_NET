@@ -53,13 +53,13 @@
             this.lbl_QLTaiKhoan = new System.Windows.Forms.Label();
             this.errName_Liqui = new System.Windows.Forms.ErrorProvider(this.components);
             this.dgvListLiqui = new System.Windows.Forms.DataGridView();
-            this.errId_Device = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errQty_Device = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errDate_Liqui = new System.Windows.Forms.ErrorProvider(this.components);
             this.Id_Liqui = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name_Liqui = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id_Device = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date_Liqui = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errId_Device = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errQty_Device = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errDate_Liqui = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpThongTinTaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errId_Liqui)).BeginInit();
             this.grp_TimKiem.SuspendLayout();
@@ -94,9 +94,11 @@
             this.grpThongTinTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.grpThongTinTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpThongTinTaiKhoan.ForeColor = System.Drawing.Color.Black;
-            this.grpThongTinTaiKhoan.Location = new System.Drawing.Point(22, 91);
+            this.grpThongTinTaiKhoan.Location = new System.Drawing.Point(29, 112);
+            this.grpThongTinTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpThongTinTaiKhoan.Name = "grpThongTinTaiKhoan";
-            this.grpThongTinTaiKhoan.Size = new System.Drawing.Size(890, 252);
+            this.grpThongTinTaiKhoan.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpThongTinTaiKhoan.Size = new System.Drawing.Size(1187, 310);
             this.grpThongTinTaiKhoan.TabIndex = 24;
             this.grpThongTinTaiKhoan.TabStop = false;
             this.grpThongTinTaiKhoan.Text = "Thông Tin";
@@ -104,15 +106,17 @@
             // txtId_Device
             // 
             this.txtId_Device.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId_Device.Location = new System.Drawing.Point(121, 102);
+            this.txtId_Device.Location = new System.Drawing.Point(161, 126);
+            this.txtId_Device.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtId_Device.MaxLength = 20;
             this.txtId_Device.Name = "txtId_Device";
-            this.txtId_Device.Size = new System.Drawing.Size(129, 20);
+            this.txtId_Device.Size = new System.Drawing.Size(171, 23);
             this.txtId_Device.TabIndex = 58;
             // 
             // mntNgayTL
             // 
-            this.mntNgayTL.Location = new System.Drawing.Point(277, 26);
+            this.mntNgayTL.Location = new System.Drawing.Point(369, 32);
+            this.mntNgayTL.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
             this.mntNgayTL.MaxSelectionCount = 1;
             this.mntNgayTL.Name = "mntNgayTL";
             this.mntNgayTL.TabIndex = 57;
@@ -122,9 +126,10 @@
             // btnDate_Liqui
             // 
             this.btnDate_Liqui.ForeColor = System.Drawing.Color.Black;
-            this.btnDate_Liqui.Location = new System.Drawing.Point(473, 98);
+            this.btnDate_Liqui.Location = new System.Drawing.Point(631, 121);
+            this.btnDate_Liqui.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDate_Liqui.Name = "btnDate_Liqui";
-            this.btnDate_Liqui.Size = new System.Drawing.Size(27, 23);
+            this.btnDate_Liqui.Size = new System.Drawing.Size(36, 28);
             this.btnDate_Liqui.TabIndex = 55;
             this.btnDate_Liqui.Text = "...";
             this.btnDate_Liqui.UseVisualStyleBackColor = true;
@@ -133,19 +138,21 @@
             // txtDate_Liqui
             // 
             this.txtDate_Liqui.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDate_Liqui.Location = new System.Drawing.Point(375, 100);
+            this.txtDate_Liqui.Location = new System.Drawing.Point(500, 123);
+            this.txtDate_Liqui.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDate_Liqui.MaxLength = 20;
             this.txtDate_Liqui.Name = "txtDate_Liqui";
-            this.txtDate_Liqui.Size = new System.Drawing.Size(91, 20);
+            this.txtDate_Liqui.Size = new System.Drawing.Size(120, 23);
             this.txtDate_Liqui.TabIndex = 54;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(277, 102);
+            this.label3.Location = new System.Drawing.Point(369, 126);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 15);
+            this.label3.Size = new System.Drawing.Size(106, 18);
             this.label3.TabIndex = 53;
             this.label3.Text = "Ngày Thanh Lý";
             // 
@@ -153,28 +160,31 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(23, 107);
+            this.label6.Location = new System.Drawing.Point(31, 132);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 15);
+            this.label6.Size = new System.Drawing.Size(82, 18);
             this.label6.TabIndex = 49;
-            this.label6.Text = "Thiết Bị";
+            this.label6.Text = "Mã Thiết Bị";
             // 
             // txtId_Liqui
             // 
             this.txtId_Liqui.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId_Liqui.Location = new System.Drawing.Point(121, 47);
+            this.txtId_Liqui.Location = new System.Drawing.Point(161, 58);
+            this.txtId_Liqui.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtId_Liqui.MaxLength = 20;
             this.txtId_Liqui.Name = "txtId_Liqui";
-            this.txtId_Liqui.Size = new System.Drawing.Size(129, 20);
+            this.txtId_Liqui.Size = new System.Drawing.Size(171, 23);
             this.txtId_Liqui.TabIndex = 27;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 53);
+            this.label1.Location = new System.Drawing.Point(21, 65);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 15);
+            this.label1.Size = new System.Drawing.Size(93, 18);
             this.label1.TabIndex = 26;
             this.label1.Text = "Mã Thanh Lý";
             // 
@@ -183,9 +193,10 @@
             this.btnLamMoi.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoi.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLamMoi.Location = new System.Drawing.Point(527, 38);
+            this.btnLamMoi.Location = new System.Drawing.Point(703, 47);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(127, 37);
+            this.btnLamMoi.Size = new System.Drawing.Size(169, 46);
             this.btnLamMoi.TabIndex = 25;
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
@@ -196,9 +207,10 @@
             this.btnXoa.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnXoa.Location = new System.Drawing.Point(527, 129);
+            this.btnXoa.Location = new System.Drawing.Point(703, 159);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(127, 37);
+            this.btnXoa.Size = new System.Drawing.Size(169, 46);
             this.btnXoa.TabIndex = 21;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -209,9 +221,10 @@
             this.btnCapNhat.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCapNhat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCapNhat.Location = new System.Drawing.Point(704, 38);
+            this.btnCapNhat.Location = new System.Drawing.Point(939, 47);
+            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(128, 37);
+            this.btnCapNhat.Size = new System.Drawing.Size(171, 46);
             this.btnCapNhat.TabIndex = 20;
             this.btnCapNhat.Text = "Cập Nhật";
             this.btnCapNhat.UseVisualStyleBackColor = false;
@@ -222,9 +235,10 @@
             this.btnThanhLyTB.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnThanhLyTB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThanhLyTB.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnThanhLyTB.Location = new System.Drawing.Point(705, 129);
+            this.btnThanhLyTB.Location = new System.Drawing.Point(940, 159);
+            this.btnThanhLyTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThanhLyTB.Name = "btnThanhLyTB";
-            this.btnThanhLyTB.Size = new System.Drawing.Size(127, 37);
+            this.btnThanhLyTB.Size = new System.Drawing.Size(169, 46);
             this.btnThanhLyTB.TabIndex = 19;
             this.btnThanhLyTB.Text = "Thanh Lý TB";
             this.btnThanhLyTB.UseVisualStyleBackColor = false;
@@ -233,19 +247,21 @@
             // txtName_Liqui
             // 
             this.txtName_Liqui.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName_Liqui.Location = new System.Drawing.Point(375, 47);
+            this.txtName_Liqui.Location = new System.Drawing.Point(500, 58);
+            this.txtName_Liqui.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtName_Liqui.MaxLength = 20;
             this.txtName_Liqui.Name = "txtName_Liqui";
-            this.txtName_Liqui.Size = new System.Drawing.Size(129, 20);
+            this.txtName_Liqui.Size = new System.Drawing.Size(171, 23);
             this.txtName_Liqui.TabIndex = 15;
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(277, 52);
+            this.lblUsername.Location = new System.Drawing.Point(369, 64);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(81, 15);
+            this.lblUsername.Size = new System.Drawing.Size(97, 18);
             this.lblUsername.TabIndex = 14;
             this.lblUsername.Text = "Tên Thanh Lý";
             // 
@@ -261,9 +277,11 @@
             this.grp_TimKiem.Controls.Add(this.txtTimKiem);
             this.grp_TimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grp_TimKiem.ForeColor = System.Drawing.Color.Black;
-            this.grp_TimKiem.Location = new System.Drawing.Point(22, 470);
+            this.grp_TimKiem.Location = new System.Drawing.Point(29, 578);
+            this.grp_TimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grp_TimKiem.Name = "grp_TimKiem";
-            this.grp_TimKiem.Size = new System.Drawing.Size(890, 69);
+            this.grp_TimKiem.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grp_TimKiem.Size = new System.Drawing.Size(1187, 85);
             this.grp_TimKiem.TabIndex = 26;
             this.grp_TimKiem.TabStop = false;
             this.grp_TimKiem.Text = "Tìm Kiếm";
@@ -274,9 +292,10 @@
             this.btnTimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnTimKiem.Location = new System.Drawing.Point(744, 18);
+            this.btnTimKiem.Location = new System.Drawing.Point(992, 22);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(101, 37);
+            this.btnTimKiem.Size = new System.Drawing.Size(135, 46);
             this.btnTimKiem.TabIndex = 3;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
@@ -286,9 +305,10 @@
             // 
             this.rdbName_Liqui.AutoSize = true;
             this.rdbName_Liqui.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbName_Liqui.Location = new System.Drawing.Point(514, 28);
+            this.rdbName_Liqui.Location = new System.Drawing.Point(685, 34);
+            this.rdbName_Liqui.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdbName_Liqui.Name = "rdbName_Liqui";
-            this.rdbName_Liqui.Size = new System.Drawing.Size(97, 19);
+            this.rdbName_Liqui.Size = new System.Drawing.Size(114, 22);
             this.rdbName_Liqui.TabIndex = 2;
             this.rdbName_Liqui.TabStop = true;
             this.rdbName_Liqui.Text = "Tên Thanh Lí";
@@ -298,9 +318,10 @@
             // 
             this.rdbId_Liqui.AutoSize = true;
             this.rdbId_Liqui.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbId_Liqui.Location = new System.Drawing.Point(358, 29);
+            this.rdbId_Liqui.Location = new System.Drawing.Point(477, 36);
+            this.rdbId_Liqui.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdbId_Liqui.Name = "rdbId_Liqui";
-            this.rdbId_Liqui.Size = new System.Drawing.Size(96, 19);
+            this.rdbId_Liqui.Size = new System.Drawing.Size(114, 22);
             this.rdbId_Liqui.TabIndex = 1;
             this.rdbId_Liqui.TabStop = true;
             this.rdbId_Liqui.Text = "Mã Thanh Lý";
@@ -308,18 +329,20 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(8, 28);
+            this.txtTimKiem.Location = new System.Drawing.Point(11, 34);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(251, 22);
+            this.txtTimKiem.Size = new System.Drawing.Size(333, 26);
             this.txtTimKiem.TabIndex = 0;
             // 
             // lbl_QLTaiKhoan
             // 
             this.lbl_QLTaiKhoan.AutoSize = true;
             this.lbl_QLTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_QLTaiKhoan.Location = new System.Drawing.Point(3, 7);
+            this.lbl_QLTaiKhoan.Location = new System.Drawing.Point(4, 9);
+            this.lbl_QLTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_QLTaiKhoan.Name = "lbl_QLTaiKhoan";
-            this.lbl_QLTaiKhoan.Size = new System.Drawing.Size(651, 61);
+            this.lbl_QLTaiKhoan.Size = new System.Drawing.Size(824, 76);
             this.lbl_QLTaiKhoan.TabIndex = 23;
             this.lbl_QLTaiKhoan.Text = "Quản Lý Thanh Lý Thiết Bị";
             // 
@@ -336,24 +359,13 @@
             this.Name_Liqui,
             this.Id_Device,
             this.Date_Liqui});
-            this.dgvListLiqui.Location = new System.Drawing.Point(107, 290);
+            this.dgvListLiqui.Location = new System.Drawing.Point(143, 357);
+            this.dgvListLiqui.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvListLiqui.Name = "dgvListLiqui";
             this.dgvListLiqui.RowHeadersWidth = 51;
-            this.dgvListLiqui.Size = new System.Drawing.Size(662, 174);
+            this.dgvListLiqui.Size = new System.Drawing.Size(883, 214);
             this.dgvListLiqui.TabIndex = 27;
             this.dgvListLiqui.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvListLiqui_MouseClick);
-            // 
-            // errId_Device
-            // 
-            this.errId_Device.ContainerControl = this;
-            // 
-            // errQty_Device
-            // 
-            this.errQty_Device.ContainerControl = this;
-            // 
-            // errDate_Liqui
-            // 
-            this.errDate_Liqui.ContainerControl = this;
             // 
             // Id_Liqui
             // 
@@ -387,17 +399,29 @@
             this.Date_Liqui.Name = "Date_Liqui";
             this.Date_Liqui.Width = 160;
             // 
+            // errId_Device
+            // 
+            this.errId_Device.ContainerControl = this;
+            // 
+            // errQty_Device
+            // 
+            this.errQty_Device.ContainerControl = this;
+            // 
+            // errDate_Liqui
+            // 
+            this.errDate_Liqui.ContainerControl = this;
+            // 
             // QLThanhLyTB
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 551);
+            this.ClientSize = new System.Drawing.Size(1192, 678);
             this.Controls.Add(this.dgvListLiqui);
             this.Controls.Add(this.grpThongTinTaiKhoan);
             this.Controls.Add(this.grp_TimKiem);
             this.Controls.Add(this.lbl_QLTaiKhoan);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "QLThanhLyTB";
             this.Text = "QLThanhLyTB";
             this.Load += new System.EventHandler(this.QLThanhLyTB_Load);

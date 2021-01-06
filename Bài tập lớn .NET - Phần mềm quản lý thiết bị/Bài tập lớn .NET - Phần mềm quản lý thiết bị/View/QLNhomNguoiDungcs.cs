@@ -67,19 +67,23 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                 Object.ObjCustomerGroup objCustomerGroup = new Object.ObjCustomerGroup();
                 SetDataCustomerGroup(objCustomerGroup);
 
-                string Id_Customer = dgvListCustomerGroup.CurrentRow.Cells[0].Value.ToString();
                 DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlg == DialogResult.Yes)
                 {
-                    if (cutomerGroupCtrl.Update(objCustomerGroup) > 0)
+                    switch (cutomerGroupCtrl.Update(objCustomerGroup))
                     {
-                        MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        CustomerGroupManage.HienThi(dgvListCustomerGroup);
-                        HienThiThongTin();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Id Customer hoặc Id Group không tồn tại, vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        case -1:
+                            {
+                                MessageBox.Show("Vui lòng chọn tên nhóm khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                break;
+                            }
+                        default:
+                            {
+                                MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                CustomerGroupManage.HienThi(dgvListCustomerGroup);
+                                HienThiThongTin();
+                                break;
+                            }
                     }
                 }
             }

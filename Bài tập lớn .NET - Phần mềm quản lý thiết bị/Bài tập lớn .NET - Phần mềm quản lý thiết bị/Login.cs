@@ -52,14 +52,15 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị
         private void btnlogin_Click(object sender, EventArgs e)
         {
             //query data
+            user = MainControl.checkInjectionSQL(txtUserName.Text.Trim());
+            pass = MainControl.checkInjectionSQL(txtPassWord.Text.Trim());
+
             string query = "SELECT Customer_Detail.Id_Group, Customer_Detail.Name_Customer " +
                 "FROM Account " +
                 "INNER JOIN Customer_Detail " +
                 "ON Account.Id_Customer = Customer_Detail.Id_Customer " +
-                "WHERE Account.User_Name_Customer = '" + txtUserName.Text.Trim() + "' " +
-                "AND Account.PassWord_Customer = '" + txtPassWord.Text.Trim() + "'; ";
-            user = txtUserName.Text.Trim();
-            pass = txtPassWord.Text.Trim();
+                "WHERE Account.User_Name_Customer = '" + user + "' " +
+                "AND Account.PassWord_Customer = '" + pass + "'; ";
 
             //action get database
             DataTable result = new DataTable();

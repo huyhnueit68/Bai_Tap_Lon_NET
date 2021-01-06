@@ -11,6 +11,9 @@
 - Thống kê trực quan bằng biểu đồ
 - Sử dụng mô hình code MVC cơ bản trong C# tổ chức code rõ ràng
 - Validate dữ liệu chặt chẽ đối với từng câu lệnh SQL
+- Giao diện được thiết kế theo kiểu menu dynamic giúp trải nhiệm người dùng tốt hơn
+- Chống tấn công SQL Injection cho ứng dụng tăng tính bảo mật
+- 100% ý tưởng, giao diện và source được thực hiện bởi nhóm tác giả và không sử dụng bất kỳ nguồi code tham khảo nào
 
 ## Nhóm tác giả:
 
@@ -20,9 +23,11 @@
 ## Cách cài đặt
 
 - Cấp quyền truy cập cao nhất cho tư mục chứa project
-- Import database bằng file .\Bai_Tap_Lon_NET\BackUpDatabase\QuanLyThietBi.bak
+- Import database bằng file .\Bai_Tap_Lon_NET\BackUpDatabase\QuanLyThietBi.bak hoặc chạy câu lệnh trong file DatabaseQuanLyThietBi.sql
 - Dẫn lại đường dẫn tới server trong Model\ConnectDatabase\ConnectDatabase.cs
 - Chạy thư mục Bai_Tap_Lon_NET\Bài tập lớn .NET - Phần mềm quản lý thiết bị \Bài tập lớn .NET - Phần mềm quản lý thiết bị.cs
+- Các thư viện đã được
+- Chỉnh đường dẫn export ra file excel mong muốn trong QLThongKe.cs\btnXuatExcel_Click
 
 ## Chức Năng Chính Của Phần Mềm
 
@@ -52,7 +57,7 @@
 - Đưa ra các nhóm thiêt bị có chung mục đích sử dụng
 - Tình trạng hiện tại của từng thiết bị
 
-#### Quản lý việc sử dụng thiết bị
+#### Quản lý việc sử dụng thiết bị (Quản lý mượn trả)
 
 - Thống kê các thiết bị đang được sử dụng
 - Thống kê các thiết bị đang được lưu trữ trong kho
@@ -63,12 +68,19 @@
 - thêm thiết bị thanh lý, thêm sửa xóa thanh lý
 - áp dụng chức năng này cho admin
 
+#### Quản lý thống kê
+
+- Thống kê tổng số thiết bị đang mượn
+- Thống kê tổng số thiết bị đã thanh lý
+- Thống kê thiết bị theo ba tiêu chí: theo khoảng thời gian, theo người dùng, theo Năm
+- Export dữ liệu thống kê ra file excel nếu cần thiết
+
 ## Các thư mục trong project và cấu trúc MVC trong chương trình
 
 ### Các Form chính
 
 - login.cs: quản lý đăng nhập hệ thống và phân quyền khi đăng nhập
-- MainControl.cs : quản lý menu chính của project, nới chứa tất cả các nút chức năng của chương trình
+- MainControl.cs : quản lý menu chính của project, nơi chứa tất cả các nút chức năng của chương trình
 
 ### Folder Model
 

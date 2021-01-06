@@ -36,7 +36,7 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Model
         public int Update(ObjAccount acc)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "UPDATE Account SET User_Name_Customer = @ten, PassWord_Customer = @pass WHERE Id_Customer = @id; ";
+            cmd.CommandText = "UPDATE Account SET PassWord_Customer = @pass WHERE Id_Customer = @id AND User_Name_Customer = @ten; ";
 
             cmd.Parameters.Add("ten", SqlDbType.NVarChar).Value = acc.UserName_Customer;
             cmd.Parameters.Add("pass", SqlDbType.NVarChar).Value = acc.PassWord_Customer;

@@ -76,16 +76,12 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.Model
 
         public DataSet getListDeviceByName(string name)
         {
-            SqlCommand sqlcmd = new SqlCommand("SELECT D.Id_Device as 'MÃ THIẾT BỊ', " +
-                "D.Name_Device as 'TÊN THIẾT BỊ', " +
-                "RD.Date_Rent as 'NGÀY MƯỢN', " +
-                "CD.Name_Customer AS 'TÊN NGƯỜI DÙNG' " +
-                "FROM Rent_Device as RD, Device as D, Customer_Detail as CD " +
-                "WHERE CD.Name_Customer LIKE '%"+name+"%' " +
-                "AND RD.Id_Device = D.Id_Device " +
-                "AND RD.Id_Customer = CD.Id_Customer");
             try
             {
+                SqlCommand sqlcmd = new SqlCommand("SELECT D.Id_Device as 'MÃ THIẾT BỊ', D.Name_Device as 'TÊN THIẾT BỊ', RD.Date_Rent as 'NGÀY MƯỢN', CD.Name_Customer AS 'TÊN NGƯỜI DÙNG' " +
+                    "FROM Rent_Device as RD, Device as D, Customer_Detail as CD " +
+                    "WHERE CD.Name_Customer Like N'%" + name + "%' " +
+                    "AND RD.Id_Device = D.Id_Device AND RD.Id_Customer = CD.Id_Customer");
                 return cls.LayDuLieu(sqlcmd);
             }
             catch (Exception ce)

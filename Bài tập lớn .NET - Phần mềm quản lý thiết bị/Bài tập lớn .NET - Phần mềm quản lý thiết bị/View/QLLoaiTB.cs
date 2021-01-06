@@ -69,19 +69,23 @@ namespace Bài_tập_lớn.NET___Phần_mềm_quản_lý_thiết_bị.View
                 Object.ObjTypeDevice objTypeDevice = new Object.ObjTypeDevice();
                 SetDataTypeDeivce(objTypeDevice);
 
-                string Id_Customer = dgvDSLoaiTB.CurrentRow.Cells[0].Value.ToString();
                 DialogResult dlg = MessageBox.Show("Bạn có chắc chắn muốn đổi dữ liệu này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlg == DialogResult.Yes)
                 {
-                    if (typeDeviceCtrl.Update(objTypeDevice) > 0)
+                    switch (typeDeviceCtrl.Update(objTypeDevice))
                     {
-                        MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        typeDeviceMng.HienThi(dgvDSLoaiTB);
-                        HienThiThongTin();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Id Type không tồn tại, vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        case -1:
+                            {
+                                MessageBox.Show("Id Type không tồn tại hoặc đã tồn tại tên loại thiết bị, vui lòng thử lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                break;
+                            }
+                        default:
+                            {
+                                MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                typeDeviceMng.HienThi(dgvDSLoaiTB);
+                                HienThiThongTin();
+                                break;
+                            }
                     }
                 }
             }
